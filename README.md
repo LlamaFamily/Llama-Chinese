@@ -1,21 +1,47 @@
 <h1 align="center">
-  <b>ChineseLlama2<b>
+  Llama2-Chinese
 </h1>
-<!-- <p align="center" width="100%"> -->
-
-
 <p align="center" width="100%">
-<img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
+  <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
-<font face="黑体" color=orange size=8"> 最好的中文Llama大模型 </font>
+  <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
 </p>
 
+</br></br>
 
 
-## 社区介绍：Llama2中文社区
+## 🗂️ 内容导引
+- [🗂️ 内容导引](#️-内容导引)
+- [🔥 社区介绍：Llama2中文社区](#-社区介绍llama2中文社区)
+  - [为什么选择Llama2中文社区？](#为什么选择llama2中文社区)
+  - [社区活动](#社区活动)
+  - [立即加入我们！](#立即加入我们)
+- [📢 社区公告](#-社区公告)
+    - [2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！](#2023年7月19日正式启动llama2模型的中文预训练关注我们获取实时动态)
+    - [2023年7月19日：Llama2国内下载地址正在启动，敬请期待！](#2023年7月19日llama2国内下载地址正在启动敬请期待)
+    - [2023年7月19日：开启Llama2中文社区，欢迎大家加入！](#2023年7月19日开启llama2中文社区欢迎大家加入)
+- [📝 数据来源](#-数据来源)
+- [⏬ 模型部署](#-模型部署)
+  - [预训练模型](#预训练模型)
+  - [Chat模型](#chat模型)
+  - [模型调用代码示例](#模型调用代码示例)
+  - [Gradio快速搭建问答平台](#gradio快速搭建问答平台)
+- [💡 模型微调](#-模型微调)
+  - [Step1: 环境和数据准备](#step1-环境和数据准备)
+  - [Step2: 微调脚本](#step2-微调脚本)
+- [📖 学习资料](#-学习资料)
+  - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
+  - [Llama相关论文](#llama相关论文)
+  - [Llama2的评测结果](#llama2的评测结果)
+- [🎉 致谢](#-致谢)
+- [🤔 问题反馈](#-问题反馈)
+
+
+
+## 🔥 社区介绍：Llama2中文社区
 欢迎来到Llama2中文社区！我们是一个专注于Llama2模型在中文方面的优化和上层建设的高级技术社区。
-
+**\*基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级\***。
 我们热忱欢迎对大模型LLM充满热情的开发者和研究者加入我们的行列。
 
 ### 为什么选择Llama2中文社区？
@@ -47,38 +73,28 @@
 🚀 **项目合作**：鼓励成员间的项目合作，共同探索Llama2在实际应用中的潜力，打造创新解决方案。
 
 
-### 立即加入我们
+### 立即加入我们！
 📚 **愿景**：无论您是对Llama2已有研究和应用经验的专业开发者，还是对Llama2中文优化感兴趣并希望深入探索的新手，我们都热切期待您的加入。在Llama2中文社区，您将有机会与行业内顶尖人才共同交流，携手推动中文NLP技术的进步，开创更加美好的技术未来！
 
 🔗 **温馨提示**：本社区为专业技术交流平台，我们热切期望志同道合的开发者和研究者加入。请遵守社区准则，共同维护积极向上的学习氛围，任何与Llama2无关的内容和广告将被清理。感谢您的理解和支持！
 
 
+## 📢 社区公告
 
-## 内容导引
-
-| 章节                    | 描述                     |
-| ----------------------- | ------------------------ |
-| [🔥社区公告](#🔥社区公告) | 我们的最新动态           |
-| [📝数据来源](#📝数据来源) | 介绍模型的训练数据来源 |
-| [⏬模型体验](#⏬模型下载) | 模型huggingface🤗下载地址 |
-| [🎉致谢](#🎉致谢) | 表达了我们由衷的敬意            |
-| [🤔问题反馈](#🤔问题反馈) | 问题的反馈               |
-
-
-## 🔥社区公告
+#### 2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！
 
 #### 2023年7月19日：Llama2国内下载地址正在启动，敬请期待！
 
 #### 2023年7月19日：开启Llama2中文社区，欢迎大家加入！
 
 
-## 📝数据来源
+## 📝 数据来源
 
 我们计划通过以下数据来优化Llama2的中文能力:
 
 | 类型                                                       | 描述                                                         |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| 网络数据                                                   | 互联网上公开的网络数据，挑选出去重后的高质量中文数据，涉及到百科，书籍，博客，新闻，公告，小说，公众号等高质量长文本数据。这部分数据还在清洗更多逐步加入到模型中。 |
+| 网络数据                                                   | 互联网上公开的网络数据，挑选出去重后的高质量中文数据，涉及到百科、书籍、博客、新闻、公告、小说等高质量长文本数据。 |
 | [Wikipedia](https://github.com/goldsmith/Wikipedia)        | 中文Wikipedia的数据                                          |
 | [悟道](https://github.com/BAAI-WuDao/Model)                | 中文悟道开源的200G数据                                       |
 | [Clue](https://github.com/CLUEbenchmark/CLUEDatasetSearch) | Clue开放的中文预训练数据，进行清洗后的高质量中文长文本数据   |
@@ -89,7 +105,7 @@
 
 
 
-## ⏬模型体验
+## ⏬ 模型部署
 
 Meta在🤗Huggingface上提供了所有模型的下载链接：https://huggingface.co/meta-llama
 
@@ -140,19 +156,69 @@ text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
 
-## 🎉致谢
+### Gradio快速搭建问答平台
 
-感谢原子回声[AtomEcho](https://github.com/AtomEcho)团队的技术和资源支持
+基于gradio搭建的问答界面，实现了流式的输出，将下面代码复制到控制台运行，以下代码以Llama2-7B-Chat模型为例，<font color="#006600">不同模型只需修改一下代码里的模型名称就好了😊</font><br/>
+```
+python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
+```
 
 
-## 🤔问题反馈
+## 💡 模型微调
 
-如有问题，请在GitHub Issue中提交。
+本仓库中提供了基于LoRA的微调代码，未来我们将会扩展更多的微调算法，敬请期待！关于LoRA的详细介绍可以参考论文“[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)”以及微软Github仓库[LoRA](https://github.com/microsoft/LoRA)。
 
-在提交问题之前，请先查阅以往的issue是否能解决你的问题。
+### Step1: 环境和数据准备
+
+根据[requirements.txt](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
+
+在data目录下提供了一份用于模型sft的数据样例：
+- 训练数据：[data/train_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/train_sft.csv)
+- 验证数据：[data/dev_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/dev_sft.csv)
+
+每个csv文件中包含一列“text”，每一行为一个训练样例，每个训练样例按照以下格式将问题和答案组织为模型输入，您可以按照以下格式自定义训练和验证数据集：
+```
+"<s>Human: "+问题+"\n</s><s>Assistant: "+答案
+```
+例如，
+```
+<s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: 因为地球是目前为止唯一已知存在生命的行星。</s>
+```
+
+
+### Step2: 微调脚本
+
+我们提供了用于微调的脚本[train/sft/finetune_other.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_other.sh)，通过修改脚本的部分参数实现模型的微调，关于微调的具体代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)。
+
+<!-- ## 🚀 未来计划 -->
+
+<!-- ## 💪 增强能力 -->
+
+
+## 📖 学习资料
+### Meta官方对于[Llama2](https://ai.meta.com/llama)的介绍
+### Llama相关论文
+* [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
+* [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://scontent-lax3-2.xx.fbcdn.net/v/t39.2365-6/10000000_663429262362723_1696968207443577320_n.pdf?_nc_cat=101&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=5ol-jUSglG4AX9uTu-j&_nc_ht=scontent-lax3-2.xx&oh=00_AfDVmJr77y3bv5GCbJ26w-stMJNXsZPTwVDlWhoIkkb8Lg&oe=64BDB0D1)
+### Llama2的评测结果
+<p align="center" width="100%">
+<img src="https://scontent-lax3-2.xx.fbcdn.net/v/t39.8562-6/361265668_276217774995411_4529778090866658620_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6825c5&_nc_ohc=gSMV6flCjbAAX8pE8nm&_nc_ht=scontent-lax3-2.xx&oh=00_AfC53vAix8IkoTlO1Z46g2IfS3p7jb51A8TaIrOK6grRsQ&oe=64BC6826" alt="Llama2Eval" style="width: 100%; display: block; margin: auto;">
+</p>
+
+
+## 🎉 致谢
+
+感谢原子回声[AtomEcho](https://github.com/AtomEcho)团队的技术和资源支持！
+
+
+## 🤔 问题反馈
+
+如有问题，请在GitHub Issue中提交，在提交问题之前，请先查阅以往的issue是否能解决你的问题。
 
 礼貌地提出问题，构建和谐的讨论社区。
 
 加入微信群讨论😍😍
 
+<p align="center" width="100%">
 <img src="./assets/wechat.jpg" alt="Wechat" style="width: 60%; display: block; margin: auto;">
+</p>

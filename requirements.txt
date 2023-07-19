@@ -1,0 +1,15 @@
+bitsandbytes==0.39.0
+accelerate
+deepspeed
+git+https://github.com/PanQiWei/AutoGPTQ.git
+scipy
+sentencepiece
+datasets
+evaluate
+pytest
+git+https://github.com/huggingface/peft
+git+https://github.com/huggingface/transformers
+scikit-learn
+torch torchvision
+tensorboard
+
