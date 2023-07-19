@@ -220,5 +220,5 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 加入微信群讨论😍😍
 
 <p align="center" width="100%">
-<img src="./assets/wechat.jpg" alt="Wechat" style="width: 60%; display: block; margin: auto;">
+<img src="./assets/wechat.jpeg" alt="Wechat" style="width: 100%; display: block; margin: auto;">
 </p>
