@@ -1,19 +1,36 @@
 <h1 align="center">
-  <b>ChineseLlama2<b>
+  Llama2-Chinese
 </h1>
-<!-- <p align="center" width="100%"> -->
-
-
 <p align="center" width="100%">
-<img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
+  <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
-<font face="黑体" color=orange size=8"> 最好的中文Llama大模型 </font>
+  <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
 </p>
 
+</br></br>
 
 
-## 社区介绍：Llama2中文社区
+## 🗂️ 内容导引
+- [🗂️ 内容导引](#️-内容导引)
+- [🔥 社区介绍：Llama2中文社区](#-社区介绍llama2中文社区)
+  - [为什么选择Llama2中文社区？](#为什么选择llama2中文社区)
+  - [社区活动](#社区活动)
+  - [立即加入我们](#立即加入我们)
+- [📢 社区公告](#-社区公告)
+    - [2023年7月19日：Llama2国内下载地址正在启动，敬请期待！](#2023年7月19日llama2国内下载地址正在启动敬请期待)
+    - [2023年7月19日：开启Llama2中文社区，欢迎大家加入！](#2023年7月19日开启llama2中文社区欢迎大家加入)
+- [📝 数据来源](#-数据来源)
+- [⏬ 模型体验](#-模型体验)
+  - [预训练模型](#预训练模型)
+  - [Chat模型](#chat模型)
+  - [模型调用代码示例](#模型调用代码示例)
+- [🎉 致谢](#-致谢)
+- [🤔 问题反馈](#-问题反馈)
+
+
+
+## 🔥 社区介绍：Llama2中文社区
 欢迎来到Llama2中文社区！我们是一个专注于Llama2模型在中文方面的优化和上层建设的高级技术社区。
 
 我们热忱欢迎对大模型LLM充满热情的开发者和研究者加入我们的行列。
@@ -53,26 +70,14 @@
 🔗 **温馨提示**：本社区为专业技术交流平台，我们热切期望志同道合的开发者和研究者加入。请遵守社区准则，共同维护积极向上的学习氛围，任何与Llama2无关的内容和广告将被清理。感谢您的理解和支持！
 
 
-
-## 内容导引
-
-| 章节                    | 描述                     |
-| ----------------------- | ------------------------ |
-| [🔥社区公告](#🔥社区公告) | 我们的最新动态           |
-| [📝数据来源](#📝数据来源) | 介绍模型的训练数据来源 |
-| [⏬模型体验](#⏬模型下载) | 模型huggingface🤗下载地址 |
-| [🎉致谢](#🎉致谢) | 表达了我们由衷的敬意            |
-| [🤔问题反馈](#🤔问题反馈) | 问题的反馈               |
-
-
-## 🔥社区公告
+## 📢 社区公告
 
 #### 2023年7月19日：Llama2国内下载地址正在启动，敬请期待！
 
 #### 2023年7月19日：开启Llama2中文社区，欢迎大家加入！
 
 
-## 📝数据来源
+## 📝 数据来源
 
 我们计划通过以下数据来优化Llama2的中文能力:
 
@@ -89,7 +94,7 @@
 
 
 
-## ⏬模型体验
+## ⏬ 模型体验
 
 Meta在🤗Huggingface上提供了所有模型的下载链接：https://huggingface.co/meta-llama
 
@@ -140,19 +145,22 @@ text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
 
-## 🎉致谢
+<!-- ## 🚀 未来计划 -->
+
+
+## 🎉 致谢
 
 感谢原子回声[AtomEcho](https://github.com/AtomEcho)团队的技术和资源支持
 
 
-## 🤔问题反馈
+## 🤔 问题反馈
 
-如有问题，请在GitHub Issue中提交。
-
-在提交问题之前，请先查阅以往的issue是否能解决你的问题。
+如有问题，请在GitHub Issue中提交，在提交问题之前，请先查阅以往的issue是否能解决你的问题。
 
 礼貌地提出问题，构建和谐的讨论社区。
 
 加入微信群讨论😍😍
 
+<p align="center" width="100%">
 <img src="./assets/wechat.jpg" alt="Wechat" style="width: 60%; display: block; margin: auto;">
+</p>
