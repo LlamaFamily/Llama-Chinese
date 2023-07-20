@@ -224,7 +224,7 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 ## 🎉 致谢
 
 感谢原子回声[AtomEcho](https://github.com/AtomEcho)团队的技术和资源支持！
-
+感谢@xzsGenius对Llama2中文社区的贡献！
 
 ## 🤔 问题反馈
 
