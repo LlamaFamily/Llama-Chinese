@@ -10,6 +10,7 @@ pytest
 git+https://github.com/huggingface/peft
 git+https://github.com/huggingface/transformers
 scikit-learn
-torch torchvision
+torch
+torchvision
 tensorboard
 
