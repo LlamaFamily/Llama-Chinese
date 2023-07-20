@@ -148,7 +148,7 @@ Llama2-Chat模型基于预训练模型进行了监督微调，具备更强的对
 
 ### 模型调用代码示例
 
-```
+```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-chat-hf',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
 model =model.eval()
@@ -174,7 +174,7 @@ print(text)
 ### Gradio快速搭建问答平台
 
 基于gradio搭建的问答界面，实现了流式的输出，将下面代码复制到控制台运行，以下代码以Llama2-7B-Chat模型为例，<font color="#006600">不同模型只需修改一下代码里的模型名称就好了😊</font><br/>
-```
+```bash
 python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 ```
 
@@ -186,17 +186,20 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 ### Step1: 环境和数据准备
 
 根据[requirements.txt](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
+```bash
+pip install -r requirements.txt
+```
 
 在data目录下提供了一份用于模型sft的数据样例：
 - 训练数据：[data/train_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/train_sft.csv)
 - 验证数据：[data/dev_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/dev_sft.csv)
 
 每个csv文件中包含一列“text”，每一行为一个训练样例，每个训练样例按照以下格式将问题和答案组织为模型输入，您可以按照以下格式自定义训练和验证数据集：
-```
+```text
 "<s>Human: "+问题+"\n</s><s>Assistant: "+答案
 ```
 例如，
-```
+```text
 <s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: 因为地球是目前为止唯一已知存在生命的行星。</s>
 ```
 
