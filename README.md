@@ -12,11 +12,13 @@
 
 
 ## 🗂️ 内容导引
+- [🐼 国内Llama2最新下载地址上线！](#-国内llama2最新下载地址上线)
 - [🔥 社区介绍：Llama2中文社区](#-社区介绍llama2中文社区)
   - [为什么选择Llama2中文社区？](#为什么选择llama2中文社区)
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年7月20日: 国内Llama2最新下载地址上线！](#2023年7月20日-国内llama2最新下载地址上线)
     - [2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！](#2023年7月19日正式启动llama2模型的中文预训练关注我们获取实时动态)
     - [2023年7月19日：Llama2国内下载地址正在启动，敬请期待！](#2023年7月19日llama2国内下载地址正在启动敬请期待)
     - [2023年7月19日：开启Llama2中文社区，欢迎大家加入！](#2023年7月19日开启llama2中文社区欢迎大家加入)
@@ -35,6 +37,18 @@
   - [Llama2的评测结果](#llama2的评测结果)
 - [🎉 致谢](#-致谢)
 - [🤔 问题反馈](#-问题反馈)
+
+
+
+## 🐼 国内Llama2最新下载地址上线！
+
+- Llama2-7B官网版本：https://pan.xunlei.com/s/VN_kR2fwuJdG1F3CoF33rwpIA1?pwd=z9kf
+
+- Llama2-7B-Chat官网版本：https://pan.xunlei.com/s/VN_kQa1_HBvV-X9QVI6jV2kOA1?pwd=xmra
+
+- Llama2-13B官网版本：https://pan.xunlei.com/s/VN_izibaMDoptluWodzJw4cRA1?pwd=2qqb
+
+- Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
 
 
 
@@ -79,6 +93,8 @@
 
 
 ## 📢 社区公告
+
+#### 2023年7月20日: 国内Llama2最新下载地址上线！
 
 #### 2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！
 
