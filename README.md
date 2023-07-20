@@ -95,7 +95,7 @@
 
 ## 📢 社区公告
 
-#### 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/JjZFwl3ZlifX52k8RKscrNk6nv8)，欢迎大家一起共建！
+#### 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，欢迎大家一起共建！
 
 #### 2023年7月20日：国内Llama2最新下载地址上线！
 
@@ -236,7 +236,7 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 
 礼貌地提出问题，构建和谐的讨论社区。
 
-加入飞书知识库，一起共建社区文档：https://chinesellama.feishu.cn/wiki/JjZFwl3ZlifX52k8RKscrNk6nv8
+加入[飞书知识库](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，一起共建社区文档。
 
 加入微信群讨论😍😍
 
