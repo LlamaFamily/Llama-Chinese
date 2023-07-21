@@ -8,7 +8,7 @@ datasets
 evaluate
 pytest
 git+https://github.com/huggingface/peft
-git+https://github.com/huggingface/transformers
+transformers==4.31.0
 scikit-learn
 torch
 torchvision
