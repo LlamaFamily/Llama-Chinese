@@ -18,6 +18,8 @@
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年7月21日：评测了Meta原始版Llama2 Chat模型的中文问答能力！](#2023年7月21日评测了meta原始版llama2-chat模型的中文问答能力)
+    - [2023年7月21日：新增Llama2模型的Huggingface版本国内下载地址！](#2023年7月21日新增llama2模型的huggingface版本国内下载地址)
     - [2023年7月20日：新增飞书知识库文档，欢迎大家一起共建！](#2023年7月20日新增飞书知识库文档欢迎大家一起共建)
     - [2023年7月20日：国内Llama2最新下载地址上线！](#2023年7月20日国内llama2最新下载地址上线)
     - [2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！](#2023年7月19日正式启动llama2模型的中文预训练关注我们获取实时动态)
@@ -32,6 +34,7 @@
 - [💡 模型微调](#-模型微调)
   - [Step1: 环境和数据准备](#step1-环境和数据准备)
   - [Step2: 微调脚本](#step2-微调脚本)
+- [🥇 模型评测](#-模型评测)
 - [📖 学习资料](#-学习资料)
   - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
   - [Llama相关论文](#llama相关论文)
@@ -50,6 +53,12 @@
 - Llama2-13B官网版本：https://pan.xunlei.com/s/VN_izibaMDoptluWodzJw4cRA1?pwd=2qqb
 
 - Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
+
+- Llama2-7B Huggingface版本
+https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
+
+- Llama2-7B-Chat Huggingface版本
+https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
 
 
 
@@ -94,6 +103,10 @@
 
 
 ## 📢 社区公告
+
+#### 2023年7月21日：评测了Meta原始版Llama2 Chat模型的[中文问答能力](#-模型评测)！
+
+#### 2023年7月21日：新增Llama2模型的Huggingface版本国内下载地址！
 
 #### 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，欢迎大家一起共建！
 
@@ -211,6 +224,29 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 <!-- ## 🚀 未来计划 -->
 
 <!-- ## 💪 增强能力 -->
+
+
+## 🥇 模型评测
+为了能够更加清晰地了解Llama2模型的中文问答能力，我们筛选了一些具有代表性的中文问题，对Llama2模型进行提问。我们测试的模型包含Meta公开的Llama2-7B-Chat和Llama2-13B-Chat两个版本，没有做任何微调和训练。测试问题筛选自[AtomBulb](https://github.com/AtomEcho/AtomBulb)，共95个测试问题，包含：通用知识、语言理解、创作能力、逻辑推理、代码编程、工作技能、使用工具、人格特征八个大的类别。
+
+测试中使用的Prompt如下，例如对于问题“列出5种可以改善睡眠质量的方法”：
+```
+[INST] 
+<<SYS>>
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.  Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature. The answer always been translate into Chinese language.
+
+If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.
+
+The answer always been translate into Chinese language.
+<</SYS>>
+
+列出5种可以改善睡眠质量的方法
+[/INST]
+```
+Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llama2-13B-Chat的测试结果见[meta_eval_13B.md](assets/meta_eval_13B.md)。
+
+通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。因此，基于中文数据对Llama2模型进行训练和微调十分必要，我们的中文版Llama2模型也已经在训练中，近期将对社区开放。
+
 
 
 ## 📖 学习资料
