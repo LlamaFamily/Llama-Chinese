@@ -2,7 +2,7 @@ output_model=output_path
 if [ ! -d ${output_model} ];then  
     mkdir ${output_model}
 fi
-cp ./finetune_other.sh ${output_model}
+cp ./finetune.sh ${output_model}
 deepspeed --include localhost:3 --master_port 29506 finetune_clm_lora.py \
     --model_name_or_path meta-llama/Llama-2-7b-chat-hf \
     --train_files ../data/train_sft.csv \
