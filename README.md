@@ -206,7 +206,7 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 
 ### Step2: 微调脚本
 
-我们提供了用于微调的脚本[train/sft/finetune_other.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_other.sh)，通过修改脚本的部分参数实现模型的微调，关于微调的具体代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)。
+我们提供了用于微调的脚本[train/sft/finetune.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune.sh)，通过修改脚本的部分参数实现模型的微调，关于微调的具体代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)。
 
 <!-- ## 🚀 未来计划 -->
 
