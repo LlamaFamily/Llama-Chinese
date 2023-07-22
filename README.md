@@ -23,7 +23,7 @@
 - [📢 社区公告](#-社区公告)
     - [2023年7月22日：Llama2在线体验链接llama.family上线，同时包含Meta原版和中文微调版本！](#2023年7月22日llama2在线体验链接llamafamily上线同时包含meta原版和中文微调版本)
     - [2023年7月21日：评测了Meta原始版Llama2 Chat模型的中文问答能力！](#2023年7月21日评测了meta原始版llama2-chat模型的中文问答能力)
-    - [2023年7月21日：新增Llama2模型的Huggingface版本国内下载地址！](#2023年7月21日新增llama2模型的huggingface版本国内下载地址)
+    - [2023年7月21日：新增Llama2模型的Hugging Face版本国内下载地址！](#2023年7月21日新增llama2模型的hugging-face版本国内下载地址)
     - [2023年7月20日：新增飞书知识库文档，欢迎大家一起共建！](#2023年7月20日新增飞书知识库文档欢迎大家一起共建)
     - [2023年7月20日：国内Llama2最新下载地址上线！](#2023年7月20日国内llama2最新下载地址上线)
     - [2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！](#2023年7月19日正式启动llama2模型的中文预训练关注我们获取实时动态)
@@ -58,9 +58,9 @@
 
 - Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
 
-- Llama2-7B Huggingface版本：https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
+- Llama2-7B Hugging Face版本：https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
 
-- Llama2-7B-Chat Huggingface版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
+- Llama2-7B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
 
 
 
@@ -110,7 +110,7 @@
 
 #### 2023年7月21日：评测了Meta原始版Llama2 Chat模型的[中文问答能力](#-模型评测)！
 
-#### 2023年7月21日：新增Llama2模型的Huggingface版本国内下载地址！
+#### 2023年7月21日：新增Llama2模型的Hugging Face版本国内下载地址！
 
 #### 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，欢迎大家一起共建！
 
@@ -142,7 +142,7 @@
 
 ## ⏬ 模型部署
 
-Meta在🤗Huggingface上提供了所有模型的下载链接：https://huggingface.co/meta-llama
+Meta在🤗Hugging Face上提供了所有模型的下载链接：https://huggingface.co/meta-llama
 
 
 ### 预训练模型
