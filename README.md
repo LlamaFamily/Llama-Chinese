@@ -271,6 +271,9 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 
 感谢 @xzsGenius 对Llama2中文社区的贡献！
 
+感谢 @Z Potentials社区对Llama2中文社区的支持！
+
+
 ## 🤔 问题反馈
 
 如有问题，请在GitHub Issue中提交，在提交问题之前，请先查阅以往的issue是否能解决你的问题。
