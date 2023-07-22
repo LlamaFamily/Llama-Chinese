@@ -7,6 +7,9 @@
 <p align="center">
   <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
 </p>
+<p align="center">
+  <a href="https://llama.family">在线体验：llama.family</a>
+</p>
 
 </br></br>
 
@@ -18,6 +21,7 @@
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年7月22日：Llama2在线体验链接llama.family上线，同时包含Meta原版和中文微调版本！](#2023年7月22日llama2在线体验链接llamafamily上线同时包含meta原版和中文微调版本)
     - [2023年7月21日：评测了Meta原始版Llama2 Chat模型的中文问答能力！](#2023年7月21日评测了meta原始版llama2-chat模型的中文问答能力)
     - [2023年7月21日：新增Llama2模型的Huggingface版本国内下载地址！](#2023年7月21日新增llama2模型的huggingface版本国内下载地址)
     - [2023年7月20日：新增飞书知识库文档，欢迎大家一起共建！](#2023年7月20日新增飞书知识库文档欢迎大家一起共建)
@@ -54,11 +58,9 @@
 
 - Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
 
-- Llama2-7B Huggingface版本
-https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
+- Llama2-7B Huggingface版本：https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
 
-- Llama2-7B-Chat Huggingface版本
-https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
+- Llama2-7B-Chat Huggingface版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
 
 
 
@@ -103,6 +105,8 @@ https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
 
 
 ## 📢 社区公告
+
+#### 2023年7月22日：Llama2在线体验链接[llama.family](https://llama.family/)上线，同时包含Meta原版和中文微调版本！
 
 #### 2023年7月21日：评测了Meta原始版Llama2 Chat模型的[中文问答能力](#-模型评测)！
 
