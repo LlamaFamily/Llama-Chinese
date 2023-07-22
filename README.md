@@ -62,6 +62,8 @@
 
 - Llama2-7B-Chat Huggingface版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
 
+- Llama2-13B Huggingface版本：https://pan.xunlei.com/s/VN_yT_9G8xNOz0SDWQ7Mb_GZA1?pwd=yvgf
+  
 - Llama2-13B-Chat Huggingface版本：https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg
 
 ## 🔥 社区介绍：Llama2中文社区
