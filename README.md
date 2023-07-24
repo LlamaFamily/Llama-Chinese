@@ -316,3 +316,7 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 <p align="center" width="100%">
 <img src="./assets/wechat.jpeg" alt="Wechat" style="width: 100%; display: block; margin: auto;">
 </p>
+
+<p align="center" width="100%">
+<img src="https://api.star-history.com/svg?repos=FlagAlpha/Llama2-Chinese&type=Date" alt="Wechat" style="width: 100%; display: block; margin: auto;">
+</p>
