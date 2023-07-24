@@ -4,7 +4,6 @@ services:
     image: longerhuya/llama2-chinese-7b:gradio # 这里替换为你实际的镜像名
     volumes:
       - /usr/local/nvidia:/usr/local/nvidia # 让容器访问主机的NVIDIA驱动
-        #      - ./ChatGLM2-6B/web_demo.py:/root/ChatGLM2-6B/web_demo.py
     environment:
       - NVIDIA_VISIBLE_DEVICES=all # 让容器可以访问所有的NVIDIA GPU
     ports:
