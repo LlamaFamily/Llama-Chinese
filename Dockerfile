@@ -29,7 +29,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /tmp/Python-3.10.12.tar.xz /tmp/Python-3.10.12 \
     && apt-get install -y git \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-    && apt-get install -y git-lfs
+    && apt-get install -y git-lfs \
+    && pip3.10 install --upgrade pip
 
 # 从git上克隆llama2-chinese仓库，设置工作目录，使用pip安装requirements.txt，克隆Hugging Face仓库
 RUN git clone https://github.com/stormdragongardin/Llama2-Chinese.git /root/Llama2-Chinese \
