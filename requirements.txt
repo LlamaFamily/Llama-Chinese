@@ -10,5 +10,7 @@ pytest
 git+https://github.com/huggingface/peft
 transformers==4.31.0
 scikit-learn
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+torch 
+torchvision 
+torchaudio --index-url https://download.pytorch.org/whl/cu118
 tensorboard
