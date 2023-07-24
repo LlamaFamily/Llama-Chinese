@@ -1,7 +1,8 @@
 bitsandbytes==0.39.0
 accelerate==0.21.0
 #deepspeed==0.10.1 --index-url https://download.pytorch.org/whl/cu11
-deepspeed==0.10.0
+#wheel
+#deepspeed==0.10.0
 git+https://github.com/PanQiWei/AutoGPTQ.git
 scipy
 sentencepiece
