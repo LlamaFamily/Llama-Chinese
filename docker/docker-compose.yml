@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  app:
+    image: longerhuya/llama2-chinese-7b:gradio # 这里替换为你实际的镜像名
+    volumes:
+      - /usr/local/nvidia:/usr/local/nvidia # 让容器访问主机的NVIDIA驱动
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all # 让容器可以访问所有的NVIDIA GPU
+    ports:
+      - 7860:7860 # 在容器和主机之间映射端口
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu] # 使用Docker的设备请求来让容器使用GPU
+#    entrypoint: ["tail", "-fn200", "/etc/hosts"] 空命令启动容器用于调试
