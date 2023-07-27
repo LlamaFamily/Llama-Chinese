@@ -1,14 +1,17 @@
 from langchain.llms.base import LLM
-from typing import Dict, List, Optional
+from typing import Dict, List, Any, Optional
 import torch,sys,os
 from transformers import AutoTokenizer
+
 
 class Llama2(LLM):
     max_token: int = 2048
     temperature: float = 0.1
-    top_p = 0.95
-
-    def __init__(self,model_name_or_path,bit4=True):
+    top_p: float = 0.95
+    tokenizer: Any
+    model: Any
+    
+    def __init__(self, model_name_or_path, bit4=True):
         super().__init__()
         self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path,use_fast=False)
         self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -22,11 +25,12 @@ class Llama2(LLM):
             
         if torch.__version__ >= "2" and sys.platform != "win32":
             self.model = torch.compile(self.model)
+            
     @property
     def _llm_type(self) -> str:
         return "Llama2"
 
-    def __call__(self, prompt: str, stop: Optional[List[str]] = None) -> str:
+    def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         print('prompt:',prompt)
         input_ids = self.tokenizer(prompt, return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')
         generate_input = {

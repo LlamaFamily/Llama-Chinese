@@ -21,6 +21,7 @@
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年7月27日：新增LangChain支持！](#2023年7月27日新增langchain支持)
     - [2023年7月26日：新增Llama2-13B中文微调参数的4bit量化压缩版本！](#2023年7月26日新增llama2-13b中文微调参数的4bit量化压缩版本)
     - [2023年7月25日：社区微信公众号“Llama中文社区”欢迎大家关注，获取最新分享和动态！](#2023年7月25日社区微信公众号llama中文社区欢迎大家关注获取最新分享和动态)
     - [2023年7月24日：FlagAlpha新增Llama2-13B中文微调参数！](#2023年7月24日flagalpha新增llama2-13b中文微调参数)
@@ -48,6 +49,8 @@
   - [中文微调参数](#中文微调参数)
 - [🍄 模型量化](#-模型量化)
 - [🥇 模型评测](#-模型评测)
+- [💪 外延能力](#-外延能力)
+  - [LangChain](#langchain)
 - [📖 学习资料](#-学习资料)
   - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
   - [Llama相关论文](#llama相关论文)
@@ -116,6 +119,8 @@
 
 
 ## 📢 社区公告
+
+#### 2023年7月27日：新增[LangChain](#langchain)支持！
 
 #### 2023年7月26日：新增Llama2-13B中文微调参数的[4bit量化压缩版本](#-模型量化)！
 
@@ -189,7 +194,7 @@ Llama2-Chat模型基于预训练模型进行了监督微调，具备更强的对
 
 ### 模型调用代码示例
 
-```
+```python
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-chat-hf',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
@@ -263,11 +268,10 @@ python examples/chat_gradio.py --model_name_or_path meta-llama/Llama-2-7b-chat
 
 <!-- ## 🚀 未来计划 -->
 
-<!-- ## 💪 增强能力 -->
 
 ## 🍄 模型量化
 我们对中文微调的模型参数进行了量化，方便以更少的计算资源运行。目前已经在[Hugging Face](https://huggingface.co/FlagAlpha)上传了13B中文微调模型[FlagAlpha/Llama2-Chinese-13b-Chat](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat)的4bit压缩版本[FlagAlpha/Llama2-Chinese-13b-Chat-4bit](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-4bit)，具体调用方式如下：
-```
+```python
 from transformers import AutoTokenizer
 from auto_gptq import AutoGPTQForCausalLM
 model = AutoGPTQForCausalLM.from_quantized('FlagAlpha/Llama2-Chinese-13b-Chat-4bit', device="cuda:0")
@@ -313,6 +317,23 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。因此，基于中文数据对Llama2模型进行训练和微调十分必要，我们的中文版Llama2模型也已经在训练中，近期将对社区开放。
 
 
+## 💪 外延能力
+
+除了持续增强大模型内在的知识储备、通用理解、逻辑推理和想象能力等，未来，我们也会不断丰富大模型的外延能力，例如知识库检索、计算工具、WolframAlpha、操作软件等。
+我们首先集成了LangChain框架，可以更方便地基于Llama2开发文档检索、问答机器人和智能体应用等，关于LangChain的更多介绍参见[LangChain](https://github.com/langchain-ai/langchain)。
+### LangChain
+针对LangChain框架封装的Llama2 LLM类见[examples/llama2_for_langchain.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py)，简单的调用代码示例如下：
+```python
+from llama2_for_langchain import Llama2
+
+# 这里以调用4bit量化压缩的Llama2-Chinese参数FlagAlpha/Llama2-Chinese-13b-Chat-4bit为例
+llm = Llama2(model_name_or_path='FlagAlpha/Llama2-Chinese-13b-Chat-4bit', bit4=True)
+
+while True:
+    human_input = input("Human: ")
+    response = llm(human_input)
+    print(f"Llama2: {response}")
+```
 
 ## 📖 学习资料
 ### Meta官方对于[Llama2](https://ai.meta.com/llama)的介绍
