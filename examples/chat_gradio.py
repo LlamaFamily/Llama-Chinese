@@ -81,7 +81,7 @@ if __name__ == "__main__":
     parser.add_argument("--is_4bit", action='store_true', help='use 4bit model')
     args = parser.parse_args()
     tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path,use_fast=False)
-    
+    tokenizer.pad_token = tokenizer.eos_token
     if args.is_4bit==False:
         model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
         model.eval()
