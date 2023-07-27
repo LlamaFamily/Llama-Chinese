@@ -91,4 +91,4 @@ if __name__ == "__main__":
     streamer = TextIteratorStreamer(tokenizer,skip_prompt=True)
     if torch.__version__ >= "2" and sys.platform != "win32":
         model = torch.compile(model)
-    demo.queue().launch(share=False, debug=True， server_name="0.0.0.0")
+    demo.queue().launch(share=False, debug=True,server_name="0.0.0.0")
