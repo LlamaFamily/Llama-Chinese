@@ -190,6 +190,7 @@ Llama2-Chat模型基于预训练模型进行了监督微调，具备更强的对
 ### 模型调用代码示例
 
 ```
+import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-chat-hf',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
 model =model.eval()
