@@ -3,6 +3,7 @@ FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
 
 # 安装Python编译依赖，下载并编译Python，并设置Python 3.10为默认Python版本
 RUN apt-get update && apt-get install -y \
+    curl \
     wget \
     build-essential \
     libssl-dev \
