@@ -1,4 +1,4 @@
-# 4G内存运行Llama2-Chinese-7B-chat模型
+# 6G内存运行Llama2-Chinese-7B-chat模型
 
 ## 第一步：
 从huggingface下载 [Llama2-Chinese-7b-Chat-GGML](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat-GGML)模型放到本地的某一目录。
