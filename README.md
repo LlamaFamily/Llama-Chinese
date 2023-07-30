@@ -80,6 +80,8 @@
   
 - Llama2-13B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg
 
+- Llama2-70B-Chat Hugging Face版本：https://pan.xunlei.com/s/VNa_vCGzCy3h3N7oeFXs2W1hA1?pwd=uhxh#
+
 ## 🔥 社区介绍：Llama2中文社区
 欢迎来到Llama2中文社区！我们是一个专注于Llama2模型在中文方面的优化和上层建设的高级技术社区。
 **\*基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级\***。
