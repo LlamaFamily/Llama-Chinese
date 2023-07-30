@@ -18,5 +18,5 @@
 
 ## 2. CPU 推理方案
 
-### 方案一：llama2.c
-[使用说明](../inference-speed/CPU/llama2.c/README.md)
+### 方案一：ggml
+[使用说明](../inference-speed/CPU/ggml/README.md)
