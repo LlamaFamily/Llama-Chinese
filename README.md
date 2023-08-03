@@ -21,6 +21,7 @@
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年8月3日：新增FasterTransformer和vLLM的GPU推理加速支持！](#2023年8月3日新增fastertransformer和vllm的gpu推理加速支持)
     - [2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见社区公众号文章](#2023年7月31日重磅国内首个真正意义上的llama2中文大模型发布详情参见社区公众号文章)
     - [2023年7月28日：通过Docker部署问答接口！](#2023年7月28日通过docker部署问答接口)
     - [2023年7月27日：新增LangChain支持！](#2023年7月27日新增langchain支持)
@@ -51,6 +52,9 @@
     - [Step3: 微调脚本](#step3-微调脚本)
   - [中文微调参数](#中文微调参数)
 - [🍄 模型量化](#-模型量化)
+- [🚀 推理加速](#-推理加速)
+  - [FasterTransformer](#fastertransformer)
+  - [vLLM](#vllm)
 - [🥇 模型评测](#-模型评测)
 - [💪 外延能力](#-外延能力)
   - [LangChain](#langchain)
@@ -125,6 +129,7 @@
 
 ## 📢 社区公告
 
+#### 2023年8月3日：新增FasterTransformer和vLLM的GPU[推理加速](#-推理加速)支持！
 #### 2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见[社区公众号文章](https://mp.weixin.qq.com/s/lExUU7z_MvgJ7tzQPF8tUQ)
 
 #### 2023年7月28日：通过[Docker部署](#docker部署问答接口)问答接口！
@@ -321,6 +326,20 @@ generate_ids  = model.generate(**generate_input)
 text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
+
+## 🚀 推理加速
+随着大模型参数规模的不断增长，在有限的算力资源下，提升模型的推理速度逐渐变为一个重要的研究方向。常用的推理加速框架包含FasterTransformer和vLLM等。
+### FasterTransformer
+[FasterTransformer](https://github.com/NVIDIA/FasterTransformer)由NVIDIA开发，采用C++/CUDA编写，支持分布式推理，transformer编码器和解码器均可进行加速。
+通过FasterTransformer和[Triton](https://github.com/openai/triton)加速LLama2模型推理，目前支持FP16或者Int8推理，Int4目前还不支持。
+
+详细的推理文档见：[inference-speed/GPU/FasterTransformer_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
+### vLLM
+[vLLM](https://github.com/vllm-project/vllm)由加州大学伯克利分校开发，核心技术是PageAttention，吞吐量比HuggingFace Transformers高出24倍。相较与FasterTrainsformer，vLLM更加的简单易用，不需要额外进行模型的转换，支持fp16推理。
+
+详细的推理文档见：[inference-speed/GPU/vllm_example](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
+
+
 
 
 ## 🥇 模型评测
