@@ -388,10 +388,10 @@ while True:
 
 ### Llama相关论文
 * [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
-* [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://scontent-lax3-2.xx.fbcdn.net/v/t39.2365-6/10000000_663429262362723_1696968207443577320_n.pdf?_nc_cat=101&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=5ol-jUSglG4AX9uTu-j&_nc_ht=scontent-lax3-2.xx&oh=00_AfDVmJr77y3bv5GCbJ26w-stMJNXsZPTwVDlWhoIkkb8Lg&oe=64BDB0D1)
+* [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
 ### Llama2的评测结果
 <p align="center" width="100%">
-<img src="https://scontent-lax3-2.xx.fbcdn.net/v/t39.8562-6/361265668_276217774995411_4529778090866658620_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6825c5&_nc_ohc=gSMV6flCjbAAX8pE8nm&_nc_ht=scontent-lax3-2.xx&oh=00_AfC53vAix8IkoTlO1Z46g2IfS3p7jb51A8TaIrOK6grRsQ&oe=64BC6826" alt="Llama2Eval" style="width: 100%; display: block; margin: auto;">
+<img src="./assets/llama_eval.jpeg" style="width: 100%; display: block; margin: auto;">
 </p>
 
 
