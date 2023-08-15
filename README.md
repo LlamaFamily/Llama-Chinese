@@ -313,8 +313,10 @@ doker-compose up -d --build
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel,PeftConfig
-fintune_model_path=''
+# 例如: fintune_model_path='FlagAlpha/Llama2-Chinese-7b-Chat-LoRA'
+fintune_model_path=''  
 config = PeftConfig.from_pretrained(fintune_model_path)
+# 例如: base_model_name_or_path='meta-llama/Llama-2-7b-chat'
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
 model = LlamaForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
