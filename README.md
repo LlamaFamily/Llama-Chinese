@@ -21,6 +21,7 @@
   - [社区活动](#社区活动)
   - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
+    - [2023年8月15日：新增PEFT加载微调模型参数的代码示例！](#2023年8月15日新增peft加载微调模型参数的代码示例)
     - [2023年8月14日：大模型数据共享训练平台上线，没有算力也能参与大模型训练，社区每位成员贡献的数据都将决定模型能力的未来走向！](#2023年8月14日大模型数据共享训练平台上线没有算力也能参与大模型训练社区每位成员贡献的数据都将决定模型能力的未来走向)
     - [2023年8月3日：新增FasterTransformer和vLLM的GPU推理加速支持！](#2023年8月3日新增fastertransformer和vllm的gpu推理加速支持)
     - [2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见社区公众号文章](#2023年7月31日重磅国内首个真正意义上的llama2中文大模型发布详情参见社区公众号文章)
@@ -52,6 +53,7 @@
     - [Step2: 数据准备](#step2-数据准备)
     - [Step3: 微调脚本](#step3-微调脚本)
   - [中文微调参数](#中文微调参数)
+  - [加载微调模型](#加载微调模型)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
   - [FasterTransformer](#fastertransformer)
@@ -129,6 +131,8 @@
 
 
 ## 📢 社区公告
+
+#### 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
 
 #### 2023年8月14日：[大模型数据共享训练平台](https://llama.family)上线，没有算力也能参与大模型训练，社区每位成员贡献的数据都将决定模型能力的未来走向！
 
@@ -302,6 +306,38 @@ doker-compose up -d --build
 | Llama2-Chinese-7b-Chat  | FlagAlpha/Llama2-Chinese-7b-Chat  | meta-llama/Llama-2-7b-chat-hf | [模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat)  |  中文指令微调的LoRA参数与基础模型参数合并版本 |
 | Llama2-Chinese-13b-Chat-LoRA  | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA  | meta-llama/Llama-2-13b-chat-hf | [模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA)  |  中文指令微调的LoRA参数 |
 | Llama2-Chinese-13b-Chat  | FlagAlpha/Llama2-Chinese-13b-Chat  | meta-llama/Llama-2-13b-chat-hf | [模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat)  |  中文指令微调的LoRA参数与基础模型参数合并版本 |
+
+### 加载微调模型
+通过[PEFT](https://github.com/huggingface/peft)加载预训练模型参数和微调模型参数，以下示例代码中，base_model_name_or_path为预训练模型参数保存路径，fintune_model_path为微调模型参数保存路径。
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from peft import PeftModel,PeftConfig
+fintune_model_path=''
+config = PeftConfig.from_pretrained(fintune_model_path)
+tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
+tokenizer.pad_token = tokenizer.eos_token
+model = LlamaForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+model = PeftModel.from_pretrained(model, fintune_model_path, device_map={"": 0})
+model =model.eval()
+input_ids = tokenizer(['<s>Human: 介绍一下北京\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')        
+generate_input = {
+    "input_ids":input_ids,
+    "max_new_tokens":512,
+    "do_sample":True,
+    "top_k":50,
+    "top_p":0.95,
+    "temperature":0.3,
+    "repetition_penalty":1.3,
+    "eos_token_id":tokenizer.eos_token_id,
+    "bos_token_id":tokenizer.bos_token_id,
+    "pad_token_id":tokenizer.pad_token_id
+}
+generate_ids  = model.generate(**generate_input)
+text = tokenizer.decode(generate_ids[0])
+print(text)
+```
+
 
 <!-- ## 🚀 未来计划 -->
 
