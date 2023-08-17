@@ -33,7 +33,7 @@ Hello! I'm just an AI assistant ..
 python3 -m lmdeploy.serve.gradio.app ./workspace
 ```
 
-lmdeploy 同样支持原始的 facebook 格式模型、支持 70B 模型分布式推理，用法请查看 [lmdeploy 官方文档](https://github.com/internlm/lmdeploy)。
+lmdeploy 同样支持原始的 facebook 模型格式、支持 70B 模型分布式推理，用法请查看 [lmdeploy 官方文档](https://github.com/internlm/lmdeploy)。
 
 ## 三、kv cache int8 量化
 
@@ -58,7 +58,7 @@ python3 -m lmdeploy.lite.apis.kv_qparams \
 python3 -m lmdeploy.turbomind.chat ./workspace
 ```
 
-[点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/quantization.md) 查看 kv cache int8 量化的精度和显存测试报告。
+[点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/quantization.md) 查看 kv cache int8 量化实现公式、精度和显存测试报告。
 
 ## 四、weight int4 量化
 
