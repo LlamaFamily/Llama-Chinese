@@ -257,7 +257,7 @@ git clone https://github.com/FlagAlpha/Llama2-Chinese.git
 
 cd Llama2-Chinese
 
-sudo docker build -f docker/Dockerfile  -t FlagAlpha/llama2-chinese-7b:gradio .
+docker build -f docker/Dockerfile -t flagalpha/llama2-chinese-7b:gradio .
 ```
 
 第二步：通过docker-compose启动chat_gradio
