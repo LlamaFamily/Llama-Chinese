@@ -23,6 +23,7 @@
   - [预训练模型](#预训练模型)
   - [Chat模型](#chat模型)
   - [模型调用代码示例](#模型调用代码示例)
+  - [FastAPI接口搭建](#fastapi接口搭建)
   - [Gradio快速搭建问答平台](#gradio快速搭建问答平台)
   - [Docker部署问答接口](#docker部署问答接口)
 - [💡 模型微调](#-模型微调)
@@ -82,6 +83,9 @@
 
 - CodeLlama-13b-Instruct官网版本：https://pan.baidu.com/s/1HyxJl4w8wElgkZRh2ATrXQ?pwd=seg6
 
+> 本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+
+
 
 ## 🔥 社区介绍：Llama2中文社区
 欢迎来到Llama2中文社区！我们是一个专注于Llama2模型在中文方面的优化和上层建设的高级技术社区。
@@ -124,6 +128,10 @@
 
 
 ## 📢 社区公告
+
+- 2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
+
+- 2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
 
 - 2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
@@ -235,6 +243,11 @@ generate_ids  = model.generate(**generate_input)
 text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
+
+### FastAPI接口搭建
+
+为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/api/READMD.md)。
+
 
 ### Gradio快速搭建问答平台
 
