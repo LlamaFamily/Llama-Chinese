@@ -15,31 +15,9 @@
 
 
 ## 🗂️ 内容导引
-- [🐼 国内Llama2最新下载地址上线！](#-国内llama2最新下载地址上线)
+- [🐼 国内Llama2最新下载地址！](#-国内llama2最新下载地址)
 - [🔥 社区介绍：Llama2中文社区](#-社区介绍llama2中文社区)
-  - [为什么选择Llama2中文社区？](#为什么选择llama2中文社区)
-  - [社区活动](#社区活动)
-  - [立即加入我们！](#立即加入我们)
 - [📢 社区公告](#-社区公告)
-    - [2023年8月15日：新增PEFT加载微调模型参数的代码示例！](#2023年8月15日新增peft加载微调模型参数的代码示例)
-    - [2023年8月14日：大模型数据共享训练平台上线，没有算力也能参与大模型训练，社区每位成员贡献的数据都将决定模型能力的未来走向！](#2023年8月14日大模型数据共享训练平台上线没有算力也能参与大模型训练社区每位成员贡献的数据都将决定模型能力的未来走向)
-    - [2023年8月3日：新增FasterTransformer和vLLM的GPU推理加速支持！](#2023年8月3日新增fastertransformer和vllm的gpu推理加速支持)
-    - [2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见社区公众号文章](#2023年7月31日重磅国内首个真正意义上的llama2中文大模型发布详情参见社区公众号文章)
-    - [2023年7月28日：通过Docker部署问答接口！](#2023年7月28日通过docker部署问答接口)
-    - [2023年7月27日：新增LangChain支持！](#2023年7月27日新增langchain支持)
-    - [2023年7月26日：新增Llama2-13B中文微调参数的4bit量化压缩版本！](#2023年7月26日新增llama2-13b中文微调参数的4bit量化压缩版本)
-    - [2023年7月25日：社区微信公众号“Llama中文社区”欢迎大家关注，获取最新分享和动态！](#2023年7月25日社区微信公众号llama中文社区欢迎大家关注获取最新分享和动态)
-    - [2023年7月24日：FlagAlpha新增Llama2-13B中文微调参数！](#2023年7月24日flagalpha新增llama2-13b中文微调参数)
-    - [2023年7月24日：llama.family新增Llama2-70B在线体验！](#2023年7月24日llamafamily新增llama2-70b在线体验)
-    - [2023年7月23日：Llama2中文微调参数发布至Hugging Face仓库FlagAlpha！](#2023年7月23日llama2中文微调参数发布至hugging-face仓库flagalpha)
-    - [2023年7月22日：Llama2在线体验链接llama.family上线，同时包含Meta原版和中文微调版本！](#2023年7月22日llama2在线体验链接llamafamily上线同时包含meta原版和中文微调版本)
-    - [2023年7月21日：评测了Meta原始版Llama2 Chat模型的中文问答能力！](#2023年7月21日评测了meta原始版llama2-chat模型的中文问答能力)
-    - [2023年7月21日：新增Llama2模型的Hugging Face版本国内下载地址！](#2023年7月21日新增llama2模型的hugging-face版本国内下载地址)
-    - [2023年7月20日：新增飞书知识库文档，欢迎大家一起共建！](#2023年7月20日新增飞书知识库文档欢迎大家一起共建)
-    - [2023年7月20日：国内Llama2最新下载地址上线！](#2023年7月20日国内llama2最新下载地址上线)
-    - [2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！](#2023年7月19日正式启动llama2模型的中文预训练关注我们获取实时动态)
-    - [2023年7月19日：Llama2国内下载地址正在启动，敬请期待！](#2023年7月19日llama2国内下载地址正在启动敬请期待)
-    - [2023年7月19日：开启Llama2中文社区，欢迎大家加入！](#2023年7月19日开启llama2中文社区欢迎大家加入)
 - [📝 数据来源](#-数据来源)
 - [⏬ 模型部署](#-模型部署)
   - [预训练模型](#预训练模型)
@@ -56,11 +34,13 @@
   - [加载微调模型](#加载微调模型)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
+  - [lmdeploy](#lmdeploy)
   - [FasterTransformer](#fastertransformer)
   - [vLLM](#vllm)
 - [🥇 模型评测](#-模型评测)
 - [💪 外延能力](#-外延能力)
   - [LangChain](#langchain)
+- [🐞 代码模型](#-代码模型)
 - [📖 学习资料](#-学习资料)
   - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
   - [Llama相关论文](#llama相关论文)
@@ -70,7 +50,7 @@
 
 
 
-## 🐼 国内Llama2最新下载地址上线！
+## 🐼 国内Llama2最新下载地址！
 
 - Llama2-7B官网版本：https://pan.xunlei.com/s/VN_kR2fwuJdG1F3CoF33rwpIA1?pwd=z9kf
 
@@ -89,6 +69,19 @@
 - Llama2-13B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg
 
 - Llama2-70B-Chat Hugging Face版本：https://pan.xunlei.com/s/VNa_vCGzCy3h3N7oeFXs2W1hA1?pwd=uhxh#
+
+- CodeLlama-7b官网版本：https://pan.baidu.com/s/1cIPzdNywWLvQI7_2QanOEQ?pwd=zfwi 
+
+- CodeLlama-7b-Python官网版本：https://pan.baidu.com/s/1liY8klGoDagYbpw-g-oFag?pwd=i952
+
+- CodeLlama-7b-Instruct官网版本：https://pan.baidu.com/s/108o9_DT2E_vfSGtOnDCQVw?pwd=zkt9
+
+- CodeLlama-13b官网版本：https://pan.baidu.com/s/1lLaeHv0XEBv0iiZzI1dpnw?pwd=qn99
+
+- CodeLlama-13b-Python官网版本：https://pan.baidu.com/s/1OLVfvZS_oqL3oqMKwsI87w?pwd=a78k
+
+- CodeLlama-13b-Instruct官网版本：https://pan.baidu.com/s/1HyxJl4w8wElgkZRh2ATrXQ?pwd=seg6
+
 
 ## 🔥 社区介绍：Llama2中文社区
 欢迎来到Llama2中文社区！我们是一个专注于Llama2模型在中文方面的优化和上层建设的高级技术社区。
@@ -132,43 +125,45 @@
 
 ## 📢 社区公告
 
-#### 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
+- 2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
-#### 2023年8月14日：[大模型数据共享训练平台](https://llama.family)上线，没有算力也能参与大模型训练，社区每位成员贡献的数据都将决定模型能力的未来走向！
+- 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
 
-#### 2023年8月3日：新增FasterTransformer和vLLM的GPU[推理加速](#-推理加速)支持！
+- 2023年8月14日：[大模型数据共享训练平台](https://llama.family)上线，没有算力也能参与大模型训练，社区每位成员贡献的数据都将决定模型能力的未来走向！
 
-#### 2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见[社区公众号文章](https://mp.weixin.qq.com/s/lExUU7z_MvgJ7tzQPF8tUQ)
+- 2023年8月3日：新增FasterTransformer和vLLM的GPU[推理加速](#-推理加速)支持！
 
-#### 2023年7月28日：通过[Docker部署](#docker部署问答接口)问答接口！
+- 2023年7月31日：【重磅】国内首个真正意义上的Llama2中文大模型发布！详情参见[社区公众号文章](https://mp.weixin.qq.com/s/lExUU7z_MvgJ7tzQPF8tUQ)
 
-#### 2023年7月27日：新增[LangChain](#langchain)支持！
+- 2023年7月28日：通过[Docker部署](#docker部署问答接口)问答接口！
 
-#### 2023年7月26日：新增Llama2-13B中文微调参数的[4bit量化压缩版本](#-模型量化)！
+- 2023年7月27日：新增[LangChain](#langchain)支持！
 
-#### 2023年7月25日：社区微信公众号“Llama中文社区”欢迎大家关注，获取最新分享和动态！
+- 2023年7月26日：新增Llama2-13B中文微调参数的[4bit量化压缩版本](#-模型量化)！
 
-#### 2023年7月24日：[FlagAlpha](https://huggingface.co/FlagAlpha)新增Llama2-13B中文微调参数！
+- 2023年7月25日：社区微信公众号“Llama中文社区”欢迎大家关注，获取最新分享和动态！
 
-#### 2023年7月24日：[llama.family](https://llama.family/)新增Llama2-70B在线体验！
+- 2023年7月24日：[FlagAlpha](https://huggingface.co/FlagAlpha)新增Llama2-13B中文微调参数！
 
-#### 2023年7月23日：Llama2中文微调参数发布至Hugging Face仓库[FlagAlpha](https://huggingface.co/FlagAlpha)！
+- 2023年7月24日：[llama.family](https://llama.family/)新增Llama2-70B在线体验！
 
-#### 2023年7月22日：Llama2在线体验链接[llama.family](https://llama.family/)上线，同时包含Meta原版和中文微调版本！
+- 2023年7月23日：Llama2中文微调参数发布至Hugging Face仓库[FlagAlpha](https://huggingface.co/FlagAlpha)！
 
-#### 2023年7月21日：评测了Meta原始版Llama2 Chat模型的[中文问答能力](#-模型评测)！
+- 2023年7月22日：Llama2在线体验链接[llama.family](https://llama.family/)上线，同时包含Meta原版和中文微调版本！
 
-#### 2023年7月21日：新增Llama2模型的Hugging Face版本国内下载地址！
+- 2023年7月21日：评测了Meta原始版Llama2 Chat模型的[中文问答能力](#-模型评测)！
 
-#### 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，欢迎大家一起共建！
+- 2023年7月21日：新增Llama2模型的Hugging Face版本国内下载地址！
 
-#### 2023年7月20日：国内Llama2最新下载地址上线！
+- 2023年7月20日：新增[飞书知识库文档](https://chinesellama.feishu.cn/wiki/space/7257824476874768388?ccm_open_type=lark_wiki_spaceLink)，欢迎大家一起共建！
 
-#### 2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！
+- 2023年7月20日：国内Llama2最新下载地址上线！
 
-#### 2023年7月19日：Llama2国内下载地址正在启动，敬请期待！
+- 2023年7月19日：正式启动Llama2模型的中文预训练，关注我们获取实时动态！
 
-#### 2023年7月19日：开启Llama2中文社区，欢迎大家加入！
+- 2023年7月19日：Llama2国内下载地址正在启动，敬请期待！
+
+- 2023年7月19日：开启Llama2中文社区，欢迎大家加入！
 
 
 ## 📝 数据来源
@@ -265,7 +260,6 @@ docker build -f docker/Dockerfile -t flagalpha/llama2-chinese-7b:gradio .
 cd Llama2-Chinese/docker
 doker-compose up -d --build
 ```
-
 
 
 ## 💡 模型微调
@@ -430,6 +424,24 @@ while True:
     print(f"Llama2: {response}")
 ```
 
+## 🐞 代码模型
+Meta官方在2023年8月24日发布了发布了Code Llama，基于代码数据对Llama2进行了微调，提供三个不同功能的版本：基础模型（Code Llama）、Python专用模型（Code Llama - Python）和指令跟随模型（Code Llama - Instruct），包含7B、13B、34B三种不同参数规模。不同模型能力区别如下表所示：
+
+|  模型类别          |        模型名称         | 代码续写 | 代码填充 | 指令编程 |
+|-----------------------|------------------------|------|------|------|
+| Code Llama            | CodeLlama-7b           | ✅    | ✅    | ❌    |
+|                       | CodeLlama-13b          | ✅    | ✅    | ❌    |
+|                       | CodeLlama-34b          | ✅    | ❌    | ❌    |
+| Code Llama - Python   | CodeLlama-7b-Python    | ✅    | ❌    | ❌    |
+|                       | CodeLlama-13b-Python   | ✅    | ❌    | ❌    |
+|                       | CodeLlama-34b-Python   | ✅    | ❌    | ❌    |
+| Code Llama - Instruct | CodeLlama-7b-Instruct  | ❌    | ✅    | ✅    |
+|                       | CodeLlama-13b-Instruct | ❌    | ✅    | ✅    |
+|                       | CodeLlama-34b-Instruct | ❌    | ❌    | ✅    |
+
+我们提供了Code Llama的[国内下载链接](#-国内llama2最新下载地址上线)以及在线体验地址[llama.family](https://llama.family/)，关于Code Llama的详细信息可以参考官方Github仓库[codellama](https://github.com/facebookresearch/codellama)。
+
+
 ## 📖 学习资料
 ### Meta官方对于[Llama2](https://ai.meta.com/llama)的介绍
 自从Meta公司发布第一代LLaMA模型以来，羊驼模型家族繁荣发展。近期Meta发布了Llama2版本，开源可商用，在模型和效果上有了重大更新。Llama2总共公布了7B、13B和70B三种参数大小的模型。相比于LLaMA，Llama2的训练数据达到了2万亿token，上下文长度也由之前的2048升级到4096，可以理解和生成更长的文本。Llama2 Chat模型基于100万人类标记数据微调得到，在英文对话上达到了接近ChatGPT的效果。      
@@ -437,6 +449,7 @@ while True:
 ### Llama相关论文
 * [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 * [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
+* [Code Llama: Open Foundation Models for Code](https://ai.meta.com/research/publications/code-llama-open-foundation-models-for-code/)
 ### Llama2的评测结果
 <p align="center" width="100%">
 <img src="./assets/llama_eval.jpeg" style="width: 100%; display: block; margin: auto;">
