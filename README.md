@@ -11,7 +11,7 @@
   <a href="https://llama.family">在线体验：llama.family</a>
 </p>
 <p align="center">
-  <a href="https://llama.family">基于Llama2的开源中文预训练大模型Atom-7B</a>
+  <a href="https://huggingface.co/FlagAlpha/Atom-7B">基于Llama2的开源中文预训练大模型Atom-7B</a>
 </p>
 
 </br></br>
