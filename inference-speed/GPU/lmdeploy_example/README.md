@@ -39,17 +39,28 @@ lmdeploy 同样支持原始的 facebook 模型格式、支持 70B 模型分布�
 
 lmdeploy 实现了 kv cache int8 量化，同样的显存可以服务更多并发用户。
 
-首先获取量化参数，结果保存到 fp16 转换好的 `workspace/triton_models/weights` 下，7B 模型也不需要 tensor parallel。 
+首先计算模型参数，结果是 pth 格式，保存到临时目录 minmax
+```shell
+mkdir minmax
+python3 -m lmdeploy.lite.apis.calibrate \
+  --model /models/llama-2-7b-chat \  # huggingface llama2 模型。也支持 llama/vicuna/internlm/baichuan 等
+  --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
+  --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
+  --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
+  --work_dir minmax \                # 保存 pth 格式量化统计参数和量化后权重的文件夹
+```
+
+然后用 minmax 目录里的参数，计算量化参数，保存到 fp16 转换好的 `workspace/triton_models/weights` 下
 
 ```shell
 python3 -m lmdeploy.lite.apis.kv_qparams \ 
-  --work_dir /models/llama-2-7b-chat \                 # huggingface 格式模型
+  --work_dir minmax \                                  # 上一步计算的 minmax 结果
   --turbomind_dir ./workspace/triton_models/weights \  # 结果保存目录
   --kv_sym False \                                     # 用非对称量化
   --num_tp 1                                           # tensor parallel GPU 个数
 ```
 
-然后修改推理配置，开启 kv cache int8。编辑 `workspace/triton_models/weights/config.ini` 
+修改推理配置，开启 kv cache int8。编辑 `workspace/triton_models/weights/config.ini` 
 * 把 `use_context_fmha` 改为 0，表示关闭 flashattention
 * 把 `quant_policy` 设为 4，表示打开 kv cache 量化
 
