@@ -81,11 +81,11 @@ lmdeploy 基于 [AWQ 算法](https://arxiv.org/abs/2306.00978) 实现了 weight 
 git clone https://huggingface.co/lmdeploy/llama2-chat-7b-w4
 ```
 
-对于自己的模型，可以用`auto_awq`工具来优化，假设你的 huggingface 模型保存在 `/models/llama-2-7b-chat`
+对于自己的模型，可以用`auto_awq`工具来优化
 ```shell
 # 计算量化参数
 python3 -m lmdeploy.lite.apis.calibrate \
-  --model $HF_MODEL \
+  --model $HF_MODEL \                # huggingface 模型位置
   --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
   --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
   --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
@@ -93,10 +93,10 @@ python3 -m lmdeploy.lite.apis.calibrate \
 
 # 量化模型
 python3 -m lmdeploy.lite.apis.auto_awq \
-  --model $HF_MODEL \
+  --model $HF_MODEL \                # huggingface 模型位置
   --w_bits 4 \                       # 权重量化的 bit 数
   --w_group_size 128 \               # 权重量化分组统计尺寸
-  --work_dir $WORK_DIR \             # 步骤 1 保存量化参数的目录
+  --work_dir $WORK_DIR \             # 上一条命令保存参数的目录
 ```
 
 
