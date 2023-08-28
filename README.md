@@ -10,6 +10,9 @@
 <p align="center">
   <a href="https://llama.family">在线体验：llama.family</a>
 </p>
+<p align="center">
+  <a href="https://llama.family">基于Llama2的开源中文预训练大模型Atom-7B</a>
+</p>
 
 </br></br>
 
@@ -128,6 +131,8 @@
 
 
 ## 📢 社区公告
+
+- 2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
 
 - 2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
 
