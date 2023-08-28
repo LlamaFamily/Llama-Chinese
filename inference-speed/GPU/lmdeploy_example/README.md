@@ -69,7 +69,7 @@ python3 -m lmdeploy.lite.apis.kv_qparams \
 python3 -m lmdeploy.turbomind.chat ./workspace
 ```
 
-[点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/quantization.md) 查看 kv cache int8 量化实现公式、精度和显存测试报告。
+[点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/kv_int8.md) 查看 kv cache int8 量化实现公式、精度和显存测试报告。
 
 ## 四、weight int4 量化
 
