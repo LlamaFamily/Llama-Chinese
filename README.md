@@ -18,14 +18,14 @@
 
 
 ## 🗂️ 内容导引
-- [🐼 国内Llama2最新下载地址！](#-国内llama2最新下载地址)
 - [🔥 社区介绍：Llama中文社区](#-社区介绍llama中文社区)
 - [📢 社区公告](#-社区公告)
-- [🔵 Atom模型](#-atom模型)
+- [🐼 国内Llama2最新下载地址](#-国内llama2最新下载地址)
+- [🔵 Atom大模型](#-atom大模型)
   - [大规模的中文数据预训练](#大规模的中文数据预训练)
   - [更高效的中文词表](#更高效的中文词表)
   - [自适应上下文扩展](#自适应上下文扩展)
-- [📝 数据来源](#-数据来源)
+- [📝 中文数据](#-中文数据)
 - [⏬ 模型部署](#-模型部署)
   - [模型下载](#模型下载)
     - [Meta官方Llama2模型](#meta官方llama2模型)
@@ -35,12 +35,16 @@
   - [FastAPI接口搭建](#fastapi接口搭建)
   - [Gradio快速搭建问答平台](#gradio快速搭建问答平台)
   - [Docker部署问答接口](#docker部署问答接口)
+- [🤖 模型预训练](#-模型预训练)
 - [💡 模型微调](#-模型微调)
-  - [微调过程](#微调过程)
-    - [Step1: 环境准备](#step1-环境准备)
-    - [Step2: 数据准备](#step2-数据准备)
-    - [Step3: 微调脚本](#step3-微调脚本)
-  - [加载微调模型](#加载微调模型)
+  - [Step1: 环境准备](#step1-环境准备)
+  - [Step2: 数据准备](#step2-数据准备)
+  - [Step3: 微调脚本](#step3-微调脚本)
+    - [LoRA微调](#lora微调)
+    - [全量参数微调](#全量参数微调)
+  - [Step4: 加载微调模型](#step4-加载微调模型)
+    - [LoRA微调](#lora微调-1)
+    - [全量参数微调](#全量参数微调-1)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
   - [lmdeploy](#lmdeploy)
@@ -58,45 +62,6 @@
 - [🤔 问题反馈](#-问题反馈)
 
 
-
-## 🐼 国内Llama2最新下载地址！
-
-本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
-
-
-<details>
-
-- Llama2-7B官网版本：https://pan.xunlei.com/s/VN_kR2fwuJdG1F3CoF33rwpIA1?pwd=z9kf
-
-- Llama2-7B-Chat官网版本：https://pan.xunlei.com/s/VN_kQa1_HBvV-X9QVI6jV2kOA1?pwd=xmra
-
-- Llama2-13B官网版本：https://pan.xunlei.com/s/VN_izibaMDoptluWodzJw4cRA1?pwd=2qqb
-
-- Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
-
-- Llama2-7B Hugging Face版本：https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
-
-- Llama2-7B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
-
-- Llama2-13B Hugging Face版本：https://pan.xunlei.com/s/VN_yT_9G8xNOz0SDWQ7Mb_GZA1?pwd=yvgf
-  
-- Llama2-13B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg
-
-- Llama2-70B-Chat Hugging Face版本：https://pan.xunlei.com/s/VNa_vCGzCy3h3N7oeFXs2W1hA1?pwd=uhxh#
-
-- CodeLlama-7b官网版本：https://pan.baidu.com/s/1cIPzdNywWLvQI7_2QanOEQ?pwd=zfwi 
-
-- CodeLlama-7b-Python官网版本：https://pan.baidu.com/s/1liY8klGoDagYbpw-g-oFag?pwd=i952
-
-- CodeLlama-7b-Instruct官网版本：https://pan.baidu.com/s/108o9_DT2E_vfSGtOnDCQVw?pwd=zkt9
-
-- CodeLlama-13b官网版本：https://pan.baidu.com/s/1lLaeHv0XEBv0iiZzI1dpnw?pwd=qn99
-
-- CodeLlama-13b-Python官网版本：https://pan.baidu.com/s/1OLVfvZS_oqL3oqMKwsI87w?pwd=a78k
-
-- CodeLlama-13b-Instruct官网版本：https://pan.baidu.com/s/1HyxJl4w8wElgkZRh2ATrXQ?pwd=seg6
-
-</details>
 
 ## 🔥 社区介绍：Llama中文社区
 
@@ -144,15 +109,17 @@
 
 ## 📢 社区公告
 
+【最新】2023年9月2日：新增模型[预训练代码](#-模型预训练)和[全量参数微调代码](#-模型微调)！
+
 【最新】2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
 
+【最新】2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
+
+【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
+
+【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
+ 
 <details>
-
-- 2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
-
-- 2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
-
-- 2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
 - 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
 
@@ -196,7 +163,48 @@
 
 
 
-## 🔵 Atom模型
+## 🐼 国内Llama2最新下载地址
+
+本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+
+
+<details>
+
+- Llama2-7B官网版本：https://pan.xunlei.com/s/VN_kR2fwuJdG1F3CoF33rwpIA1?pwd=z9kf
+
+- Llama2-7B-Chat官网版本：https://pan.xunlei.com/s/VN_kQa1_HBvV-X9QVI6jV2kOA1?pwd=xmra
+
+- Llama2-13B官网版本：https://pan.xunlei.com/s/VN_izibaMDoptluWodzJw4cRA1?pwd=2qqb
+
+- Llama2-13B-Chat官网版本：https://pan.xunlei.com/s/VN_iyyponyapjIDLXJCNfqy7A1?pwd=t3xw
+
+- Llama2-7B Hugging Face版本：https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep
+
+- Llama2-7B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir
+
+- Llama2-13B Hugging Face版本：https://pan.xunlei.com/s/VN_yT_9G8xNOz0SDWQ7Mb_GZA1?pwd=yvgf
+  
+- Llama2-13B-Chat Hugging Face版本：https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg
+
+- Llama2-70B-Chat Hugging Face版本：https://pan.xunlei.com/s/VNa_vCGzCy3h3N7oeFXs2W1hA1?pwd=uhxh#
+
+- CodeLlama-7b官网版本：https://pan.baidu.com/s/1cIPzdNywWLvQI7_2QanOEQ?pwd=zfwi 
+
+- CodeLlama-7b-Python官网版本：https://pan.baidu.com/s/1liY8klGoDagYbpw-g-oFag?pwd=i952
+
+- CodeLlama-7b-Instruct官网版本：https://pan.baidu.com/s/108o9_DT2E_vfSGtOnDCQVw?pwd=zkt9
+
+- CodeLlama-13b官网版本：https://pan.baidu.com/s/1lLaeHv0XEBv0iiZzI1dpnw?pwd=qn99
+
+- CodeLlama-13b-Python官网版本：https://pan.baidu.com/s/1OLVfvZS_oqL3oqMKwsI87w?pwd=a78k
+
+- CodeLlama-13b-Instruct官网版本：https://pan.baidu.com/s/1HyxJl4w8wElgkZRh2ATrXQ?pwd=seg6
+
+</details>
+
+
+
+## 🔵 Atom大模型
 
 **原子大模型Atom**由Llama中文社区和原子回声联合打造，在中文大模型评测榜单C-Eval中位居前十（8月21日评测提交时间）。
 <p align="center" width="100%">
@@ -219,7 +227,7 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 
 
-## 📝 数据来源
+## 📝 中文数据
 
 我们通过以下数据来优化Llama2的中文能力:
 
@@ -335,18 +343,32 @@ cd Llama2-Chinese/docker
 doker-compose up -d --build
 ```
 
+## 🤖 模型预训练
+虽然Llama2的预训练数据相对于第一代LLaMA扩大了一倍，但是中文预训练数据的比例依然非常少，仅占0.13%，这也导致了原始Llama2的中文能力较弱。为了能够提升模型的中文能力，可以采用微调和预训练两种路径，其中：
+- 微调需要的算力资源少，能够快速实现一个中文Llama的雏形。但缺点也显而易见，只能激发基座模型已有的中文能力，由于Llama2的中文训练数据本身较少，所以能够激发的能力也有限，治标不治本。
+
+- 基于大规模中文语料进行预训练，成本高，不仅需要大规模高质量的中文数据，也需要大规模的算力资源。但是优点也显而易见，就是能从模型底层优化中文能力，真正达到治本的效果，从内核为大模型注入强大的中文能力。
+
+我们为社区提供了Llama模型的预训练代码，以及[中文测试语料](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/data)，更多数据可以参考[中文语料](#-中文数据)。具体代码和配置如下：
+
+
+
+- 模型预训练脚本：[train/pretrain/pretrain.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
+- 预训练实现代码：[train/pretrain/pretrain_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
+- [DeepSpeed](https://github.com/microsoft/DeepSpeed)加速：
+  - 对于单卡训练，可以采用ZeRO-2的方式，参数配置见 [train/pretrain/ds_config_zero2.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json)
+  - 对于多卡训练，可以采用ZeRO-3的方式，参数配置见 [train/pretrain/ds_config_zero3.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json)
+- 训练效果度量指标：[train/pretrain/accuracy.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
 
 ## 💡 模型微调
 
-本仓库中提供了基于LoRA的微调代码，未来我们将会扩展更多的微调算法，敬请期待！关于LoRA的详细介绍可以参考论文“[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)”以及微软Github仓库[LoRA](https://github.com/microsoft/LoRA)。
+本仓库中同时提供了LoRA微调和全量参数微调代码，关于LoRA的详细介绍可以参考论文“[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)”以及微软Github仓库[LoRA](https://github.com/microsoft/LoRA)。
 
-### 微调过程
-
-#### Step1: 环境准备
+### Step1: 环境准备
 
 根据[requirements.txt](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
 
-#### Step2: 数据准备
+### Step2: 数据准备
 在data目录下提供了一份用于模型sft的数据样例：
 - 训练数据：[data/train_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/train_sft.csv)
 - 验证数据：[data/dev_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/dev_sft.csv)
@@ -360,13 +382,19 @@ doker-compose up -d --build
 <s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: 因为地球是目前为止唯一已知存在生命的行星。</s>
 ```
 
-#### Step3: 微调脚本
+### Step3: 微调脚本
 
-我们提供了用于微调的脚本[train/sft/finetune.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune.sh)，通过修改脚本的部分参数实现模型的微调，关于微调的具体代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
+#### LoRA微调
+LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh)，关于LoRA微调的具体实现代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
+
+#### 全量参数微调
+全量参数微调脚本见：[train/sft/finetune.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune.sh)，关于全量参数微调的具体实现代码见[train/sft/finetune_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm.py)。
 
 
-### 加载微调模型
-微调模型参数见：[基于Llama2的中文微调模型](#基于llama2的中文微调模型)，LoRA参数需要和基础模型参数结合使用。
+### Step4: 加载微调模型
+
+#### LoRA微调
+基于LoRA微调的模型参数见：[基于Llama2的中文微调模型](#基于llama2的中文微调模型)，LoRA参数需要和基础模型参数结合使用。
 
 通过[PEFT](https://github.com/huggingface/peft)加载预训练模型参数和微调模型参数，以下示例代码中，base_model_name_or_path为预训练模型参数保存路径，finetune_model_path为微调模型参数保存路径。
 
@@ -400,6 +428,10 @@ generate_ids  = model.generate(**generate_input)
 text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
+
+#### 全量参数微调
+对于全量参数微调的模型，调用方式同[模型调用代码示例](#模型调用代码示例)，只需要修改其中的模型名称或者保存路径即可。
+
 
 
 <!-- ## 🚀 未来计划 -->
