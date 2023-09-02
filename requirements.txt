@@ -7,7 +7,7 @@ sentencepiece
 datasets
 evaluate
 pytest
-git+https://github.com/huggingface/peft
+git+https://github.com/huggingface/peft.git
 transformers==4.31.0
 scikit-learn
 torch --index-url https://download.pytorch.org/whl/cu118
