@@ -119,20 +119,10 @@ class ModelArguments:
         default=None,
         metadata={"help": "Where do you want to store the pretrained models downloaded from huggingface.co"},
     )
-    lora_r: Optional[int] = field(default=16)
-    lora_alpha: Optional[int] = field(default=32)
-    target_modules: Optional[str] = field(
-        default='q_proj,v_proj,k_proj,o_proj,gate_proj,down_proj,up_proj',
-        metadata={
-            "help": "List of module names or regex expression of the module names to replace with Lora."
-            "For example, ['q', 'v'] or '.*decoder.*(SelfAttention|EncDecAttention).*(q|v)$' "
-        },
-    )
     use_fast_tokenizer: bool = field(
         default=True,
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
     )
-    load_in_bits: Optional[int] = field(default=8)
     model_revision: str = field(
         default="main",
         metadata={"help": "The specific model version to use (can be a branch name, tag name or commit id)."},
@@ -246,26 +236,6 @@ class DataTrainingArguments:
                 extension = self.validation_files[0].split(".")[-1]
                 assert extension in ["csv", "json", "txt"], "`validation_file` should be a csv, a json or a txt file."
                 
-class SavePeftModelCallback(TrainerCallback):
-    def on_save(
-        self,
-        args: TrainingArguments,
-        state: TrainerState,
-        control: TrainerControl,
-        **kwargs,
-    ):
-        if state.is_world_process_zero:
-            print('+++++++++++++++++save call back++++++++++++++++')
-            checkpoint_folder = os.path.join(
-                args.output_dir, f"{PREFIX_CHECKPOINT_DIR}-{state.global_step}"
-            )
-            kwargs["model"].save_pretrained(checkpoint_folder)
-
-            pytorch_model_path = os.path.join(checkpoint_folder, "pytorch_model.bin")
-            if os.path.exists(pytorch_model_path):
-                os.remove(pytorch_model_path)
-            return control
-
 def main():
     # See all possible arguments in src/transformers/training_args.py
     # or by passing the --help flag to this script.
@@ -420,25 +390,6 @@ def main():
             "You can do it from another script, save it, and load it from here, using --tokenizer_name."
         )
     tokenizer.pad_token = tokenizer.eos_token
-    lora_config = LoraConfig(
-        r=model_args.lora_r,
-        lora_alpha=model_args.lora_alpha,
-        # target_modules=["query_key_value"],
-        # target_modules =  ['q_proj', 'k_proj', 'v_proj', 'o_proj'],
-        target_modules =  model_args.target_modules,
-        fan_in_fan_out = False,
-        lora_dropout=0.05,
-        inference_mode=False,
-        bias="none",
-        task_type="CAUSAL_LM",
-    )
-    print(lora_config)
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
     if model_args.model_name_or_path:
         torch_dtype = (
             model_args.torch_dtype
@@ -455,9 +406,6 @@ def main():
             revision=model_args.model_revision,
             use_auth_token=True if model_args.use_auth_token else None,
             torch_dtype=torch_dtype,
-            load_in_8bit=True if model_args.load_in_bits==8 else False,
-            quantization_config=bnb_config if model_args.load_in_bits==4 else None,
-            # device_map  = 'auto'
             device_map={"": int(os.environ.get("LOCAL_RANK") or 0)}
         )
         # model = prepare_model_for_int8_training(model, output_embedding_layer_name="embed_out", layer_norm_names=[])
@@ -472,10 +420,6 @@ def main():
     embedding_size = model.get_input_embeddings().weight.shape[0]
     if len(tokenizer) > embedding_size:
         model.resize_token_embeddings(len(tokenizer))
-    if model_args.load_in_bits==8:
-        model = prepare_model_for_int8_training(model)
-    elif model_args.load_in_bits==4:
-        model = prepare_model_for_kbit_training(model)
     
     # Preprocessing the datasets.
     # First we tokenize all the texts.
@@ -598,12 +542,6 @@ def main():
             # preds = np.array(true_predictions).reshape(-1)
             # labels = np.array(true_labels).reshape(-1)
             return metric.compute(predictions=preds, references=labels)
-        # layer_norm_names=[]
-
-                
-    
-    model = get_peft_model(model, lora_config)
-    model.print_trainable_parameters()
 
     # Initialize our Trainer
     trainer = Trainer(
@@ -618,32 +556,17 @@ def main():
         ),
         compute_metrics=compute_metrics if training_args.do_eval and not is_torch_tpu_available() else None,
         preprocess_logits_for_metrics=preprocess_logits_for_metrics if training_args.do_eval and not is_torch_tpu_available()else None,
-        callbacks=([SavePeftModelCallback] if isinstance(model, PeftModel) else None),
     )
 
     # Training
     if training_args.do_train:
         checkpoint = None
         if training_args.resume_from_checkpoint is not None:
-            resume_from_checkpoint = training_args.resume_from_checkpoint
-            checkpoint_name = os.path.join(resume_from_checkpoint, "pytorch_model.bin")
-            if not os.path.exists(checkpoint_name):
-                checkpoint_name = os.path.join(
-                    resume_from_checkpoint, "adapter_model.bin"
-                )  # only LoRA model - LoRA config above has to fit
-                resume_from_checkpoint = (
-                    False  # So the trainer won't try loading its state
-                )
-            # The two files above have a different name depending on how they were saved, but are actually the same.
-            if os.path.exists(checkpoint_name):
-                print(f"Restarting from {checkpoint_name}")
-                adapters_weights = torch.load(checkpoint_name)
-                set_peft_model_state_dict(model, adapters_weights)
-            else:
-                print(f"Checkpoint {checkpoint_name} not found")
-            # checkpoint = Fa
+            checkpoint = training_args.resume_from_checkpoint
         elif last_checkpoint is not None:
             checkpoint = last_checkpoint
+
+        print(training_args.local_rank,'start train')
         
         if torch.__version__ >= "2" and sys.platform != "win32":
             model = torch.compile(model)

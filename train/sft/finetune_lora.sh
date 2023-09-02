@@ -4,7 +4,7 @@ if [ ! -d ${output_model} ];then
     mkdir ${output_model}
 fi
 cp ./finetune.sh ${output_model}
-CUDA_VISIBLE_DEVICES=0,1 deepspeed --num_gpus 2  finetune_clm.py \
+CUDA_VISIBLE_DEVICES=0,1 deepspeed --num_gpus 2  finetune_clm_lora.py \
     --model_name_or_path meta-llama/Llama-2-7b-chat-hf \
     --train_files ../../data/train_sft.csv \
                 ../../data/train_sft_sharegpt.csv \
@@ -22,6 +22,10 @@ CUDA_VISIBLE_DEVICES=0,1 deepspeed --num_gpus 2  finetune_clm.py \
     --gradient_accumulation_steps 8 \
     --num_train_epochs 10 \
     --warmup_steps 400 \
+    --load_in_bits 4 \
+    --lora_r 8 \
+    --lora_alpha 32 \
+    --target_modules q_proj,k_proj,v_proj,o_proj,down_proj,gate_proj,up_proj \
     --logging_dir ${output_model}/logs \
     --logging_strategy steps \
     --logging_steps 10 \
