@@ -118,7 +118,7 @@
 【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
 
 【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
- 
+
 <details>
 
 - 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
@@ -525,7 +525,7 @@ while True:
 ```
 
 ## 🐞 代码模型
-Meta官方在2023年8月24日发布了发布了Code Llama，基于代码数据对Llama2进行了微调，提供三个不同功能的版本：基础模型（Code Llama）、Python专用模型（Code Llama - Python）和指令跟随模型（Code Llama - Instruct），包含7B、13B、34B三种不同参数规模。不同模型能力区别如下表所示：
+Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2进行了微调，提供三个不同功能的版本：基础模型（Code Llama）、Python专用模型（Code Llama - Python）和指令跟随模型（Code Llama - Instruct），包含7B、13B、34B三种不同参数规模。不同模型能力区别如下表所示：
 
 |  模型类别          |        模型名称         | 代码续写 | 代码填充 | 指令编程 |
 |-----------------------|------------------------|------|------|------|
