@@ -294,14 +294,10 @@ def main():
         data_files = {}
         dataset_args = {}
         if data_args.train_files is not None:
-            if type(data_args.train_files)==str:
-                print(pd.read_csv(data_args.train_files))
-                data_files["train"] = pd.read_csv(data_args.train_files)['file_name'].to_list()
-                print('训练文件总个数',len(data_files["train"]))
-            else:
-                print(pd.read_csv(data_args.train_files[0]))
-                data_files["train"] = pd.read_csv(data_args.train_files[0])['file_name'].to_list()
-                print('训练文件总个数',len(data_files["train"]))
+            
+            print(data_args.train_files)
+            data_files["train"] = data_args.train_files
+            print('训练文件总个数',len(data_args.train_files))
         if data_args.validation_files is not None:
             data_files["validation"] = data_args.validation_files
         extension = (
