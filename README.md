@@ -109,6 +109,8 @@
 
 ## 📢 社区公告
 
+【最新】2023年9月12日：更新预训练版本[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)和对话版本[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)模型参数，最新的中文预训练数据量为100B token，训练进程见[llama.family](https://llama.family/)！
+
 【最新】2023年9月2日：新增模型[预训练代码](#-模型预训练)和[全量参数微调代码](#-模型微调)！
 
 【最新】2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
@@ -213,7 +215,7 @@
 <img src="./assets/ceval.jpg" alt="ceval" style="width: 100%; display: block; margin: auto;">
 </p>
 
-Atom系列模型包含Atom-7B和Atom-13B，基于Llama2做了中文能力的持续优化。Atom-7B目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha/Atom-7B)仓库获取模型。Atom大模型针对中文做了以下优化：
+Atom系列模型包含Atom-7B和Atom-13B，基于Llama2做了中文能力的持续优化。Atom-7B和Atom-7B-Chat目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha)仓库获取模型，详情见[Atom-7B下载](#基于llama2的中文预训练模型atom)。Atom大模型针对中文做了以下优化：
 
 ### 大规模的中文数据预训练
 
@@ -282,11 +284,12 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 
 #### 基于Llama2的中文预训练模型Atom
 
-社区提供Atom-7B模型的开放下载，模型参数会持续不断更新，关于模型的进展详见社区官网[llama.family](https://llama.family)。
+社区提供预训练版本Atom-7B和基于Atom-7B进行对话微调的模型参数供开放下载，模型参数会持续不断更新，关于模型的进展详见社区官网[llama.family](https://llama.family)。
 
-| 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
-| --------------- | ------------------------------ | ------------------------------------------------------------ |
-| Atom-7B  | FlagAlpha/Atom-7B  | [模型下载](https://huggingface.co/FlagAlpha/Atom-7B) |
+|  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
+| --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
+|  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [模型下载](https://huggingface.co/FlagAlpha/Atom-7B) |
+|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [模型下载](https://huggingface.co/FlagAlpha/Atom-7B-Chat) |
 
 
 ### 模型调用代码示例
