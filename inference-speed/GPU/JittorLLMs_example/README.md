@@ -29,7 +29,7 @@ pip install -r requirements.txt -i https://pypi.jittor.org/simple -I
 部署只需一行命令即可：
 
 ```
-python cli_demo.py llama2
+python cli_demo.py atom7b
 ```
 
 运行后会自动从服务器上下载模型文件到本地，会占用根目录下一定的硬盘空间。
@@ -42,7 +42,7 @@ python cli_demo.py llama2
 JittorLLM通过gradio库，允许用户在浏览器之中和大模型直接进行对话。
 
 ~~~bash
-python web_demo.py llama2
+python web_demo.py atom7b
 ~~~
 
 ### 后端服务部署
@@ -50,7 +50,7 @@ python web_demo.py llama2
 JittorLLM在api.py文件之中，提供了一个架设后端服务的示例。
 
 ~~~bash
-python api.py llama2
+python api.py atom7b
 ~~~
 
 接着可以使用如下代码进行直接访问
