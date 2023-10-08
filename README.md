@@ -202,7 +202,7 @@
 
 - CodeLlama-13b-Instruct官网版本：https://pan.baidu.com/s/1HyxJl4w8wElgkZRh2ATrXQ?pwd=seg6
 
-- CodeLlama-34b官网版本：https://pan.baidu.com/s/10d9rL5QUNSieXrTtY_Jd4A?pwd=7jev
+- CodeLlama-34b官网版本：https://pan.baidu.com/s/1vEw0pFgIkctPUN4_5_6pIQ?pwd=q8eu
 
 </details>
 
