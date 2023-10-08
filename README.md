@@ -47,9 +47,10 @@
     - [全量参数微调](#全量参数微调-1)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
-  - [lmdeploy](#lmdeploy)
   - [FasterTransformer](#fastertransformer)
   - [vLLM](#vllm)
+  - [JittorLLMs](#jittorllms)
+  - [lmdeploy](#lmdeploy)
 - [🥇 模型评测](#-模型评测)
 - [💪 外延能力](#-外延能力)
   - [LangChain](#langchain)
@@ -108,6 +109,8 @@
 </details>
 
 ## 📢 社区公告
+
+【最新】2023年10月8日：新增清华大学JittorLLMs的推理加速功能[JittorLLMs](#jittorllms)！
 
 【最新】2023年9月12日：更新预训练版本[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)和对话版本[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)模型参数，最新的中文预训练数据量为100B token，训练进程见[llama.family](https://llama.family/)！
 
@@ -470,11 +473,6 @@ print(text)
 ## 🚀 推理加速
 随着大模型参数规模的不断增长，在有限的算力资源下，提升模型的推理速度逐渐变为一个重要的研究方向。常用的推理加速框架包含 lmdeploy、FasterTransformer、vLLM和JittorLLMs 等。
 
-### lmdeploy
-[lmdeploy](https://github.com/InternLM/lmdeploy/) 由上海人工智能实验室开发，推理使用 C++/CUDA，对外提供 python/gRPC/http 接口和 WebUI 界面，支持 tensor parallel 分布式推理、支持 fp16/weight int4/kv cache int8 量化。
-
-详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
-
 ### FasterTransformer
 [FasterTransformer](https://github.com/NVIDIA/FasterTransformer)由NVIDIA开发，采用C++/CUDA编写，支持分布式推理，transformer编码器和解码器均可进行加速。
 通过FasterTransformer和[Triton](https://github.com/openai/triton)加速LLama2模型推理，目前支持FP16或者Int8推理，Int4目前还不支持。
@@ -490,6 +488,12 @@ print(text)
 [JittorLLMs](https://github.com/Jittor/JittorLLMs)由非十科技领衔，与清华大学可视媒体研究中心合作研发，通过动态swap机制大幅降低硬件配置要求（减少80%）,并且Jittor框架通过零拷贝技术，大模型加载相比Pytorch开销降低40%，同时，通过元算子自动编译优化，计算性能提升20%以上。
 
 详细的推理文档见：[inference-speed/GPU/JittorLLMs](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
+
+### lmdeploy
+[lmdeploy](https://github.com/InternLM/lmdeploy/) 由上海人工智能实验室开发，推理使用 C++/CUDA，对外提供 python/gRPC/http 接口和 WebUI 界面，支持 tensor parallel 分布式推理、支持 fp16/weight int4/kv cache int8 量化。
+
+详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
+
 
 ## 🥇 模型评测
 为了能够更加清晰地了解Llama2模型的中文问答能力，我们筛选了一些具有代表性的中文问题，对Llama2模型进行提问。我们测试的模型包含Meta公开的Llama2-7B-Chat和Llama2-13B-Chat两个版本，没有做任何微调和训练。测试问题筛选自[AtomBulb](https://github.com/AtomEcho/AtomBulb)，共95个测试问题，包含：通用知识、语言理解、创作能力、逻辑推理、代码编程、工作技能、使用工具、人格特征八个大的类别。
