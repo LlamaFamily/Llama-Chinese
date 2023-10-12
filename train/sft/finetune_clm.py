@@ -153,8 +153,7 @@ class ModelArguments:
             raise ValueError(
                 "--config_overrides can't be used in combination with --config_name or --model_name_or_path"
             )
-        if type(self.target_modules)==str:
-            self.target_modules = self.target_modules.split(',')
+        
 
 
 @dataclass
