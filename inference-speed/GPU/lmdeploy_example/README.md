@@ -1,6 +1,6 @@
 #  lmdeploy 安装和使用
 
-lmdeploy 支持 transformer 结构（例如 LLaMA、LLaMa2、InternLM、Vicuna 等），目前支持 fp16，int8 和 int4。
+lmdeploy 支持 transformer 结构（例如 Atom、LLaMA、LLaMa2、InternLM、Vicuna 等），目前支持 fp16，int8 和 int4。
 
 ## 一、安装
 
@@ -11,10 +11,10 @@ python3 -m pip install lmdeploy
 
 ## 二、fp16 推理
 
-把模型转成 lmdeploy 推理格式，假设 huggingface 版 LLaMa2 模型已下载到 `/models/llama-2-7b-chat` 目录，结果会存到 `workspace` 文件夹
+把模型转成 lmdeploy 推理格式，假设 huggingface 版 [Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat) 模型已下载到 `/models/Atom-7B-Chat` 目录，结果会存到 `workspace` 文件夹
 
 ```shell
-python3 -m lmdeploy.serve.turbomind.deploy llama2 /models/llama-2-7b-chat
+python3 -m lmdeploy.serve.turbomind.deploy llama2 /models/Atom-7B-Chat
 ```
 
 在命令行中测试聊天效果
@@ -39,22 +39,22 @@ lmdeploy 同样支持原始的 facebook 模型格式、支持 70B 模型分布�
 
 lmdeploy 实现了 kv cache int8 量化，同样的显存可以服务更多并发用户。
 
-首先计算模型参数，结果是 pth 格式，保存到临时目录 minmax
+首先计算模型参数，结果是 pth 格式，保存到临时目录 atom
 ```shell
-mkdir minmax
+mkdir atom
 python3 -m lmdeploy.lite.apis.calibrate \
-  --model /models/llama-2-7b-chat \  # huggingface llama2 模型。也支持 llama/vicuna/internlm/baichuan 等
+  --model /models/Atom-7B-Chat \     # huggingface Atom 模型。也支持 llama/vicuna/internlm/baichuan 等
   --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
   --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
   --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
-  --work_dir minmax \                # 保存 pth 格式量化统计参数和量化后权重的文件夹
+  --work_dir atom \                # 保存 pth 格式量化统计参数和量化后权重的文件夹
 ```
 
-然后用 minmax 目录里的参数，计算量化参数，保存到 fp16 转换好的 `workspace/triton_models/weights` 下
+然后用 atom 目录里的参数，计算量化参数，保存到 fp16 转换好的 `workspace/triton_models/weights` 下
 
 ```shell
 python3 -m lmdeploy.lite.apis.kv_qparams \ 
-  --work_dir minmax \                                  # 上一步计算的 minmax 结果
+  --work_dir atom \                                  # 上一步计算的 atom 结果
   --turbomind_dir ./workspace/triton_models/weights \  # 结果保存目录
   --kv_sym False \                                     # 用非对称量化
   --num_tp 1                                           # tensor parallel GPU 个数
@@ -75,43 +75,71 @@ python3 -m lmdeploy.turbomind.chat ./workspace
 
 lmdeploy 基于 [AWQ 算法](https://arxiv.org/abs/2306.00978) 实现了 weight int4 量化，相对 fp16 版本，速度是 3.16 倍、显存从 16G 降低到 6.3G。
 
-这里有 AWQ 算法优化好 llama2 原始模型，直接下载。
-
-```shell
-git clone https://huggingface.co/lmdeploy/llama2-chat-7b-w4
-```
-
 对于自己的模型，可以用`auto_awq`工具来优化
 ```shell
+# 指定量化导出的模型路径
+WORK_DIR="./atom-7b-chta-w4"
+
 # 计算量化参数
 python3 -m lmdeploy.lite.apis.calibrate \
   --model $HF_MODEL \                # huggingface 模型位置
   --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
   --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
   --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
-  --work_dir $WORK_DIR \             # 保存 Pytorch 格式量化统计参数和量化后权重的文件夹
+  --work_dir $WORK_DIR              # 保存 Pytorch 格式量化统计参数和量化后权重的文件夹
 
 # 量化模型
 python3 -m lmdeploy.lite.apis.auto_awq \
   --model $HF_MODEL \                # huggingface 模型位置
   --w_bits 4 \                       # 权重量化的 bit 数
   --w_group_size 128 \               # 权重量化分组统计尺寸
-  --work_dir $WORK_DIR \             # 上一条命令保存参数的目录
-```
+  --work_dir $WORK_DIR              # 上一条命令保存参数的目录
 
-
-执行以下命令，即可在终端与模型对话：
-
-```shell
-## 转换模型的layout，存放在默认路径 ./workspace 下
+# 转换模型的layout，存放在默认路径 ./workspace 下
 python3 -m lmdeploy.serve.turbomind.deploy \
     --model-name llama2 \
-    --model-path ./llama2-chat-7b-w4 \
+    --model-path $WORK_DIR \
     --model-format awq \
     --group-size 128
+```
 
-## 推理
-python3 -m lmdeploy.turbomind.chat ./workspace
+执行以下命令，启动服务：
+```shell
+# 这里的路径是上面转换模型的layout的输出
+FasterTransformer_PATH="./workspace"
+
+TP=1
+# 指定需要用的显卡
+DEVICES="0"
+for ((i = 1; i < ${TP}; ++i)); do
+    DEVICES="${DEVICES},$i"
+done
+DEVICES="\"device=${DEVICES}\""
+
+# 在容器内启动服务
+docker run -idt \
+        --gpus $DEVICES \
+        -v $FasterTransformer_PATH:/workspace/models \
+        --shm-size 16g \
+        -p 33336:22 \
+        -p 33337-33400:33337-33400 \
+        --cap-add=SYS_PTRACE \
+        --cap-add=SYS_ADMIN \
+        --security-opt seccomp=unconfined \
+        --name lmdeploy \
+        --env NCCL_LAUNCH_MODE=GROUP openmmlab/lmdeploy:latest \
+        tritonserver \
+        --model-repository=/workspace/models/model_repository \
+        --allow-http=0 \
+        --allow-grpc=1 \
+        --grpc-port=33337 \
+        --log-verbose=0 \
+        --allow-metrics=1
+```
+
+客户端测试：
+```shell
+python test_api_server.py  --tritonserver_addr 127.0.0.1:33337
 ```
 
 [点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/w4a16.md) 查看 weight int4 量化的显存和速度测试结果。
