@@ -1,3 +1,7 @@
+<p align="left">
+    <a href="README.md">English</a> ｜ 中文
+</p>
+
 <h1 align="center">
   Llama2-Chinese
 </h1>
