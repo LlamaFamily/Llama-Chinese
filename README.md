@@ -575,6 +575,8 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 
 感谢原子回声[AtomEcho](https://github.com/AtomEcho)团队的技术和资源支持！
 
+感谢芯格[Coremesh](https://coremesh.net)团队的技术和资源支持！
+
 感谢 @xzsGenius 对Llama2中文社区的贡献！
 
 感谢 @Z Potentials社区对Llama2中文社区的支持！
