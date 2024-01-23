@@ -17,7 +17,7 @@ class Llama2(LLM):
         self.tokenizer.pad_token = self.tokenizer.eos_token
         if bit4==False:
             from transformers import AutoModelForCausalLM
-            self.model = AutoModelForCausalLM.from_pretrained(model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+            self.model = AutoModelForCausalLM.from_pretrained(model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
             self.model.eval()
         else:
             from auto_gptq import AutoGPTQForCausalLM

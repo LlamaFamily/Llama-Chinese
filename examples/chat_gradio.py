@@ -83,7 +83,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path,use_fast=False)
     tokenizer.pad_token = tokenizer.eos_token
     if args.is_4bit==False:
-        model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+        model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
         model.eval()
     else:
         from auto_gptq import AutoGPTQForCausalLM

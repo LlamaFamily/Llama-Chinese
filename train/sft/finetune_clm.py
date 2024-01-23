@@ -405,6 +405,8 @@ def main():
             revision=model_args.model_revision,
             use_auth_token=True if model_args.use_auth_token else None,
             torch_dtype=torch_dtype,
+            trust_remote_code=True,
+            use_flash_attention_2=True,
             device_map={"": int(os.environ.get("LOCAL_RANK") or 0)}
         )
         # model = prepare_model_for_int8_training(model, output_embedding_layer_name="embed_out", layer_norm_names=[])

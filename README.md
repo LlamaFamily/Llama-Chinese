@@ -304,7 +304,7 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 ```python
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
 model =model.eval()
 tokenizer = AutoTokenizer.from_pretrained('FlagAlpha/Atom-7B',use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
@@ -420,7 +420,7 @@ config = PeftConfig.from_pretrained(finetune_model_path)
 # 例如: base_model_name_or_path='meta-llama/Llama-2-7b-chat'
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
-model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
 model = PeftModel.from_pretrained(model, finetune_model_path, device_map={"": 0})
 model =model.eval()
 input_ids = tokenizer(['<s>Human: 介绍一下北京\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')        
@@ -477,11 +477,10 @@ print(text)
 ## 🚀 推理加速
 随着大模型参数规模的不断增长，在有限的算力资源下，提升模型的推理速度逐渐变为一个重要的研究方向。常用的推理加速框架包含 lmdeploy、FasterTransformer、vLLM和JittorLLMs 等。
 
-### FasterTransformer
-[FasterTransformer](https://github.com/NVIDIA/FasterTransformer)由NVIDIA开发，采用C++/CUDA编写，支持分布式推理，transformer编码器和解码器均可进行加速。
-通过FasterTransformer和[Triton](https://github.com/openai/triton)加速LLama2模型推理，目前支持FP16或者Int8推理，Int4目前还不支持。
+### TensorRT-LLM
+[TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/tree/main)由NVIDIA开发，高性能推理框架
 
-详细的推理文档见：[inference-speed/GPU/FasterTransformer_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
+详细的推理文档见：[inference-speed/GPU/TensorRT-LLM_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/TensorRT-LLM_example)
 
 ### vLLM
 [vLLM](https://github.com/vllm-project/vllm)由加州大学伯克利分校开发，核心技术是PageAttention，吞吐量比HuggingFace Transformers高出24倍。相较与FasterTrainsformer，vLLM更加的简单易用，不需要额外进行模型的转换，支持fp16推理。

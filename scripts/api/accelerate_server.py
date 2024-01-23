@@ -155,7 +155,7 @@ if __name__ == '__main__':
     
     tokenizer = AutoTokenizer.from_pretrained(args.model_path, trust_remote_code=True)
     if infer_dtype in ["int8", "float16"]:
-        model = AutoModelForCausalLM.from_pretrained(args.model_path, **kwargs)
+        model = AutoModelForCausalLM.from_pretrained(args.model_path, **kwargs,trust_remote_code=True,use_flash_attention_2=True)
     elif infer_dtype == "int4":
         from auto_gptq import AutoGPTQForCausalLM, get_gptq_peft_model
         model = AutoGPTQForCausalLM.from_quantized(

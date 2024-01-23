@@ -456,6 +456,8 @@ def main():
             use_auth_token=True if model_args.use_auth_token else None,
             torch_dtype=torch_dtype,
             load_in_8bit=True if model_args.load_in_bits==8 else False,
+            trust_remote_code=True,
+            use_flash_attention_2=True,
             quantization_config=bnb_config if model_args.load_in_bits==4 else None,
             # device_map  = 'auto'
             device_map={"": int(os.environ.get("LOCAL_RANK") or 0)}

@@ -24,7 +24,7 @@ script_args = parser.parse_args_into_dataclasses()[0]
 
 
 peft_config = PeftConfig.from_pretrained(script_args.adapter_model_name)
-model = AutoModelForCausalLM.from_pretrained(peft_config.base_model_name_or_path, return_dict=True, torch_dtype=torch.float16,device_map='auto')
+model = AutoModelForCausalLM.from_pretrained(peft_config.base_model_name_or_path, return_dict=True, torch_dtype=torch.float16,device_map='auto',trust_remote_code=True)
 model = PeftModel.from_pretrained(model, script_args.adapter_model_name,device_map='auto')
 tokenizer = AutoTokenizer.from_pretrained(peft_config.base_model_name_or_path,use_fast=script_args.tokenizer_fast)
 config = AutoConfig.from_pretrained(peft_config.base_model_name_or_path)
@@ -38,5 +38,5 @@ model.eval()
 model.save_pretrained(f"{script_args.output_name}")
 tokenizer.save_pretrained(f"{script_args.output_name}")
 if script_args.load8bit:
-    model = AutoModelForCausalLM.from_pretrained(script_args.output_name, torch_dtype=torch.float16,load_in_8bit=script_args.load8bit,device_map='auto')
+    model = AutoModelForCausalLM.from_pretrained(script_args.output_name, torch_dtype=torch.float16,load_in_8bit=script_args.load8bit,device_map='auto',trust_remote_code=True)
     model.save_pretrained(f"{script_args.output_name}",max_shard_size='5GB')
