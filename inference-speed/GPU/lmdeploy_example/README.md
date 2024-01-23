@@ -6,58 +6,50 @@ lmdeploy 支持 transformer 结构（例如 Atom、LLaMA、LLaMa2、InternLM、V
 
 安装预编译的 python 包
 ```
-python3 -m pip install lmdeploy
+python3 -m pip install lmdeploy==0.2.1
 ```
 
-## 二、fp16 推理
+## 二、转换huggingface模型为lmdeploy格式
 
-把模型转成 lmdeploy 推理格式，假设 huggingface 版 [Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat) 模型已下载到 `/models/Atom-7B-Chat` 目录，结果会存到 `workspace` 文件夹
+把模型转成 lmdeploy 推理格式，假设 huggingface 版 [Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat) 模型已下载到 `/models/Atom-7B-Chat` 目录，结果会存到 当前执行命令的`workspace` 文件夹
 
 ```shell
-python3 -m lmdeploy.serve.turbomind.deploy llama2 /models/Atom-7B-Chat
+lmdeploy convert llama2 /models/Atom-7B-Chat
+```
+lmdeploy 修改一处bug
+```
+sed -i 's/from .utils import get_logger/from transformers.utils.logging import get_logger/g' ./workspace/model_repository/preprocessing/1/tokenizer/tokenizer.py
+sed -i 's/from .utils import get_logger/from transformers.utils.logging import get_logger/g' ./workspace/model_repository/postprocessing/1/tokenizer/tokenizer.py
 ```
 
-在命令行中测试聊天效果
-
-```shell
-python3 -m lmdeploy.turbomind.chat ./workspace
-..
-double enter to end input >>> who are you
-
-..
-Hello! I'm just an AI assistant ..
-```
-
-也可以用 gradio 启动 WebUI 来聊天
-```shell
-python3 -m lmdeploy.serve.gradio.app ./workspace
-```
-
-lmdeploy 同样支持原始的 facebook 模型格式、支持 70B 模型分布式推理，用法请查看 [lmdeploy 官方文档](https://github.com/internlm/lmdeploy)。
 
 ## 三、kv cache int8 量化
-
-lmdeploy 实现了 kv cache int8 量化，同样的显存可以服务更多并发用户。
-
-首先计算模型参数，结果是 pth 格式，保存到临时目录 atom
+对于最大长度是 2048 的 Atom-7B fp16 模型，服务端每创建 1 个并发，都需要大约 1030MB 显存保存 kv_cache，即便是 A100 80G，能服务的用户也非常有限。
+为了降低运行时显存，lmdeploy 实现了 kv cache PTQ 量化，同样的显存可以服务更多并发用户。
+首先计算模型参数，保存到临时目录 atom
 ```shell
 mkdir atom
-python3 -m lmdeploy.lite.apis.calibrate \
-  --model /models/Atom-7B-Chat \     # huggingface Atom 模型。也支持 llama/vicuna/internlm/baichuan 等
-  --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
-  --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
-  --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
-  --work_dir atom \                # 保存 pth 格式量化统计参数和量化后权重的文件夹
+lmdeploy lite calibrate \
+  /models/Atom-7B-Chat  \             # huggingface Atom 模型。也支持 llama/vicuna/internlm/baichuan 等
+  --calib-dataset 'ptb' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
+  --calib-samples 128   \             # 校准集的样本数，如果显存不够，可以适当调小
+  --device 'cuda'       \             # 单条的文本长度，如果显存不够，可以适当调小
+  --work-dir atom                     # 保存 pth 格式量化统计参数和量化后权重的文件夹
+```
+注意：可能需要安装flash_attn
+```shell
+conda install -c nvidia cuda-nvcc # 为了使用conda内的cuda环境安装 flash_attn
+pip install flash_attn
 ```
 
-然后用 atom 目录里的参数，计算量化参数，保存到 fp16 转换好的 `workspace/triton_models/weights` 下
+
+然后用 atom 目录里的参数，计算量化参数，保存到转换后参数到 `workspace/triton_models/weights` 下
 
 ```shell
-python3 -m lmdeploy.lite.apis.kv_qparams \ 
-  --work_dir atom \                                  # 上一步计算的 atom 结果
-  --turbomind_dir ./workspace/triton_models/weights \  # 结果保存目录
-  --kv_sym False \                                     # 用非对称量化
-  --num_tp 1                                           # tensor parallel GPU 个数
+lmdeploy lite kv_qparams                 \ 
+  ./atom                                 \  # 上一步计算的 atom 结果
+  ./workspace/triton_models/weights      \  # 结果保存目录
+  --num-tp 1                                # tensor parallel GPU 个数
 ```
 
 修改推理配置，开启 kv cache int8。编辑 `workspace/triton_models/weights/config.ini` 
@@ -66,47 +58,34 @@ python3 -m lmdeploy.lite.apis.kv_qparams \
 
 最终执行测试即可
 ```shell
-python3 -m lmdeploy.turbomind.chat ./workspace
+lmdeploy chat turbomind ./workspace
 ```
 
 [点击这里](https://github.com/InternLM/lmdeploy/blob/main/docs/zh_cn/kv_int8.md) 查看 kv cache int8 量化实现公式、精度和显存测试报告。
 
 ## 四、weight int4 量化
 
-lmdeploy 基于 [AWQ 算法](https://arxiv.org/abs/2306.00978) 实现了 weight int4 量化，相对 fp16 版本，速度是 3.16 倍、显存从 16G 降低到 6.3G。
+lmdeploy 基于 [AWQ 算法](https://arxiv.org/abs/2306.00978) 实现了 weight int4 量化，性能是 FP16 的 2.4 倍以上。显存从 16G 降低到 6.3G。
 
 对于自己的模型，可以用`auto_awq`工具来优化
 ```shell
 # 指定量化导出的模型路径
 WORK_DIR="./atom-7b-chta-w4"
 
-# 计算量化参数
-python3 -m lmdeploy.lite.apis.calibrate \
-  --model $HF_MODEL \                # huggingface 模型位置
-  --calib_dataset 'c4' \             # 校准数据集，支持 c4, ptb, wikitext2, pileval
-  --calib_samples 128 \              # 校准集的样本数，如果显存不够，可以适当调小
-  --calib_seqlen 2048 \              # 单条的文本长度，如果显存不够，可以适当调小
-  --work_dir $WORK_DIR              # 保存 Pytorch 格式量化统计参数和量化后权重的文件夹
-
-# 量化模型
-python3 -m lmdeploy.lite.apis.auto_awq \
-  --model $HF_MODEL \                # huggingface 模型位置
-  --w_bits 4 \                       # 权重量化的 bit 数
-  --w_group_size 128 \               # 权重量化分组统计尺寸
-  --work_dir $WORK_DIR              # 上一条命令保存参数的目录
-
-# 转换模型的layout，存放在默认路径 ./workspace 下
-python3 -m lmdeploy.serve.turbomind.deploy \
-    --model-name llama2 \
-    --model-path $WORK_DIR \
-    --model-format awq \
-    --group-size 128
+lmdeploy lite auto_awq \
+$HF_MODEL              \  # huggingface 模型位置
+--calib-dataset 'ptb'  \  # 校准数据集，支持 c4, ptb, wikitext2, pileval
+--calib-samples 128    \  # 校准集的样本数，如果显存不够，可以适当调小
+--calib-seqlen 2048    \  # 单条的文本长度，如果显存不够，可以适当调小  
+--w-bits 4             \  # 权重量化的 bit 数
+--w-group-size 128     \  # 权重量化分组统计尺寸
+--work-dir $WORK_DIR  
 ```
 
 执行以下命令，启动服务：
 ```shell
-# 这里的路径是上面转换模型的layout的输出
-FasterTransformer_PATH="./workspace"
+# 这里的路径是上面步骤一中转换模型的layout的输出
+FasterTransformer_PATH="/path/workspace"
 
 TP=1
 # 指定需要用的显卡
