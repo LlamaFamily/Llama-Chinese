@@ -124,7 +124,7 @@ We warmly welcome developers and researchers passionate about LLM models to join
 
 【Latest】August 26, 2023: Provided [FastAPI](#fastapi-interface-setup) interface setup script!
 
-【Latest】August 26, 2023: Provided a script to convert Meta official model parameters to a format compatible with Hugging Face [Format Conversion Script](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)!
+【Latest】August 26, 2023: Provided a script to convert Meta official model parameters to a format compatible with Hugging Face [Format Conversion Script](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)!
 
 【Latest】August 26, 2023: Added [Code Llama](#-code-model) model!
 
@@ -173,7 +173,7 @@ We warmly welcome developers and researchers passionate about LLM models to join
 
 ## 🐼 Latest Downloads of Llama2
 
-The code examples in this repository are primarily based on Hugging Face version parameters. We provide scripts to convert the model parameters released on the Meta website into the format supported by Hugging Face. You can directly load them using the transformers library: [Parameter Format Conversion](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+The code examples in this repository are primarily based on Hugging Face version parameters. We provide scripts to convert the model parameters released on the Meta website into the format supported by Hugging Face. You can directly load them using the transformers library: [Parameter Format Conversion](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
 
 <details>
 
@@ -325,7 +325,7 @@ print(text)
 
 ### FastAPI Setup
 
-To facilitate model invocation via API, we provide a script for quickly building a [FastAPI](https://github.com/tiangolo/fastapi) interface. For related test code and API parameter settings, please refer to [API Call](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/api/READMD.md).
+To facilitate model invocation via API, we provide a script for quickly building a [FastAPI](https://github.com/tiangolo/fastapi) interface. For related test code and API parameter settings, please refer to [API Call](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/READMD.md).
 
 ### Gradio Setup
 
@@ -336,11 +336,11 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B
 ```
 
 ### Docker Setup
-For details, refer to: [Docker Deployment](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/docs/chat_gradio_guide.md)
+For details, refer to: [Docker Deployment](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/docs/chat_gradio_guide.md)
 
 Step 1: Prepare the Docker image and launch [chat_gradio.py](../examples/chat_gradio.py) through a Docker container.
 ```bash
-git clone https://github.com/FlagAlpha/Llama2-Chinese.git
+git clone https://github.com/LlamaFamily/Llama2-Chinese.git
 
 cd Llama2-Chinese
 
@@ -360,14 +360,14 @@ While the pretraining data for Llama2 has doubled compared to the first generati
 
 - Pretraining based on large-scale Chinese corpora involves high costs, requiring not only large-scale high-quality Chinese data but also substantial computational resources. However, the advantage is clear – it optimizes the Chinese capability from the model's foundational layers, achieving a fundamental improvement, injecting robust Chinese capabilities into the core of the large model.
 
-We provide the pretraining code for the Llama model to the community, along with [Chinese test data](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/data). More data can be found in [Chinese Data](#-chinese-data). The specific code and configurations are as follows:
+We provide the pretraining code for the Llama model to the community, along with [Chinese test data](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/data). More data can be found in [Chinese Data](#-chinese-data). The specific code and configurations are as follows:
 
-- Model pretraining script: [train/pretrain/pretrain.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
-- Pretraining implementation code: [train/pretrain/pretrain_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
+- Model pretraining script: [train/pretrain/pretrain.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
+- Pretraining implementation code: [train/pretrain/pretrain_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
 - [DeepSpeed](https://github.com/microsoft/DeepSpeed) acceleration:
-  - For single-card training, ZeRO-2 can be used. See parameters in [train/pretrain/ds_config_zero2.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json).
-  - For multi-card training, ZeRO-3 can be used. See parameters in [train/pretrain/ds_config_zero3.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json).
-- Training effectiveness metrics: [train/pretrain/accuracy.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
+  - For single-card training, ZeRO-2 can be used. See parameters in [train/pretrain/ds_config_zero2.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json).
+  - For multi-card training, ZeRO-3 can be used. See parameters in [train/pretrain/ds_config_zero3.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json).
+- Training effectiveness metrics: [train/pretrain/accuracy.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
 
 ## 💡 Model Fine-Tuning
 
@@ -375,13 +375,13 @@ This repository provides both LoRA fine-tuning and full-parameter fine-tuning co
 
 ### Step1: Environment Setup
 
-Install the necessary environment dependencies according to [requirements.txt](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/requirements.txt).
+Install the necessary environment dependencies according to [requirements.txt](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/requirements.txt).
 
 ### Step2: Data Preparation
 
 In the data directory, there is a sample data for the model's SFT:
-- Training data: [data/train_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/train_sft.csv)
-- Validation data: [data/dev_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/dev_sft.csv)
+- Training data: [data/train_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/train_sft.csv)
+- Validation data: [data/dev_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/dev_sft.csv)
 
 Each CSV file contains a "text" column, with each row representing a training example. Organize questions and answers in the model's input format, as shown below:
 ```
@@ -395,10 +395,10 @@ For example,
 ### Step3: Fine-tuning Scripts
 
 #### LoRA Fine-tuning
-LoRA fine-tuning script: [train/sft/finetune_lora.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh). For details on LoRA fine-tuning implementation, refer to [train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py). Fine-tuning on a single machine with multiple cards can be achieved by modifying the "--include localhost:0" in the script.
+LoRA fine-tuning script: [train/sft/finetune_lora.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh). For details on LoRA fine-tuning implementation, refer to [train/sft/finetune_clm_lora.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py). Fine-tuning on a single machine with multiple cards can be achieved by modifying the "--include localhost:0" in the script.
 
 #### Full-parameter Fine-tuning
-Full-parameter fine-tuning script: [train/sft/finetune.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune.sh). For details on full-parameter fine-tuning implementation, refer to [train/sft/finetune_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm.py).
+Full-parameter fine-tuning script: [train/sft/finetune.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune.sh). For details on full-parameter fine-tuning implementation, refer to [train/sft/finetune_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm.py).
 
 ### Step4: Load Fine-tuned Model
 
@@ -474,22 +474,22 @@ As the parameter scale of large models continues to grow, improving model infere
 ### FasterTransformer
 [FasterTransformer](https://github.com/NVIDIA/FasterTransformer) is developed by NVIDIA, written in C++/CUDA, and supports distributed inference. Both transformer encoder and decoder can be accelerated. FasterTransformer, in combination with [Triton](https://github.com/openai/triton), accelerates LLama2 model inference. Currently, it supports FP16 or Int8 inference, while Int4 is not supported yet.
 
-For detailed inference documentation, visit: [inference-speed/GPU/FasterTransformer_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
+For detailed inference documentation, visit: [inference-speed/GPU/FasterTransformer_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
 
 ### vLLM
 [vLLM](https://github.com/vllm-project/vllm) is developed by the University of California, Berkeley, with its core technology being PageAttention. It achieves 24 times higher throughput compared to HuggingFace Transformers. Unlike FasterTransformer, vLLM is more user-friendly and does not require additional model conversion. It supports FP16 inference.
 
-For detailed inference documentation, visit: [inference-speed/GPU/vllm_example](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
+For detailed inference documentation, visit: [inference-speed/GPU/vllm_example](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
 
 ### JittorLLMs
 [JittorLLMs](https://github.com/Jittor/JittorLLMs) is led by Non-ten Technology in collaboration with the Visual Media Research Center at Tsinghua University. It significantly reduces hardware requirements by 80% through a dynamic swap mechanism. Jittor framework, with zero-copy technology, reduces the loading overhead of large models by 40% compared to PyTorch. Moreover, automatic compilation optimization through meta-operators enhances computational performance by over 20%.
 
-For detailed inference documentation, visit: [inference-speed/GPU/JittorLLMs](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
+For detailed inference documentation, visit: [inference-speed/GPU/JittorLLMs](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
 
 ### lmdeploy
 [lmdeploy](https://github.com/InternLM/lmdeploy/) is developed by the Shanghai AI Lab, using C++/CUDA for inference. It provides Python/gRPC/HTTP interfaces and a WebUI for inference, supporting tensor parallel distributed inference and FP16/weight int4/kv cache int8 quantization.
 
-For detailed inference documentation, visit: [inference-speed/GPU/lmdeploy_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
+For detailed inference documentation, visit: [inference-speed/GPU/lmdeploy_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
 
 
 
@@ -523,7 +523,7 @@ In addition to continually enhancing the intrinsic qualities of large models, su
 We have initially integrated the LangChain framework to facilitate the development of applications like document retrieval, question-answering bots, and intelligent agents based on the Llama2 model. For more information on LangChain, please refer to [LangChain](https://github.com/langchain-ai/langchain).
 
 ### LangChain
-For a simplified implementation using the LangChain framework with the Llama2 LLM class, refer to [examples/llama2_for_langchain.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py). Here is a basic code snippet:
+For a simplified implementation using the LangChain framework with the Llama2 LLM class, refer to [examples/llama2_for_langchain.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py). Here is a basic code snippet:
 
 ```python
 from llama2_for_langchain import Llama2

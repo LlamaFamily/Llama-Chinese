@@ -124,7 +124,7 @@
 
 【最新】2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
 
-【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
+【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
 
 【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
@@ -174,7 +174,7 @@
 
 ## 🐼 国内Llama2最新下载地址
 
-本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
 
 
 <details>
@@ -328,7 +328,7 @@ print(text)
 
 ### FastAPI接口搭建
 
-为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/scripts/api/READMD.md)。
+为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/READMD.md)。
 
 ### Gradio快速搭建问答平台
 
@@ -338,11 +338,11 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B
 ```
 
 ### Docker部署问答接口
-详情参见：[Docker部署](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/docs/chat_gradio_guide.md)
+详情参见：[Docker部署](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/docs/chat_gradio_guide.md)
 
 第一步：准备docker镜像，通过docker容器启动[chat_gradio.py](../examples/chat_gradio.py)
 ```bash
-git clone https://github.com/FlagAlpha/Llama2-Chinese.git
+git clone https://github.com/LlamaFamily/Llama2-Chinese.git
 
 cd Llama2-Chinese
 
@@ -361,16 +361,16 @@ doker-compose up -d --build
 
 - 基于大规模中文语料进行预训练，成本高，不仅需要大规模高质量的中文数据，也需要大规模的算力资源。但是优点也显而易见，就是能从模型底层优化中文能力，真正达到治本的效果，从内核为大模型注入强大的中文能力。
 
-我们为社区提供了Llama模型的预训练代码，以及[中文测试语料](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/data)，更多数据可以参考[中文语料](#-中文数据)。具体代码和配置如下：
+我们为社区提供了Llama模型的预训练代码，以及[中文测试语料](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/data)，更多数据可以参考[中文语料](#-中文数据)。具体代码和配置如下：
 
 
 
-- 模型预训练脚本：[train/pretrain/pretrain.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
-- 预训练实现代码：[train/pretrain/pretrain_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
+- 模型预训练脚本：[train/pretrain/pretrain.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
+- 预训练实现代码：[train/pretrain/pretrain_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
 - [DeepSpeed](https://github.com/microsoft/DeepSpeed)加速：
-  - 对于单卡训练，可以采用ZeRO-2的方式，参数配置见 [train/pretrain/ds_config_zero2.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json)
-  - 对于多卡训练，可以采用ZeRO-3的方式，参数配置见 [train/pretrain/ds_config_zero3.json](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json)
-- 训练效果度量指标：[train/pretrain/accuracy.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
+  - 对于单卡训练，可以采用ZeRO-2的方式，参数配置见 [train/pretrain/ds_config_zero2.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json)
+  - 对于多卡训练，可以采用ZeRO-3的方式，参数配置见 [train/pretrain/ds_config_zero3.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json)
+- 训练效果度量指标：[train/pretrain/accuracy.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
 
 ## 💡 模型微调
 
@@ -378,12 +378,12 @@ doker-compose up -d --build
 
 ### Step1: 环境准备
 
-根据[requirements.txt](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
+根据[requirements.txt](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
 
 ### Step2: 数据准备
 在data目录下提供了一份用于模型sft的数据样例：
-- 训练数据：[data/train_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/train_sft.csv)
-- 验证数据：[data/dev_sft.csv](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/data/dev_sft.csv)
+- 训练数据：[data/train_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/train_sft.csv)
+- 验证数据：[data/dev_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/dev_sft.csv)
 
 每个csv文件中包含一列“text”，每一行为一个训练样例，每个训练样例按照以下格式将问题和答案组织为模型输入，您可以按照以下格式自定义训练和验证数据集：
 ```
@@ -397,10 +397,10 @@ doker-compose up -d --build
 ### Step3: 微调脚本
 
 #### LoRA微调
-LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh)，关于LoRA微调的具体实现代码见[train/sft/finetune_clm_lora.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
+LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh)，关于LoRA微调的具体实现代码见[train/sft/finetune_clm_lora.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
 
 #### 全量参数微调
-全量参数微调脚本见：[train/sft/finetune.sh](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune.sh)，关于全量参数微调的具体实现代码见[train/sft/finetune_clm.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/train/sft/finetune_clm.py)。
+全量参数微调脚本见：[train/sft/finetune.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune.sh)，关于全量参数微调的具体实现代码见[train/sft/finetune_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm.py)。
 
 
 ### Step4: 加载微调模型
@@ -481,22 +481,22 @@ print(text)
 [FasterTransformer](https://github.com/NVIDIA/FasterTransformer)由NVIDIA开发，采用C++/CUDA编写，支持分布式推理，transformer编码器和解码器均可进行加速。
 通过FasterTransformer和[Triton](https://github.com/openai/triton)加速LLama2模型推理，目前支持FP16或者Int8推理，Int4目前还不支持。
 
-详细的推理文档见：[inference-speed/GPU/FasterTransformer_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
+详细的推理文档见：[inference-speed/GPU/FasterTransformer_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
 
 ### vLLM
 [vLLM](https://github.com/vllm-project/vllm)由加州大学伯克利分校开发，核心技术是PageAttention，吞吐量比HuggingFace Transformers高出24倍。相较与FasterTrainsformer，vLLM更加的简单易用，不需要额外进行模型的转换，支持fp16推理。
 
-详细的推理文档见：[inference-speed/GPU/vllm_example](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
+详细的推理文档见：[inference-speed/GPU/vllm_example](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
 
 ### JittorLLMs
 [JittorLLMs](https://github.com/Jittor/JittorLLMs)由非十科技领衔，与清华大学可视媒体研究中心合作研发，通过动态swap机制大幅降低硬件配置要求（减少80%）,并且Jittor框架通过零拷贝技术，大模型加载相比Pytorch开销降低40%，同时，通过元算子自动编译优化，计算性能提升20%以上。
 
-详细的推理文档见：[inference-speed/GPU/JittorLLMs](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
+详细的推理文档见：[inference-speed/GPU/JittorLLMs](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
 
 ### lmdeploy
 [lmdeploy](https://github.com/InternLM/lmdeploy/) 由上海人工智能实验室开发，推理使用 C++/CUDA，对外提供 python/gRPC/http 接口和 WebUI 界面，支持 tensor parallel 分布式推理、支持 fp16/weight int4/kv cache int8 量化。
 
-详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/FlagAlpha/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
+详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
 
 
 ## 🥇 模型评测
@@ -526,7 +526,7 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 除了持续增强大模型内在的知识储备、通用理解、逻辑推理和想象能力等，未来，我们也会不断丰富大模型的外延能力，例如知识库检索、计算工具、WolframAlpha、操作软件等。
 我们首先集成了LangChain框架，可以更方便地基于Llama2开发文档检索、问答机器人和智能体应用等，关于LangChain的更多介绍参见[LangChain](https://github.com/langchain-ai/langchain)。
 ### LangChain
-针对LangChain框架封装的Llama2 LLM类见[examples/llama2_for_langchain.py](https://github.com/FlagAlpha/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py)，简单的调用代码示例如下：
+针对LangChain框架封装的Llama2 LLM类见[examples/llama2_for_langchain.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py)，简单的调用代码示例如下：
 ```python
 from llama2_for_langchain import Llama2
 

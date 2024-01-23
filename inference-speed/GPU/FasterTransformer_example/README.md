@@ -160,5 +160,6 @@ I0717 17:17:14.713000 70681 http_server.cc:185] Started Metrics Service at 0.0.0
 ```
 python3 $BUILD_DICTIONARY/fastertransformer_backend/inference_example/llama/llama_grpc_stream_client.py \
 --url 127.0.0.1:8001 \
---hf_model_location /path/FlagAlpha/Atom-7B-Chat
+--hf_model_location /path/FlagAlpha/Atom-7B-Chat \
+-topp 0.95
 ```

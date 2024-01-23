@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /root/Llama2-Chinese
 
 # 从git上克隆llama2-chinese仓库
-RUN git clone https://github.com/FlagAlpha/Llama2-Chinese.git /root/Llama2-Chinese 
+RUN git clone https://github.com/LlamaFamily/Llama2-Chinese.git /root/Llama2-Chinese 
 
 # 使用pip安装requirements.txt
 RUN pip install -r requirements.txt
