@@ -13,18 +13,20 @@
 ## 第一步： 安装vllm
 
 ```bash
-git clone https://github.com/vllm-project/vllm
-
-cd vllm && python setup.py install
+pip install vllm
 ```
 
 ## 第二步：启动测试server
 
-下载[13B模型](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat/tree/main)或者[Atom-7B-Chat模型](https://huggingface.co/FlagAlpha/Atom-7B-Chat)到特定目录。
+从Huggingface下载Atom或者LLama2模型：
+```
+# 您可以选择具体想部署的模型下载
+git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat  Atom-7B-Chat
+```
 
 1. 单卡推理
 
-编辑single_gpus_api_server.sh里面model为上面的7B或者13B模型的下载路径。
+编辑single_gpus_api_server.sh里面model为上面模型的下载路径。
 
 启动测试server
 ```bash
