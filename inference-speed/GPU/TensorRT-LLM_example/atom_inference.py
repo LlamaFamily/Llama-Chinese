@@ -1,9 +1,10 @@
 import csv
+import sys
 from pathlib import Path
 
 import numpy as np
 import torch
-from tensorrt_llm_code.examples.utils import (DEFAULT_HF_MODEL_DIRS, DEFAULT_PROMPT_TEMPLATES,
+from utils import (DEFAULT_HF_MODEL_DIRS, DEFAULT_PROMPT_TEMPLATES,
                    load_tokenizer, read_model_name, throttle_generator)
 
 import tensorrt_llm
@@ -179,5 +180,5 @@ class AtomTRTApi:
             
             
 if __name__=='__main__':
-    model = AtomTRTApi(engine_dir=sys.args[1],tokenizer_dir=sys.argv[2])
+    model = AtomTRTApi(engine_dir=sys.argv[1],tokenizer_dir=sys.argv[2])
     model.ask('如何成为一个更优秀的人')
