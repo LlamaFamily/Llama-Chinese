@@ -51,7 +51,7 @@
     - [全量参数微调](#全量参数微调-1)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
-  - [TensorRT-LLM] (#TensorRT-LLM)
+  - [TensorRT-LLM](#TensorRT-LLM)
   - [vLLM](#vllm)  
   - [JittorLLMs](#jittorllms)
   - [lmdeploy](#lmdeploy)

@@ -471,10 +471,10 @@ print(text)
 ## 🚀 Inference Acceleration
 As the parameter scale of large models continues to grow, improving model inference speed has become an important research direction with limited computational resources. Common inference acceleration frameworks include lmdeploy, FasterTransformer, vLLM, and JittorLLMs.
 
-### FasterTransformer
-[FasterTransformer](https://github.com/NVIDIA/FasterTransformer) is developed by NVIDIA, written in C++/CUDA, and supports distributed inference. Both transformer encoder and decoder can be accelerated. FasterTransformer, in combination with [Triton](https://github.com/openai/triton), accelerates LLama2 model inference. Currently, it supports FP16 or Int8 inference, while Int4 is not supported yet.
+### TensorRT-LLM
+[TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/tree/main) is developed by NVIDIA, written in C++/CUDA, and supports distributed inference. 
 
-For detailed inference documentation, visit: [inference-speed/GPU/FasterTransformer_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/FasterTransformer_example)
+For detailed inference documentation, visit: [inference-speed/GPU/TensorRT-LLM_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/TensorRT-LLM_example)
 
 ### vLLM
 [vLLM](https://github.com/vllm-project/vllm) is developed by the University of California, Berkeley, with its core technology being PageAttention. It achieves 24 times higher throughput compared to HuggingFace Transformers. Unlike FasterTransformer, vLLM is more user-friendly and does not require additional model conversion. It supports FP16 inference.
