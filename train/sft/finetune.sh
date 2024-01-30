@@ -4,10 +4,9 @@ if [ ! -d ${output_model} ];then
     mkdir ${output_model}
 fi
 cp ./finetune.sh ${output_model}
-deepspeed --include localhost:1,0  --num_gpus 2  finetune_clm.py \
+deepspeed --include localhost:1,0 finetune_clm.py \
     --model_name_or_path meta-llama/Llama-2-7b-chat-hf \
     --train_files ../../data/train_sft.csv \
-                ../../data/train_sft_sharegpt.csv \
     --validation_files  ../../data/dev_sft.csv \
                          ../../data/dev_sft_sharegpt.csv \
     --per_device_train_batch_size 1 \

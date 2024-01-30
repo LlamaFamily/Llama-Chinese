@@ -8,7 +8,6 @@ cp ./ds_config_zero*.json ${output_model}
 deepspeed --num_gpus 8 pretrain_clm.py \
     --model_name_or_path meta-llama/Llama-2-7b-chat-hf \
     --train_files ../../data/train_sft.csv \
-                ../../data/train_sft_sharegpt.csv \
     --validation_files  ../../data/dev_sft.csv \
                          ../../data/dev_sft_sharegpt.csv \
     --per_device_train_batch_size 10 \
