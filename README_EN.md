@@ -266,12 +266,12 @@ The Llama2 pretrained models include 7B, 13B, and 70B versions. The Llama2-Chat 
 
 |  Category  | Model Name   | 🤗Model Loading Name             | Download Link                                                 |
 |  ----------  | ---------- | ------------------------- | --------------------- |
-|  Pretrained  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-hf)  |
-|  Pretrained  | Llama2-13B | meta-llama/Llama-2-13b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-hf) |
+|  Pretrained  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-hf) \| [XunLei](https://pan.xunlei.com/s/VN_t0dUikZqOwt-5DZWHuMvqA1?pwd=66ep) |
+|  Pretrained  | Llama2-13B | meta-llama/Llama-2-13b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-hf) \| [XunLei](https://pan.xunlei.com/s/VN_yT_9G8xNOz0SDWQ7Mb_GZA1?pwd=yvgf) |
 |  Pretrained  | Llama2-70B | meta-llama/Llama-2-70b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-hf) |
-|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
-|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) |
-|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) |
+|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) \| [XunLei](https://pan.xunlei.com/s/VN_oaV4BpKFgKLto4KgOhBcaA1?pwd=ufir) |
+|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) \| [XunLei](https://pan.xunlei.com/s/VN_yA-9G34NGL9B79b3OQZZGA1?pwd=xqrg) |
+|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) \| [XunLei](https://pan.xunlei.com/s/VNa_vCGzCy3h3N7oeFXs2W1hA1?pwd=uhxh#) |
 
 
 #### Fine-tuned Chinese Models Based on Llama2
@@ -423,7 +423,9 @@ device_map = "cuda:0" if torch.cuda.is_available() else "auto"
 model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, device_map=device_map, torch_dtype=torch.float16, load_in_8bit=True)
 model = PeftModel.from_pretrained(model, finetune_model_path, device_map={"": 0})
 model = model.eval()
-input_ids = tokenizer(['<s>Human: Introduce Beijing\n</s><s>Assistant: '], return_tensors="pt", add_special_tokens=False).input_ids.to('cuda')
+input_ids = tokenizer(['<s>Human: Introduce Beijing\n</s><s>Assistant: '], return_tensors="pt", add_special_tokens=False).input_ids
+if torch.cuda.is_available():
+  input_ids = input_ids.to('cuda')
 generate_input = {
     "input_ids": input_ids,
     "max_new_tokens": 512,
