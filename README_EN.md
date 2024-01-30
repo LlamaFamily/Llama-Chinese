@@ -124,7 +124,7 @@ We warmly welcome developers and researchers passionate about LLM models to join
 
 【Latest】August 26, 2023: Provided [FastAPI](#fastapi-interface-setup) interface setup script!
 
-【Latest】August 26, 2023: Provided a script to convert Meta official model parameters to a format compatible with Hugging Face [Format Conversion Script](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)!
+【Latest】August 26, 2023: Provided a script to convert Meta official model parameters to a format compatible with Hugging Face [Format Conversion Script](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/README.md)!
 
 【Latest】August 26, 2023: Added [Code Llama](#-code-model) model!
 
@@ -173,7 +173,7 @@ We warmly welcome developers and researchers passionate about LLM models to join
 
 ## 🐼 Latest Downloads of Llama2
 
-The code examples in this repository are primarily based on Hugging Face version parameters. We provide scripts to convert the model parameters released on the Meta website into the format supported by Hugging Face. You can directly load them using the transformers library: [Parameter Format Conversion](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+The code examples in this repository are primarily based on Hugging Face version parameters. We provide scripts to convert the model parameters released on the Meta website into the format supported by Hugging Face. You can directly load them using the transformers library: [Parameter Format Conversion](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/README.md)
 
 <details>
 
@@ -266,12 +266,12 @@ The Llama2 pretrained models include 7B, 13B, and 70B versions. The Llama2-Chat 
 
 |  Category  | Model Name   | 🤗Model Loading Name             | Download Link                                                 |
 |  ----------  | ---------- | ------------------------- | --------------------- |
-|  Pretrained  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [Download Model](https://huggingface.co/meta-llama/Llama-2-7b-hf)  |
-|  Pretrained  | Llama2-13B | meta-llama/Llama-2-13b-hf | [Download Model](https://huggingface.co/meta-llama/Llama-2-13b-hf) |
-|  Pretrained  | Llama2-70B | meta-llama/Llama-2-70b-hf | [Download Model](https://huggingface.co/meta-llama/Llama-2-70b-hf) |
-|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [Download Model](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
-|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [Download Model](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) |
-|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [Download Model](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) |
+|  Pretrained  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-hf)  |
+|  Pretrained  | Llama2-13B | meta-llama/Llama-2-13b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-hf) |
+|  Pretrained  | Llama2-70B | meta-llama/Llama-2-70b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-hf) |
+|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
+|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) |
+|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) |
 
 
 #### Fine-tuned Chinese Models Based on Llama2
@@ -280,10 +280,10 @@ We fine-tuned the Llama2-Chat model based on a Chinese instruction dataset, enha
 
 |  Category  | Model Name   | 🤗Model Loading Name             | Base Model Version |    Download Link                                                 |
 |  ----------  | ---------- | ------------- |  ----------------- | ------------------- |
-|  Merged Parameters | Llama2-Chinese-7b-Chat | FlagAlpha/Llama2-Chinese-7b-Chat  |    meta-llama/Llama-2-7b-chat-hf       |[Download Model](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat)  |
-|  Merged Parameters | Llama2-Chinese-13b-Chat | FlagAlpha/Llama2-Chinese-13b-Chat|     meta-llama/Llama-2-13b-chat-hf     |[Download Model](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat) |
-|  LoRA Parameters | Llama2-Chinese-7b-Chat-LoRA  | FlagAlpha/Llama2-Chinese-7b-Chat-LoRA  |     meta-llama/Llama-2-7b-chat-hf      |[Download Model](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat-LoRA) |
-|  LoRA Parameters | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[Download Model](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
+|  Merged Parameters | Llama2-Chinese-7b-Chat | FlagAlpha/Llama2-Chinese-7b-Chat  |    meta-llama/Llama-2-7b-chat-hf       |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat)  |
+|  Merged Parameters | Llama2-Chinese-13b-Chat | FlagAlpha/Llama2-Chinese-13b-Chat|     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat) |
+|  LoRA Parameters | Llama2-Chinese-7b-Chat-LoRA  | FlagAlpha/Llama2-Chinese-7b-Chat-LoRA  |     meta-llama/Llama-2-7b-chat-hf      |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat-LoRA) |
+|  LoRA Parameters | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
 
 
 #### Pre-trained Chinese Model Atom based on Llama2
@@ -292,8 +292,8 @@ The community provides pretrained versions Atom-7B and models fine-tuned for con
 
 |  Category  | Model Name        | 🤗Model Loading Name                  | Download Link                                                 |
 | --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
-|  Pretrained  | Atom-7B  | FlagAlpha/Atom-7B  | [Download Model](https://huggingface.co/FlagAlpha/Atom-7B) |
-|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [Download Model](https://huggingface.co/FlagAlpha/Atom-7B-Chat) |
+|  Pretrained  | Atom-7B  | FlagAlpha/Atom-7B  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B) |
+|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B-Chat) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat) |
 
 
 ### Code Examples
@@ -301,11 +301,14 @@ The community provides pretrained versions Atom-7B and models fine-tuned for con
 ```python
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B', device_map='auto', torch_dtype=torch.float16, load_in_8bit=True)
+device_map = "cuda:0" if torch.cuda.is_available() else "auto"
+model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B-Chat', device_map=device_map, torch_dtype=torch.float16, load_in_8bit=True)
 model = model.eval()
-tokenizer = AutoTokenizer.from_pretrained('FlagAlpha/Atom-7B', use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained('FlagAlpha/Atom-7B-Chat', use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
-input_ids = tokenizer(['<s>Human: Introduce China\n</s><s>Assistant: '], return_tensors="pt", add_special_tokens=False).input_ids.to('cuda')        
+input_ids = tokenizer(['<s>Human: Introduce China\n</s><s>Assistant: '], return_tensors="pt", add_special_tokens=False).input_ids
+if torch.cuda.is_available():
+  input_ids = input_ids.to('cuda')
 generate_input = {
     "input_ids": input_ids,
     "max_new_tokens": 512,
@@ -325,14 +328,14 @@ print(text)
 
 ### FastAPI Setup
 
-To facilitate model invocation via API, we provide a script for quickly building a [FastAPI](https://github.com/tiangolo/fastapi) interface. For related test code and API parameter settings, please refer to [API Call](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/READMD.md).
+To facilitate model invocation via API, we provide a script for quickly building a [FastAPI](https://github.com/tiangolo/fastapi) interface. For related test code and API parameter settings, please refer to [API Call](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/README.md).
 
 ### Gradio Setup
 
 Built on Gradio, the Q&A interface implements fluid output. Copy the following code into the console to run. The code below uses the Atom-7B model as an example, <font color="#006600">simply modify the model name in the code for different models 😊</font><br/>
 
 ```
-python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B
+python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 ```
 
 ### Docker Setup
@@ -344,7 +347,7 @@ git clone https://github.com/LlamaFamily/Llama2-Chinese.git
 
 cd Llama2-Chinese
 
-docker build -f docker/Dockerfile -t flagalpha/llama2-chinese-7b:gradio .
+docker build -f docker/Dockerfile -t flagalpha/llama2-chinese:gradio .
 ```
 
 Step 2: Start chat_gradio through Docker-compose.
@@ -416,7 +419,8 @@ finetune_model_path = ''  # For example: 'FlagAlpha/Llama2-Chinese-7b-Chat-LoRA'
 config = PeftConfig.from_pretrained(finetune_model_path)
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path, use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
-model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, device_map='auto', torch_dtype=torch.float16, load_in_8bit=True)
+device_map = "cuda:0" if torch.cuda.is_available() else "auto"
+model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, device_map=device_map, torch_dtype=torch.float16, load_in_8bit=True)
 model = PeftModel.from_pretrained(model, finetune_model_path, device_map={"": 0})
 model = model.eval()
 input_ids = tokenizer(['<s>Human: Introduce Beijing\n</s><s>Assistant: '], return_tensors="pt", add_special_tokens=False).input_ids.to('cuda')
@@ -443,6 +447,11 @@ For full-parameter fine-tuned models, use the same calling method as in Model Ca
 
 ## 🍄 Model Quantization
 We have quantized the parameters of the Chinese fine-tuned model to facilitate running with fewer computational resources. Currently, we have uploaded a 4-bit compressed version of the 13B Chinese fine-tuned model [FlagAlpha/Llama2-Chinese-13b-Chat](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat) as [FlagAlpha/Llama2-Chinese-13b-Chat-4bit](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-4bit) on [Hugging Face](https://huggingface.co/FlagAlpha). The specific calling method is as follows:
+
+Environmental requirements:
+```
+pip install git+https://github.com/PanQiWei/AutoGPTQ.git
+```
 
 ```python
 from transformers import AutoTokenizer
@@ -528,8 +537,8 @@ For a simplified implementation using the LangChain framework with the Llama2 LL
 ```python
 from llama2_for_langchain import Llama2
 
-# Example using the 4-bit quantization compressed Llama2-Chinese model FlagAlpha/Llama2-Chinese-13b-Chat-4bit
-llm = Llama2(model_name_or_path='FlagAlpha/Llama2-Chinese-13b-Chat-4bit', bit4=True)
+# Example using FlagAlpha/Atom-7B-Chat
+llm = Llama2(model_name_or_path='FlagAlpha/Atom-7B-Chat')
 
 while True:
     human_input = input("Human: ")

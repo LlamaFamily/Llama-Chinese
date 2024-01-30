@@ -1,17 +1,19 @@
-torch --index-url https://download.pytorch.org/whl/cu118
-bitsandbytes==0.39.0
-accelerate==0.21.0
-#deepspeed==0.10.0
-git+https://github.com/PanQiWei/AutoGPTQ.git
+torch
+bitsandbytes
+accelerate
+numpy
+gekko
+pandas
 scipy
 sentencepiece
 datasets
 evaluate
 pytest
-git+https://github.com/huggingface/peft.git
-transformers==4.31.0
+peft
+transformers
 scikit-learn
-torchvision --index-url https://download.pytorch.org/whl/cu118
-torchaudio --index-url https://download.pytorch.org/whl/cu118
+torchvision
+torchaudio
 tensorboard
 gradio
+flash_attn

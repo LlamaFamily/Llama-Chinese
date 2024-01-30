@@ -87,7 +87,13 @@ if __name__ == "__main__":
         config = PeftConfig.from_pretrained(args.model_name_or_path)
         tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
         tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,low_cpu_mem_usage=True,trust_remote_code=True,use_flash_attention_2=True)
+        model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,
+                                                     device_map='cuda:0' if torch.cuda.is_available() else "auto",
+                                                     torch_dtype=torch.float16,
+                                                     load_in_8bit=True,
+                                                     low_cpu_mem_usage=True,
+                                                     trust_remote_code=True,
+                                                     use_flash_attention_2=True)
         model = PeftModel.from_pretrained(model, args.model_name_or_path, device_map={"": 0})
         model.eval()
     else:

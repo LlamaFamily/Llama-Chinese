@@ -11,13 +11,14 @@ class Llama2(LLM):
     tokenizer: Any
     model: Any
     
-    def __init__(self, model_name_or_path, bit4=True):
+    def __init__(self, model_name_or_path, bit4=False):
         super().__init__()
         self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path,use_fast=False)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         if bit4==False:
             from transformers import AutoModelForCausalLM
-            self.model = AutoModelForCausalLM.from_pretrained(model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
+            device_map = "cuda:0" if torch.cuda.is_available() else "auto"
+            self.model = AutoModelForCausalLM.from_pretrained(model_name_or_path,device_map=device_map,torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
             self.model.eval()
         else:
             from auto_gptq import AutoGPTQForCausalLM

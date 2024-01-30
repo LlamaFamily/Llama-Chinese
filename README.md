@@ -124,7 +124,7 @@
 
 【最新】2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
 
-【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)！
+【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/README.md)！
 
 【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
@@ -174,7 +174,7 @@
 
 ## 🐼 国内Llama2最新下载地址
 
-本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/READMD.md)
+本仓库中的代码示例主要是基于Hugging Face版本参数进行调用，我们提供了脚本将Meta官网发布的模型参数转换为Hugging Face支持的格式，可以直接通过transformers库进行加载：[参数格式转化](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/README.md)
 
 
 <details>
@@ -269,12 +269,12 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 
 |  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
 |  ----------  | ---------- | ------------------------- | --------------------- |
-|  预训练  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [模型下载](https://huggingface.co/meta-llama/Llama-2-7b-hf)  |
-|  预训练  | Llama2-13B | meta-llama/Llama-2-13b-hf | [模型下载](https://huggingface.co/meta-llama/Llama-2-13b-hf) |
-|  预训练  | Llama2-70B | meta-llama/Llama-2-70b-hf | [模型下载](https://huggingface.co/meta-llama/Llama-2-70b-hf) |
-|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [模型下载](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
-|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [模型下载](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) |
-|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [模型下载](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) |
+|  预训练  | Llama2-7B  | meta-llama/Llama-2-7b-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-hf)  |
+|  预训练  | Llama2-13B | meta-llama/Llama-2-13b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-hf) |
+|  预训练  | Llama2-70B | meta-llama/Llama-2-70b-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-hf) |
+|  Chat  | Llama2-7B-Chat  | meta-llama/Llama-2-7b-chat-hf  | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
+|  Chat  | Llama2-13B-Chat | meta-llama/Llama-2-13b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf) |
+|  Chat  | Llama2-70B-Chat | meta-llama/Llama-2-70b-chat-hf | [HuggingFace](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf) |
 
 
 #### 基于Llama2的中文微调模型
@@ -283,10 +283,10 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 
 |  类别  | 模型名称   | 🤗模型加载名称             | 基础模型版本 |    下载地址                                                     |
 |  ----------  | ---------- | ------------- |  ----------------- | ------------------- |
-|  合并参数 | Llama2-Chinese-7b-Chat | FlagAlpha/Llama2-Chinese-7b-Chat  |    meta-llama/Llama-2-7b-chat-hf       |[模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat)  |
-|  合并参数 | Llama2-Chinese-13b-Chat | FlagAlpha/Llama2-Chinese-13b-Chat|     meta-llama/Llama-2-13b-chat-hf     |[模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat) |
-|  LoRA参数 | Llama2-Chinese-7b-Chat-LoRA  | FlagAlpha/Llama2-Chinese-7b-Chat-LoRA  |     meta-llama/Llama-2-7b-chat-hf      |[模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat-LoRA) |
-|  LoRA参数 | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[模型下载](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
+|  合并参数 | Llama2-Chinese-7b-Chat | FlagAlpha/Llama2-Chinese-7b-Chat  |    meta-llama/Llama-2-7b-chat-hf       |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat)  |
+|  合并参数 | Llama2-Chinese-13b-Chat | FlagAlpha/Llama2-Chinese-13b-Chat|     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat) |
+|  LoRA参数 | Llama2-Chinese-7b-Chat-LoRA  | FlagAlpha/Llama2-Chinese-7b-Chat-LoRA  |     meta-llama/Llama-2-7b-chat-hf      |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-7b-Chat-LoRA) |
+|  LoRA参数 | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
 
 
 #### 基于Llama2的中文预训练模型Atom
@@ -295,8 +295,8 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 
 |  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
 | --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
-|  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [模型下载](https://huggingface.co/FlagAlpha/Atom-7B) |
-|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [模型下载](https://huggingface.co/FlagAlpha/Atom-7B-Chat) |
+|  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B) |
+|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B-Chat) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)|
 
 
 ### 模型调用代码示例
@@ -304,11 +304,14 @@ Llama2预训练模型包含7B、13B和70B三个版本。Llama2-Chat模型基于�
 ```python
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B',device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
+device_map = "cuda:0" if torch.cuda.is_available() else "auto"
+model = AutoModelForCausalLM.from_pretrained('FlagAlpha/Atom-7B-Chat',device_map=device_map,torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
 model =model.eval()
-tokenizer = AutoTokenizer.from_pretrained('FlagAlpha/Atom-7B',use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained('FlagAlpha/Atom-7B-Chat',use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
-input_ids = tokenizer(['<s>Human: 介绍一下中国\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')        
+input_ids = tokenizer(['<s>Human: 介绍一下中国\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids
+if torch.cuda.is_available():
+  input_ids = input_ids.to('cuda')
 generate_input = {
     "input_ids":input_ids,
     "max_new_tokens":512,
@@ -328,13 +331,13 @@ print(text)
 
 ### FastAPI接口搭建
 
-为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/READMD.md)。
+为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/README.md)。
 
 ### Gradio快速搭建问答平台
 
 基于gradio搭建的问答界面，实现了流式的输出，将下面代码复制到控制台运行，以下代码以Atom-7B模型为例，<font color="#006600">不同模型只需修改一下代码里的模型名称就好了😊</font><br/>
 ```
-python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B
+python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 ```
 
 ### Docker部署问答接口
@@ -346,7 +349,7 @@ git clone https://github.com/LlamaFamily/Llama2-Chinese.git
 
 cd Llama2-Chinese
 
-docker build -f docker/Dockerfile -t flagalpha/llama2-chinese-7b:gradio .
+docker build -f docker/Dockerfile -t flagalpha/llama2-chinese:gradio .
 ```
 
 第二步：通过docker-compose启动chat_gradio
@@ -420,7 +423,8 @@ config = PeftConfig.from_pretrained(finetune_model_path)
 # 例如: base_model_name_or_path='meta-llama/Llama-2-7b-chat'
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
 tokenizer.pad_token = tokenizer.eos_token
-model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
+device_map = "cuda:0" if torch.cuda.is_available() else "auto"
+model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map=device_map,torch_dtype=torch.float16,load_in_8bit=True,trust_remote_code=True,use_flash_attention_2=True)
 model = PeftModel.from_pretrained(model, finetune_model_path, device_map={"": 0})
 model =model.eval()
 input_ids = tokenizer(['<s>Human: 介绍一下北京\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')        
@@ -451,6 +455,11 @@ print(text)
 
 ## 🍄 模型量化
 我们对中文微调的模型参数进行了量化，方便以更少的计算资源运行。目前已经在[Hugging Face](https://huggingface.co/FlagAlpha)上传了13B中文微调模型[FlagAlpha/Llama2-Chinese-13b-Chat](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat)的4bit压缩版本[FlagAlpha/Llama2-Chinese-13b-Chat-4bit](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-4bit)，具体调用方式如下：
+环境准备：
+```
+pip install git+https://github.com/PanQiWei/AutoGPTQ.git
+```
+
 ```python
 from transformers import AutoTokenizer
 from auto_gptq import AutoGPTQForCausalLM
@@ -529,8 +538,8 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 ```python
 from llama2_for_langchain import Llama2
 
-# 这里以调用4bit量化压缩的Llama2-Chinese参数FlagAlpha/Llama2-Chinese-13b-Chat-4bit为例
-llm = Llama2(model_name_or_path='FlagAlpha/Llama2-Chinese-13b-Chat-4bit', bit4=True)
+# 这里以调用FlagAlpha/Atom-7B-Chat为例
+llm = Llama2(model_name_or_path='FlagAlpha/Atom-7B-Chat')
 
 while True:
     human_input = input("Human: ")

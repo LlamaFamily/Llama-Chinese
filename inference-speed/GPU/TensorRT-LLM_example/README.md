@@ -51,8 +51,8 @@ cd ./examples/llama
 #### 从Huggingface下载Atom或者LLama2模型：
 ```
 # 您可以选择具体想部署的模型下载
-git clone https://huggingface.co/FlagAlpha/Atom-7B      Atom-7B
-mv Atom-7B /origin_model
+git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat      Atom-7B-Chat
+mv Atom-7B-Chat /origin_model
 ```
 
 #### 使用build.py 构建推理引擎：

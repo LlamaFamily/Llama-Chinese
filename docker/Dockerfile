@@ -1,36 +1,8 @@
-# 使用nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04作为基础镜像
-FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
+# 使用pytorch/pytorch:2.1.2-cuda12.1-cudnn8-devel作为基础镜像
+FROM pytorch/pytorch:2.1.2-cuda12.1-cudnn8-devel
 
-# 安装Python编译依赖，下载并编译Python，并设置Python 3.10为默认Python版本
-RUN apt-get update && apt-get install -y \
-    wget \
-    build-essential \
-    libssl-dev \
-    zlib1g-dev \
-    libncurses5-dev \
-    libncursesw5-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    libgdbm-dev \
-    libdb5.3-dev \
-    libbz2-dev \
-    libexpat1-dev \
-    liblzma-dev \
-    libffi-dev \
-    libgdbm-compat-dev \
-    && wget https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tar.xz -O /tmp/Python-3.10.12.tar.xz \
-    && tar xvf /tmp/Python-3.10.12.tar.xz -C /tmp \
-    && cd /tmp/Python-3.10.12 \
-    && ./configure --enable-optimizations --with-ensurepip=install \
-    && make -j $(nproc) \
-    && make altinstall \
-    && update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1 \
-    && update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.10 1 \
-    && rm -rf /tmp/Python-3.10.12.tar.xz /tmp/Python-3.10.12 \
-    && apt-get install -y git \
-    && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-    && apt-get install -y git-lfs \
-    && pip install --upgrade pip
+RUN apt-get update -y --allow-unauthenticated 
+RUN apt install -y git vim git-lfs
 
 #设置工作目录
 WORKDIR /root/Llama2-Chinese
@@ -38,14 +10,18 @@ WORKDIR /root/Llama2-Chinese
 # 从git上克隆llama2-chinese仓库
 RUN git clone https://github.com/LlamaFamily/Llama2-Chinese.git /root/Llama2-Chinese 
 
+# tsinghua source
+RUN mkdir -p ~/.pip
+RUN echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" > ~/.pip/pip.conf
+
 # 使用pip安装requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn -r requirements.txt
 
 #克隆Hugging Face仓库
 RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
 
 #开启7860端口
-EXPOSE 7860 
+EXPOSE 7860
 
 #设置启动命令
 ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Atom-7B-Chat/"]

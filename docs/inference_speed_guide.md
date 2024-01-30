@@ -10,13 +10,9 @@
 
 [使用说明](../inference-speed/GPU/vllm_example/README.md)
 
-### 方案二：FasterTransformer &&  Triton
+### 方案二：TensorRT-LLM
 
-[使用说明](../inference-speed/GPU/FasterTransformer_example/README.md)
-
-### 方案三：lmdeploy
-
-[使用说明](../inference-speed/GPU/lmdeploy_example/README.md)
+[使用说明](../inference-speed/GPU/TensorRT-LLM_example/README.md)
 
 
 ## 2. CPU 推理方案

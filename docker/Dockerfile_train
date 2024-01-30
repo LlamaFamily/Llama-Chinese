@@ -1,9 +1,9 @@
-FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel  as builder
+FROM pytorch/pytorch:2.1.2-cuda12.1-cudnn8-devel  as builder
 RUN apt-get update -y --allow-unauthenticated 
 RUN apt install git tmux htop vim -y 
-RUN pip install bitsandbytes==0.39.0 --upgrade -i https://pypi.org/simple
-RUN pip install transformers==4.31.0
-RUN pip install peft==0.4.0
-RUN pip install accelerate==0.21.0
-RUN pip install deepspeed==0.10.0
-RUN pip install scipy sentencepiece datasets joblib sentence_transformers cn2an evaluate tensorboard wandb
+RUN pip install bitsandbytes -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+RUN pip install transformers -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+RUN pip install peft -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+RUN pip install accelerate -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+RUN pip install deepspeed -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+RUN pip install scipy sentencepiece datasets joblib sentence_transformers cn2an evaluate tensorboard wandb -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
