@@ -565,7 +565,7 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 |                       | CodeLlama-13b-Instruct | ❌    | ✅    | ✅    |
 |                       | CodeLlama-34b-Instruct | ❌    | ❌    | ✅    |
 
-我们提供了Code Llama的[国内下载链接](#-国内llama2最新下载地址上线)以及在线体验地址[llama.family](https://llama.family/)，关于Code Llama的详细信息可以参考官方Github仓库[codellama](https://github.com/facebookresearch/codellama)。
+我们提供了Code Llama的[国内下载链接](#-国内Llama2最新下载地址)以及在线体验地址[llama.family](https://llama.family/)，关于Code Llama的详细信息可以参考官方Github仓库[codellama](https://github.com/facebookresearch/codellama)。
 
 
 ## 📖 学习资料

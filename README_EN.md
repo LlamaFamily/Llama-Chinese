@@ -563,7 +563,7 @@ Meta officially released Code Llama on August 24, 2023, which is a fine-tuned ve
 |                       | CodeLlama-13b-Instruct | ❌    | ✅    | ✅    |
 |                       | CodeLlama-34b-Instruct | ❌    | ❌    | ✅    |
 
-We provide a [domestic download link for Code Llama](#-国内llama2最新下载地址上线) and an online experience link at [llama.family](https://llama.family/). For detailed information on Code Llama, refer to the official GitHub repository [codellama](https://github.com/facebookresearch/codellama).
+We provide a [domestic download link for Code Llama](#-latest-downloads-of-llama2-in-china) and an online experience link at [llama.family](https://llama.family/). For detailed information on Code Llama, refer to the official GitHub repository [codellama](https://github.com/facebookresearch/codellama).
 
 
 
