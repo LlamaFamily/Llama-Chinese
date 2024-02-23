@@ -4,7 +4,7 @@
 <br>
 
 <h1 align="center">
-  Llama2-Chinese
+  Llama-Chinese
 </h1>
 <p align="center" width="100%">
   <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
@@ -345,14 +345,14 @@ Step 1: Prepare the Docker image and launch [chat_gradio.py](../examples/chat_gr
 ```bash
 git clone https://github.com/LlamaFamily/Llama-Chinese.git
 
-cd Llama2-Chinese
+cd Llama-Chinese
 
 docker build -f docker/Dockerfile -t flagalpha/llama2-chinese:gradio .
 ```
 
 Step 2: Start chat_gradio through Docker-compose.
 ```bash
-cd Llama2-Chinese/docker
+cd Llama-Chinese/docker
 doker-compose up -d --build
 ```
 
@@ -602,5 +602,5 @@ Join the WeChat group for discussions 😍😍
 </p>
 
 <p align="center" width="100%">
-<img src="https://api.star-history.com/svg?repos=LlamaFamily/Llama2-Chinese&type=Date" alt="Wechat" style="width: 100%; display: block; margin: auto;">
+<img src="https://api.star-history.com/svg?repos=LlamaFamily/Llama-Chinese&type=Date" alt="Wechat" style="width: 100%; display: block; margin: auto;">
 </p>

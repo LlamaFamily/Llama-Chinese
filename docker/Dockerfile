@@ -5,10 +5,10 @@ RUN apt-get update -y --allow-unauthenticated
 RUN apt install -y git vim git-lfs
 
 #设置工作目录
-WORKDIR /root/Llama2-Chinese
+WORKDIR /root/Llama-Chinese
 
-# 从git上克隆llama2-chinese仓库
-RUN git clone https://github.com/LlamaFamily/Llama-Chinese.git /root/Llama2-Chinese 
+# 从git上克隆llama-chinese仓库
+RUN git clone https://github.com/LlamaFamily/Llama-Chinese.git /root/Llama-Chinese 
 
 # tsinghua source
 RUN mkdir -p ~/.pip
@@ -24,4 +24,4 @@ RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
 EXPOSE 7860
 
 #设置启动命令
-ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Atom-7B-Chat/"]
+ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama-Chinese/Atom-7B-Chat/"]

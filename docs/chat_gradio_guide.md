@@ -12,7 +12,7 @@
 ```bash
 git clone https://github.com/LlamaFamily/Llama-Chinese.git
 
-cd Llama2-Chinese
+cd Llama-Chinese
 
 docker build -f docker/Dockerfile  -t FlagAlpha/llama2-chinese:gradio .
 ```
@@ -21,6 +21,6 @@ docker build -f docker/Dockerfile  -t FlagAlpha/llama2-chinese:gradio .
 
 
 ```bash
-cd Llama2-Chinese/docker
+cd Llama-Chinese/docker
 doker-compose up -d --build
 ```
