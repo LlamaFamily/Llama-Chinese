@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  Llama2-Chinese
+  Llama-Chinese
 </h1>
 <p align="center" width="100%">
   <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
@@ -22,67 +22,67 @@
 
 
 ## 🗂️ 目录
-- [📌Llama中文社区](#-Llama中文社区)
-  - [🔥 社区介绍：Llama中文社区](#-社区介绍：llama中文社区)
-  - [🔵 模型](#-模型)
-    - [🤗Llama2官方模型](#-Llama2官方模型)
-    - [🤗Llama2中文微调模型](#-Llama2中文微调模型)
-    - [🤗中文预训练模型Atom-7B](#-中文预训练模型Atom-7B)
-  - [📢 最新动态](#-最新动态)
-  - [社区资源](#社区资源)
-    - [算力](#算力)
-    - [数据](#数据)
-    - [论坛](#论坛)
-    - [应用](#应用)
+- [📌 Llama中文社区](#-llama中文社区)
+  * [🔥 社区介绍：Llama中文社区](#-社区介绍llama中文社区)
+  * [📢 最新动态](#-最新动态)
+  * [🤗 模型](#-模型)
+    + [🤗 中文预训练模型Atom-7B](#-中文预训练模型atom-7b)
+    + [🤗 Llama2官方模型](#-llama2官方模型)
+    + [🤗 Llama2中文微调模型](#-llama2中文微调模型)
+  * [🌟 社区资源](#社区资源)
+    + [算力](#-算力)
+    + [数据](#-数据)
+    + [论坛](#-论坛)
+    + [应用](#-应用)
 
-- [📌如何使用Llama模型?](#如何使用Llama模型?)
-  - [快速上手Llama3模型](#快速上手Llama3模型)
-  - [快速上手Llama2模型](#快速上手Llama2模型)
-    - [快速上手](#快速上手)
-      - [选择学习路径](#选择学习路径)
-      - [快速上手-使用Anaconda](#快速上手-使用Anaconda)
-      - [快速上手-使用Docker](#快速上手-使用Docker)
-      - [快速上手-使用llama.cpp](#快速上手-使用llama.cpp)
+- [📌 如何使用Llama模型?](#-如何使用llama模型?)
+  * [快速上手Llama3模型](#快速上手llama3模型)
+  * [快速上手Llama2模型](#快速上手llama2模型)
+    + [快速上手](#快速上手)
+      - [快速上手-使用Anaconda](#快速上手-使用anaconda)
+      - [快速上手-使用Docker](#快速上手-使用docker)
+      - [快速上手-使用llama.cpp](#快速上手-使用llamacpp)
       - [快速上手-使用gradio](#快速上手-使用gradio)
-    - [🤖 模型预训练](#模型预训练)
-    - [💡 模型微调](#模型微调)
+      - [快速上手-构建API服务](#快速上手-构建api服务)
+    + [🤖 模型预训练](#-模型预训练)
+    + [💡 模型微调](#-模型微调)
       - [Step1: 环境准备](#step1-环境准备)
       - [Step2: 数据准备](#step2-数据准备)
       - [Step3: 微调脚本](#step3-微调脚本)
-        - [LoRA微调](#lora微调)
-        - [全量参数微调](#全量参数微调)
+        * [LoRA微调](#lora微调)
+        * [全量参数微调](#全量参数微调)
       - [Step4: 加载微调模型](#step4-加载微调模型)
-        - [LoRA微调](#lora微调-1)
-        - [全量参数微调](#全量参数微调-1)
-    - [🍄 模型量化](#-模型量化)
+        * [LoRA微调](#lora微调-1)
+        * [全量参数微调](#全量参数微调-1)
+    + [🍄 模型量化](#-模型量化)
 
-    - [🚀 部署加速](#-部署加速)
-      - [TensorRT-LLM](#TensorRT-LLM)
+    + [🚀 部署加速](#-部署加速)
+      - [TensorRT-LLM](#tensorrt-llm)
       - [vLLM](#vllm)  
       - [JittorLLMs](#jittorllms)
       - [lmdeploy](#lmdeploy)
 
-    - [💪 外延能力](#-外延能力)
+    + [💪 外延能力](#-外延能力)
       - [LangChain](#langchain)
     
-  - [🥇 模型评测](#-模型评测)
-    - [Llama3模型评测](#Llama3模型评测)
-    - [Llama2模型评测](#Llama2模型评测)
+  * [🥇 模型评测](#-模型评测)
+    + [Llama3模型评测](#llama3模型评测)
+    + [Llama2模型评测](#llama2模型评测)
 
-  - [📖 学习中心](#-学习中心)
-      - [Llama3](#Llama3)
-      - [Llama2](#Llama2)
+  * [📖 学习中心](#-学习中心)
+      + [Llama3](#llama3)
+      + [Llama2](#llama2)
         - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
         - [Llama相关论文](#llama相关论文)
         - [Llama2的评测结果](#llama2的评测结果)
 
-- [📌其它](#其它)
-  - [🤔 问题反馈](#-问题反馈)
-  - [🎉 致谢](#-致谢)
+- [📌 其它](#其它)
+  * [🤔 问题反馈](#-问题反馈)
+  * [🎉 致谢](#-致谢)
 
-## Llama中文社区
+## 📌 Llama中文社区
 
-### 社区介绍：llama中文社区
+### 🔥 社区介绍：llama中文社区
 
 欢迎来到Llama中文社区！我们是一个专注于Llama模型在中文方面的优化和上层建设的高级技术社区。
 **\*【Done】已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级\***。**【Doing】正在从预训练开始对Llama3模型进行中文能力的持续迭代升级**
@@ -126,7 +126,7 @@
 
 </details>
 
-### 最新动态
+### 📢 最新动态
 
 【最新】2023年10月8日：新增清华大学JittorLLMs的推理加速功能[JittorLLMs](#jittorllms)！
 
@@ -138,7 +138,7 @@
 
 【最新】2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
 
-【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/convert2hf/README.md)！
+【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama-Chinese/blob/main/scripts/convert2hf/README.md)！
 
 【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
@@ -237,9 +237,9 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 |  LoRA参数 | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
 
 
-#### 中文预训练模型Atom-7B
+#### 🔵 中文预训练模型Atom-7B
 
-##### 🔵 Atom大模型
+##### Atom大模型
 **原子大模型Atom**由Llama中文社区和原子回声联合打造，在中文大模型评测榜单C-Eval中位居前十（8月21日评测提交时间）。
 
 |  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
@@ -283,16 +283,32 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 
 ### 社区资源
+社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。
 
-#### 算力
+<details>
 
-#### 数据
+#### 💻 算力
+- 提供低于市场价格的算力资源，可用于各类计算任务，如深度学习模型的训练、推理等。
+- 为社区成员提供专属的在线推理服务，让用户可以快速有效地对模型进行推理操作。
+- 提供一键在线微调服务，使用户可以方便地对模型进行微调，以适应不同的任务和数据。
 
-#### 论坛
+#### 📊 数据
+- 开放丰富的训练数据资源，覆盖多个领域和行业，为模型训练提供充足的数据支持。
+- 提供高质量、多样化的数据集，以满足不同用户的需求，并支持数据共享和交流，促进数据资源的充分利用。
 
-#### 应用
+#### 💬 论坛
+- 社区论坛为社区成员提供了一个在线交流和讨论技术问题的平台。
+- 在论坛上，用户可以分享经验、提出问题、解答疑惑，促进技术交流和合作。
+- 论坛还可以定期举办线上活动、研讨会等，增进社区成员之间的联系和了解。
 
-##  如何使用Llama模型?
+#### 📱 应用
+- 免费提供应用推广展示位，让开发者可以将他们的应用充分展示给社区成员。
+- 提供推广的帮助，包括但不限于宣传推广、用户引导等服务，帮助应用获得更多的曝光和用户。
+- 通过社区平台，为优秀的应用提供合作机会，促进应用开发者之间的合作和交流，共同推动应用的发展和壮大。
+
+</details>
+
+## 📌 如何使用Llama模型?
 
 ### 快速上手Llama3模型
 
@@ -302,7 +318,6 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 你可以选择一条学习路径，开始使用 Llama 系列模型。推荐使用[中文预训练对话模型](#llama2中文预训练模型atom-7b)进行使用，对中文的效果支持更好。
 
-##### 选择学习路径
 
 ##### 快速上手-使用Anaconda
 
@@ -312,7 +327,7 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 ###### 第 1 步：准备环境
 如需设置环境，安装所需要的软件包，运行下面的命令。
 ```
-git clone https://github.com/LlamaFamily/Llama2-Chinese.git
+git clone https://github.com/LlamaFamily/Llama-Chinese.git
 cd Llama2-Chinese
 pip install -r requirements.txt
 ```
@@ -360,11 +375,11 @@ python quick_start.py
 
 ##### 快速上手-使用Docker
 
-详情参见：[Docker部署](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/docs/chat_gradio_guide.md)
+详情参见：[Docker部署](https://github.com/LlamaFamily/Llama-Chinese/blob/main/docs/chat_gradio_guide.md)
 
 第一步：准备docker镜像，通过docker容器启动[chat_gradio.py](../examples/chat_gradio.py)
 ```bash
-git clone https://github.com/LlamaFamily/Llama2-Chinese.git
+git clone https://github.com/LlamaFamily/Llama-Chinese.git
 
 cd Llama2-Chinese
 
@@ -378,7 +393,7 @@ doker-compose up -d --build
 ```
 
 ##### 快速上手-使用llama.cpp
-详情参见：[使用llama.cpp](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/CPU/ggml/README.md)
+详情参见：[使用llama.cpp](https://github.com/LlamaFamily/Llama-Chinese/blob/main/inference-speed/CPU/ggml/README.md)
 
 ##### 快速上手-使用gradio
 基于gradio搭建的问答界面，实现了流式的输出，将下面代码复制到控制台运行，以下代码以Atom-7B-Chat模型为例，不同模型只需修改一下面的model_name_or_path对应的模型名称就好了😊
@@ -386,8 +401,97 @@ doker-compose up -d --build
 python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 ```
 
-##### FastAPI接口搭建
-为了方便通过API方式调用模型，我们提供了脚本用来快速搭建[FastAPI](https://github.com/tiangolo/fastapi)接口，相关测试代码与API参数设置见[API 调用](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/scripts/api/README.md)。
+##### 快速上手-构建API服务
+使用FastChat构建和OpenAI一致的推理服务接口。
+
+<details>
+###### 第 0 步：前提条件
+安装fastchat
+```bash
+pip3 install "fschat[model_worker,webui]"
+```
+###### 第 1 步：启动Restful API
+开启三个控制台分别执行下面的三个命令
+- 首先启动controler
+```bash
+python3 -m fastchat.serve.controller \
+--host localhost \
+--port 21001
+```
+
+- 启动模型
+```bash
+CUDA_VISIBLE_DEVICES="0" python3 -m fastchat.serve.model_worker --model-path /path/Atom-7B-Chat \
+--host localhost \
+--port 21002 \
+--worker-address "http://localhost:21002" \
+--limit-worker-concurrency 5 \
+--stream-interval 2 \
+--gpus "1" \
+--load-8bit
+```
+
+- 启动RESTful API 服务
+```bash
+python3 -m fastchat.serve.openai_api_server \
+--host localhost \
+--port 21003 \
+--controller-address http://localhost:21001
+```
+
+###### 第 2 步：测试api服务
+执行下面的python代码测试上面部署的api服务
+```bash
+# coding=utf-8
+import json
+import time
+import urllib.request
+import sys
+import requests
+
+def test_api_server(input_text):
+    header = {'Content-Type': 'application/json'}
+
+    data = {
+          "messages": [{"role": "system", "content": ""}, {"role": "user", "content": input_text}],
+          "temperature": 0.3, 
+          "top_p" : 0.95, 
+          "max_tokens": 512, 
+          "model": "LLama2-Chinese-13B",
+          "stream" : False,
+          "n" : 1,
+          "best_of": 1, 
+          "presence_penalty": 1.2, 
+          "frequency_penalty": 0.2,           
+          "top_k": 50, 
+          "use_beam_search": False, 
+          "stop": [], 
+          "ignore_eos" :False,
+          "logprobs": None
+    }
+    response = requests.post(
+        url='http://127.0.0.1:21003/v1/chat/completions',
+        headers=header,
+        data=json.dumps(data).encode('utf-8')
+    )
+
+    result = None
+    try:
+        result = json.loads(response.content)
+        print(json.dumps(data, ensure_ascii=False, indent=2))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+
+    except Exception as e:
+        print(e)
+
+    return result
+
+if __name__ == "__main__":
+    test_api_server("如何去北京?")
+```
+
+</details>
+
 
 
 #### 🤖 模型预训练
@@ -396,14 +500,14 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 
 - 基于大规模中文语料进行预训练，成本高，不仅需要大规模高质量的中文数据，也需要大规模的算力资源。但是优点也显而易见，就是能从模型底层优化中文能力，真正达到治本的效果，从内核为大模型注入强大的中文能力。
 
-我们为社区提供了Llama模型的预训练代码，以及[中文测试语料](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/data)，更多数据可以参考[中文语料](#-中文数据)。具体代码和配置如下：
+我们为社区提供了Llama模型的预训练代码，以及[中文测试语料](https://github.com/LlamaFamily/Llama-Chinese/tree/main/data)，更多数据可以参考[中文语料](#-中文数据)。具体代码和配置如下：
 
-- 模型预训练脚本：[train/pretrain/pretrain.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain.sh)
-- 预训练实现代码：[train/pretrain/pretrain_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/pretrain_clm.py)
+- 模型预训练脚本：[train/pretrain/pretrain.sh](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/pretrain/pretrain.sh)
+- 预训练实现代码：[train/pretrain/pretrain_clm.py](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/pretrain/pretrain_clm.py)
 - [DeepSpeed](https://github.com/microsoft/DeepSpeed)加速：
-  - 对于单卡训练，可以采用ZeRO-2的方式，参数配置见 [train/pretrain/ds_config_zero2.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero2.json)
-  - 对于多卡训练，可以采用ZeRO-3的方式，参数配置见 [train/pretrain/ds_config_zero3.json](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/ds_config_zero3.json)
-- 训练效果度量指标：[train/pretrain/accuracy.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/pretrain/accuracy.py)
+  - 对于单卡训练，可以采用ZeRO-2的方式，参数配置见 [train/pretrain/ds_config_zero2.json](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/pretrain/ds_config_zero2.json)
+  - 对于多卡训练，可以采用ZeRO-3的方式，参数配置见 [train/pretrain/ds_config_zero3.json](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/pretrain/ds_config_zero3.json)
+- 训练效果度量指标：[train/pretrain/accuracy.py](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/pretrain/accuracy.py)
 
 #### 💡 模型微调
 
@@ -411,12 +515,12 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 
 ##### Step1: 环境准备
 
-根据[requirements.txt](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
+根据[requirements.txt](https://github.com/LlamaFamily/Llama-Chinese/blob/main/requirements.txt)安装对应的环境依赖。
 
 ##### Step2: 数据准备
 在data目录下提供了一份用于模型sft的数据样例：
-- 训练数据：[data/train_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/train_sft.csv)
-- 验证数据：[data/dev_sft.csv](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/data/dev_sft.csv)
+- 训练数据：[data/train_sft.csv](https://github.com/LlamaFamily/Llama-Chinese/blob/main/data/train_sft.csv)
+- 验证数据：[data/dev_sft.csv](https://github.com/LlamaFamily/Llama-Chinese/blob/main/data/dev_sft.csv)
 
 每个csv文件中包含一列“text”，每一行为一个训练样例，每个训练样例按照以下格式将问题和答案组织为模型输入，您可以按照以下格式自定义训练和验证数据集：
 ```
@@ -430,10 +534,10 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 ##### Step3: 微调脚本
 
 ###### LoRA微调
-LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_lora.sh)，关于LoRA微调的具体实现代码见[train/sft/finetune_clm_lora.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
+LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/sft/finetune_lora.sh)，关于LoRA微调的具体实现代码见[train/sft/finetune_clm_lora.py](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/sft/finetune_clm_lora.py)，单机多卡的微调可以通过修改脚本中的`--include localhost:0`来实现。
 
 ###### 全量参数微调
-全量参数微调脚本见：[train/sft/finetune.sh](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune.sh)，关于全量参数微调的具体实现代码见[train/sft/finetune_clm.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/train/sft/finetune_clm.py)。
+全量参数微调脚本见：[train/sft/finetune.sh](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/sft/finetune.sh)，关于全量参数微调的具体实现代码见[train/sft/finetune_clm.py](https://github.com/LlamaFamily/Llama-Chinese/blob/main/train/sft/finetune_clm.py)。
 
 
 ##### Step4: 加载微调模型
@@ -517,22 +621,22 @@ print(text)
 ##### TensorRT-LLM
 [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/tree/main)由NVIDIA开发，高性能推理框架
 
-详细的推理文档见：[inference-speed/GPU/TensorRT-LLM_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/TensorRT-LLM_example)
+详细的推理文档见：[inference-speed/GPU/TensorRT-LLM_example](https://github.com/LlamaFamily/Llama-Chinese/tree/main/inference-speed/GPU/TensorRT-LLM_example)
 
 ##### vLLM
 [vLLM](https://github.com/vllm-project/vllm)由加州大学伯克利分校开发，核心技术是PageAttention，吞吐量比HuggingFace Transformers高出24倍。相较与FasterTrainsformer，vLLM更加的简单易用，不需要额外进行模型的转换，支持fp16推理。
 
-详细的推理文档见：[inference-speed/GPU/vllm_example](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
+详细的推理文档见：[inference-speed/GPU/vllm_example](https://github.com/LlamaFamily/Llama-Chinese/blob/main/inference-speed/GPU/vllm_example/README.md)
 
 ##### JittorLLMs
 [JittorLLMs](https://github.com/Jittor/JittorLLMs)由非十科技领衔，与清华大学可视媒体研究中心合作研发，通过动态swap机制大幅降低硬件配置要求（减少80%）,并且Jittor框架通过零拷贝技术，大模型加载相比Pytorch开销降低40%，同时，通过元算子自动编译优化，计算性能提升20%以上。
 
-详细的推理文档见：[inference-speed/GPU/JittorLLMs](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
+详细的推理文档见：[inference-speed/GPU/JittorLLMs](https://github.com/LlamaFamily/Llama-Chinese/blob/main/inference-speed/GPU/JittorLLMs_example/README.md)
 
 ##### lmdeploy
 [lmdeploy](https://github.com/InternLM/lmdeploy/) 由上海人工智能实验室开发，推理使用 C++/CUDA，对外提供 python/gRPC/http 接口和 WebUI 界面，支持 tensor parallel 分布式推理、支持 fp16/weight int4/kv cache int8 量化。
 
-详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/LlamaFamily/Llama2-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
+详细的推理文档见：[inference-speed/GPU/lmdeploy_example](https://github.com/LlamaFamily/Llama-Chinese/tree/main/inference-speed/GPU/lmdeploy_example)
 
 #### 💪 外延能力
 
@@ -540,7 +644,7 @@ print(text)
 我们首先集成了LangChain框架，可以更方便地基于Llama2开发文档检索、问答机器人和智能体应用等，关于LangChain的更多介绍参见[LangChain](https://github.com/langchain-ai/langchain)。
 
 ##### LangChain
-针对LangChain框架封装的Llama2 LLM类见[examples/llama2_for_langchain.py](https://github.com/LlamaFamily/Llama2-Chinese/blob/main/examples/llama2_for_langchain.py)，简单的调用代码示例如下：
+针对LangChain框架封装的Llama2 LLM类见[examples/llama2_for_langchain.py](https://github.com/LlamaFamily/Llama-Chinese/blob/main/examples/llama2_for_langchain.py)，简单的调用代码示例如下：
 ```python
 from llama2_for_langchain import Llama2
 
@@ -580,7 +684,7 @@ The answer always been translate into Chinese language.
 ```
 Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llama2-13B-Chat的测试结果见[meta_eval_13B.md](assets/meta_eval_13B.md)。
 
-通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。因此，基于中文数据对Llama2模型进行训练和微调十分必要，我们的中文版Llama2模型也已经在训练中，近期将对社区开放。
+通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。因此，基于中文数据对Llama2模型进行训练和微调十分必要。
 
 
 #### 📖 学习中心
@@ -597,13 +701,13 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 * [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
 * [Code Llama: Open Foundation Models for Code](https://ai.meta.com/research/publications/code-llama-open-foundation-models-for-code/)
 
+### Llama2的评测结果
+<p align="center" width="100%">
+<img src="./assets/llama_eval.jpeg" style="width: 100%; display: block; margin: auto;">
+</p>
 
-## 为什么选择Llama中文社区模型?
 
-### 社区资源共建企业+社区成员
-
-
-## 其它
+## 📌 其它
 
 ### 🎉 致谢
 
