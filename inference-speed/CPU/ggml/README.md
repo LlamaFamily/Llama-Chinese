@@ -1,6 +1,6 @@
 ## 使用llama.cpp量化部署
 
-以[llama.cpp工具](https://github.com/Rayrtfr/llama.cpp)为例，介绍模型量化并在本地部署的详细步骤。Windows则可能需要cmake等编译工具的安装。**本地快速部署体验推荐使用经过指令精调的[Atom-7B-Chat](https://github.com/LlamaFamily/Llama2-Chinese?tab=readme-ov-file#%E5%9F%BA%E4%BA%8Ellama2%E7%9A%84%E4%B8%AD%E6%96%87%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8Batom)模型，有条件的推荐使用6-bit或者8-bit模型，效果更佳。** 运行前请确保：
+以[llama.cpp工具](https://github.com/Rayrtfr/llama.cpp)为例，介绍模型量化并在本地部署的详细步骤。Windows则可能需要cmake等编译工具的安装。**本地快速部署体验推荐使用经过指令精调的[Atom-7B-Chat](https://github.com/LlamaFamily/Llama-Chinese?tab=readme-ov-file#%E5%9F%BA%E4%BA%8Ellama2%E7%9A%84%E4%B8%AD%E6%96%87%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8Batom)模型，有条件的推荐使用6-bit或者8-bit模型，效果更佳。** 运行前请确保：
 
 1. 系统应有`make`（MacOS/Linux自带）或`cmake`（Windows需自行安装）编译工具
 2. 建议使用Python 3.10以上编译和运行该工具

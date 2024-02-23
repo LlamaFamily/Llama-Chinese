@@ -10,9 +10,9 @@
 通过docker镜像可以更方便的管理需要安装的环境依赖。所以这里可以直接通过docker容器启动[chat_gradio](../examples/chat_gradio.py)， 第一步准备镜像环境。
 
 ```bash
-git clone https://github.com/LlamaFamily/Llama2-Chinese.git
+git clone https://github.com/LlamaFamily/Llama-Chinese.git
 
-cd Llama2-Chinese
+cd Llama-Chinese
 
 docker build -f docker/Dockerfile  -t FlagAlpha/llama2-chinese:gradio .
 ```
@@ -21,6 +21,6 @@ docker build -f docker/Dockerfile  -t FlagAlpha/llama2-chinese:gradio .
 
 
 ```bash
-cd Llama2-Chinese/docker
+cd Llama-Chinese/docker
 doker-compose up -d --build
 ```
