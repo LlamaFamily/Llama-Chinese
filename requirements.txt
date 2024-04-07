@@ -10,10 +10,12 @@ datasets
 evaluate
 pytest
 peft==0.8.2
-transformers==4.38.1
+transformers==4.39.0
+deepspeed==0.14.0
 scikit-learn
 torchvision
+torchdata
 torchaudio
 tensorboard
 gradio
-flash_attn==2.5.5
+packaging

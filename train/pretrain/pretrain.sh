@@ -1,38 +1,41 @@
-output_model=/mnt/data1/atomgpt
+output_model=output_model
 if [ ! -d ${output_model} ];then  
     mkdir ${output_model}
 fi
 cp ./pretrain.sh ${output_model}
 cp ./ds_config_zero*.json ${output_model}
+export CUDA_HOME=/usr/local/cuda/
+export NCCL_P2P_DISABLE=1
 
-deepspeed --num_gpus 8 pretrain_clm.py \
-    --model_name_or_path meta-llama/Llama-2-7b-chat-hf \
-    --train_files ../../data/train_sft.csv \
-    --validation_files  ../../data/dev_sft.csv \
-                         ../../data/dev_sft_sharegpt.csv \
-    --per_device_train_batch_size 10 \
-    --per_device_eval_batch_size 10 \
+deepspeed --include localhost:0,2 pretrain_clm.py \
+    --config_name  ../../model_config/Atom-100M/config.json \
+    --tokenizer_name ../../model_config/Atom-100M \
+    --train_files ../../data/wiki_zh/train_lm_task_0.csv \
+                    ../../data/wiki_zh/train_lm_task_1.csv \
+    --validation_files  ../../data/wiki_zh/dev_lm_task.csv \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
     --do_train \
     --output_dir ${output_model} \
     --evaluation_strategy  steps \
     --use_fast_tokenizer false \
     --max_eval_samples 500 \
-    --learning_rate 3e-5 \
-    --gradient_accumulation_steps 4 \
+    --learning_rate 1e-4 \
+    --gradient_accumulation_steps 2 \
     --num_train_epochs 3 \
-    --warmup_steps 10000 \
+    --warmup_steps 5000 \
     --logging_dir ${output_model}/logs \
     --logging_strategy steps \
-    --logging_steps 2 \
+    --logging_steps 5 \
     --save_strategy steps \
     --preprocessing_num_workers 10 \
-    --save_steps 500 \
-    --eval_steps 500 \
+    --save_steps 100 \
+    --eval_steps 5000000 \
     --save_total_limit 2000 \
     --seed 42 \
     --disable_tqdm false \
     --ddp_find_unused_parameters false \
-    --block_size 4096 \
+    --block_size 1024 \
     --overwrite_output_dir \
     --report_to tensorboard \
     --run_name ${output_model} \
