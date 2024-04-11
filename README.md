@@ -11,6 +11,11 @@
 <p align="center">
   <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
 </p>
+
+<p align="center">
+🤗 <a href="https://huggingface.co/FlagAlpha" target="_blank">Hugging Face</a> • 🤖 <a href="https://www.modelscope.cn/organization/FlagAlpha/" target="_blank">ModelScope</a> • ✡️ <a href="https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat" target="_blank">WiseModel</a>
+</p> 
+
 <p align="center">
   <a href="https://llama.family">在线体验：llama.family</a>
 </p>
@@ -51,7 +56,7 @@
     - [全量参数微调](#全量参数微调-1)
 - [🍄 模型量化](#-模型量化)
 - [🚀 推理加速](#-推理加速)
-  - [TensorRT-LLM](#TensorRT-LLM)
+  - [TensorRT-LLM](#tensorrt-llm)
   - [vLLM](#vllm)  
   - [JittorLLMs](#jittorllms)
   - [lmdeploy](#lmdeploy)
@@ -113,6 +118,8 @@
 </details>
 
 ## 📢 社区公告
+
+【最新】Atom-7B-Chat 模型回答内容相较之前更为丰富、增强了模型的指令遵循能力和回答稳定性、优化了ppo的奖励模型。下载链接[modelscope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat)、[Huggingface](https://huggingface.co/FlagAlpha/Atom-7B-Chat)。
 
 【最新】2024年03月08日：开放了免费API供大家使用，包含（Atom-1B,7B,13B 3种中文大模型）[API使用链接](https://llama.family/docs/chat-completion-v1)
 
