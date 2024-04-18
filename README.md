@@ -3,10 +3,10 @@
 </p>
 
 <h1 align="center">
-  Llama-Chinese
+  Llama中文社区
 </h1>
 <p align="center" width="100%">
-  <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
+  <img src="assets/llama.jpg" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
   <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
@@ -90,7 +90,7 @@
 ### 🔥 社区介绍：llama中文社区
 
 欢迎来到Llama中文社区！我们是一个专注于Llama模型在中文方面的优化和上层建设的高级技术社区。
-**\*【Done】已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级\***。**【Doing】正在从预训练开始对Llama3模型进行中文能力的持续迭代升级**
+**已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级【Done】**。**正在从预训练开始对Llama3模型进行中文能力的持续迭代升级【Doing】**
 我们热忱欢迎对大模型LLM充满热情的开发者和研究者加入我们的行列。
 
 <details>
@@ -133,6 +133,7 @@
 
 ### 📢 最新动态
 
+【最新】2024年04月19日：社区增加了llama3 8B、llama3 70B[在线体验链接](https://llama.family/chat/#/)。
 【最新】2024年04月14日：社区更新了四个专家角色：心理咨询师、羊驼夸夸 、律师、医生。链接：[角色role](https://llama.family/tools/#/agent)。
 
 【最新】2024年04月10日：Atom-7B-Chat 模型回答内容相较之前更为丰富、增强了模型的指令遵循能力和回答稳定性、优化了ppo的奖励模型。下载链接[modelscope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat)、[Huggingface](https://huggingface.co/FlagAlpha/Atom-7B-Chat)。
@@ -210,35 +211,30 @@
 
 ### 🤗 模型
 
-#### 🔵 中文预训练模型Atom-7B
+#### 🔵 中文预训练模型Atom
 
-##### Atom大模型
-**原子大模型Atom**由Llama中文社区和原子回声联合打造，在中文大模型评测榜单C-Eval中位居前十（8月21日评测提交时间）。
-
-<p align="center" width="100%">
-<img src="./assets/ceval.jpg" alt="ceval" style="width: 100%; display: block; margin: auto;">
-</p>
+**原子大模型Atom**由Llama中文社区和原子回声联合打造。
 
 |  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
 | --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
 |  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B) |
 |  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B-Chat) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)|
 
-Atom系列模型包含Atom-7B和Atom-13B，基于Llama2做了中文能力的持续优化。Atom-7B和Atom-7B-Chat目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha)仓库获取模型，详情见[Atom-7B下载](#基于llama2的中文预训练模型atom)。Atom大模型针对中文做了以下优化：
+Atom系列模型包含Atom-13B、Atom-7B和Atom-1B，基于Llama2做了中文能力的持续优化。Atom-7B和Atom-7B-Chat目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha)仓库获取模型，详情见[Atom-7B下载](#基于llama2的中文预训练模型atom)。Atom大模型针对中文做了以下优化：
 
-###### 大规模的中文数据预训练
+- 大规模的中文数据预训练
 
 原子大模型Atom在Llama2的基础上，采用大规模的中文数据进行持续预训练，包含百科、书籍、博客、新闻、公告、小说、金融数据、法律数据、医疗数据、代码数据、专业论文数据、中文自然语言处理竞赛数据集等，详见[📝 数据来源](#-数据来源)。
 
 同时对庞大的数据进行了过滤、打分、去重，筛选出超过1T token的高质量中文数据，持续不断加入训练迭代中。
 
-###### 更高效的中文词表
+- 更高效的中文词表
 为了提高中文文本处理的效率，我们针对Llama2模型的词表进行了深度优化。首先，我们基于数百G的中文文本，在该模型词表的基础上扩展词库至65,000个单词。经过测试，我们的改进使得中文编码/解码速度提高了约350％。此外，我们还扩大了中文字符集的覆盖范围，包括所有emoji符号😊。这使得生成带有表情符号的文章更加高效。
 
-###### 自适应上下文扩展
+- 自适应上下文扩展
 Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Kernel （NTK）方法，经过微调可以将上下文长度扩增到32K。
 
-###### 📝 中文数据
+- 📝 中文数据
 
 我们通过以下数据来优化Llama2的中文能力:
 
@@ -342,10 +338,10 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 
 ##### 快速上手-使用Anaconda
 
-###### 第 0 步：前提条件
+第 0 步：前提条件
 - 确保安装了 Python 3.10 以上版本。
 
-###### 第 1 步：准备环境
+第 1 步：准备环境
 如需设置环境，安装所需要的软件包，运行下面的命令。
 ```bash
 git clone https://github.com/LlamaFamily/Llama-Chinese.git
@@ -353,13 +349,13 @@ cd Llama-Chinese
 pip install -r requirements.txt
 ```
 
-###### 第 2 步：下载模型
+第 2 步：下载模型
 你可以从以下来源下载Atom-7B-Chat模型。
 - [HuggingFace](https://huggingface.co/FlagAlpha)
 - [ModelScope](https://modelscope.cn/organization/FlagAlpha)
 - [WideModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)
 
-###### 第 3 步：进行推理
+第 3 步：进行推理
 使用Atom-7B-Chat模型进行推理
 1. 创建一个名为 quick_start.py 的文件，并将以下内容复制到该文件中。
 ```python
@@ -426,12 +422,14 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 使用FastChat构建和OpenAI一致的推理服务接口。
 
 <details>
-###### 第 0 步：前提条件
+第 0 步：前提条件
+
 安装fastchat
 ```bash
 pip3 install "fschat[model_worker,webui]"
 ```
-###### 第 1 步：启动Restful API
+第 1 步：启动Restful API
+
 开启三个控制台分别执行下面的三个命令
 - 首先启动controler
 ```bash
@@ -460,7 +458,8 @@ python3 -m fastchat.serve.openai_api_server \
 --controller-address http://localhost:21001
 ```
 
-###### 第 2 步：测试api服务
+第 2 步：测试api服务
+
 执行下面的python代码测试上面部署的api服务
 ```python
 # coding=utf-8
@@ -679,7 +678,20 @@ while True:
 
 ##### 🥇 模型评测
 
+###### Llama2和Llama3对比评测
+基础模型对比
+<p align="center" width="100%">
+<img src="./assets/base_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
+微调模型对比
+<p align="center" width="100%">
+<img src="./assets/tuned_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
+
 ###### Llama3模型评测
+<p align="center" width="100%">
+<img src="./assets/llama3_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
 
 ###### Llama2模型评测
 <p align="center" width="100%">
@@ -709,7 +721,11 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 
 #### 📖 学习中心
 
+##### 官方文档
+Meta Llama全系列模型官方文档：https://llama.meta.com/docs/get-started
+
 ##### Llama3
+Llama 3官方链接：https://llama.meta.com/llama3
 
 ##### Llama2
 
