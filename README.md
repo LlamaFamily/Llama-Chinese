@@ -11,6 +11,11 @@
 <p align="center">
   <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
 </p>
+
+<p align="center">
+🤗 <a href="https://huggingface.co/FlagAlpha" target="_blank">Hugging Face</a> • 🤖 <a href="https://www.modelscope.cn/organization/FlagAlpha/" target="_blank">ModelScope</a> • ✡️ <a href="https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat" target="_blank">WiseModel</a>
+</p> 
+
 <p align="center">
   <a href="https://llama.family">在线体验（包含Llama2、Llama3）：https://llama.family</a>
 </p>
@@ -77,8 +82,8 @@
         - [Llama2的评测结果](#llama2的评测结果)
 
 - [📌 其它](#其它)
-  * [🤔 问题反馈](#-问题反馈)
   * [🎉 致谢](#-致谢)
+  * [🤔 问题反馈](#-问题反馈)
 
 ## 📌 Llama中文社区
 
@@ -128,21 +133,29 @@
 
 ### 📢 最新动态
 
+【最新】2024年04月14日：社区更新了四个专家角色：心理咨询师、羊驼夸夸 、律师、医生。链接：[角色role](https://llama.family/tools/#/agent)。
+
+【最新】2024年04月10日：Atom-7B-Chat 模型回答内容相较之前更为丰富、增强了模型的指令遵循能力和回答稳定性、优化了ppo的奖励模型。下载链接[modelscope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat)、[Huggingface](https://huggingface.co/FlagAlpha/Atom-7B-Chat)。
+
+【最新】2024年04月01日：社区上线了Llama中文[应用平台](https://llama.family/store)；同时如果你有优秀的的应用需要推广可以填写[申请表](https://atomecho.feishu.cn/share/base/form/shrcnFqpN71OmBoXDCT6y0TQgIc)。
+
+【最新】2024年03月08日：开放了免费API供大家使用，包含（Atom-1B,7B,13B 3种中文大模型）[API使用链接](https://llama.family/docs/chat-completion-v1)
+
 【最新】2023年10月8日：新增清华大学JittorLLMs的推理加速功能[JittorLLMs](#jittorllms)！
 
 【最新】2023年9月12日：更新预训练版本[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)和对话版本[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)模型参数，最新的中文预训练数据量为2.7TB token，训练进程见[llama.family](https://llama.family/)！
 
 【最新】2023年9月2日：新增模型[预训练代码](#-模型预训练)和[全量参数微调代码](#-模型微调)！
 
-【最新】2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
-
-【最新】2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
-
-【最新】2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama-Chinese/blob/main/scripts/convert2hf/README.md)！
-
-【最新】2023年8月26日：新增[Code Llama](#-代码模型)模型！
-
 <details>
+
+- 2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
+
+- 2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
+
+- 2023年8月26日：提供将Meta原始模型参数转换为兼容Hugging Face的[格式转化脚本](https://github.com/LlamaFamily/Llama-Chinese/blob/main/scripts/convert2hf/README.md)！
+
+- 2023年8月26日：新增[Code Llama](#-代码模型)模型！
 
 - 2023年8月15日：新增[PEFT加载微调模型参数](#加载微调模型)的代码示例！
 
@@ -186,6 +199,49 @@
 
 
 ### 🤗 模型
+
+#### 🔵 中文预训练模型Atom-7B
+
+##### Atom大模型
+**原子大模型Atom**由Llama中文社区和原子回声联合打造，在中文大模型评测榜单C-Eval中位居前十（8月21日评测提交时间）。
+
+<p align="center" width="100%">
+<img src="./assets/ceval.jpg" alt="ceval" style="width: 100%; display: block; margin: auto;">
+</p>
+
+|  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
+| --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
+|  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B) |
+|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B-Chat) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)|
+
+Atom系列模型包含Atom-7B和Atom-13B，基于Llama2做了中文能力的持续优化。Atom-7B和Atom-7B-Chat目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha)仓库获取模型，详情见[Atom-7B下载](#基于llama2的中文预训练模型atom)。Atom大模型针对中文做了以下优化：
+
+###### 大规模的中文数据预训练
+
+原子大模型Atom在Llama2的基础上，采用大规模的中文数据进行持续预训练，包含百科、书籍、博客、新闻、公告、小说、金融数据、法律数据、医疗数据、代码数据、专业论文数据、中文自然语言处理竞赛数据集等，详见[📝 数据来源](#-数据来源)。
+
+同时对庞大的数据进行了过滤、打分、去重，筛选出超过1T token的高质量中文数据，持续不断加入训练迭代中。
+
+###### 更高效的中文词表
+为了提高中文文本处理的效率，我们针对Llama2模型的词表进行了深度优化。首先，我们基于数百G的中文文本，在该模型词表的基础上扩展词库至65,000个单词。经过测试，我们的改进使得中文编码/解码速度提高了约350％。此外，我们还扩大了中文字符集的覆盖范围，包括所有emoji符号😊。这使得生成带有表情符号的文章更加高效。
+
+###### 自适应上下文扩展
+Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Kernel （NTK）方法，经过微调可以将上下文长度扩增到32K。
+
+###### 📝 中文数据
+
+我们通过以下数据来优化Llama2的中文能力:
+
+| 类型                                                       | 描述                                                         |
+| ---------------------------------------------------------- | ------------------------------------------------------------ |
+| 网络数据                                                   | 互联网上公开的网络数据，挑选出去重后的高质量中文数据，涉及到百科、书籍、博客、新闻、公告、小说等高质量长文本数据。 |
+| [Wikipedia](https://github.com/goldsmith/Wikipedia)        | 中文Wikipedia的数据                                          |
+| [悟道](https://github.com/BAAI-WuDao/Model)                | 中文悟道开源的200G数据                                       |
+| [Clue](https://github.com/CLUEbenchmark/CLUEDatasetSearch) | Clue开放的中文预训练数据，进行清洗后的高质量中文长文本数据   |
+| 竞赛数据集                                                 | 近年来中文自然语言处理多任务竞赛数据集，约150个              |
+| [MNBVC](https://github.com/esbatmop/MNBVC)                 | MNBVC 中清洗出来的部分数据集
+
+社区提供预训练版本Atom-7B和基于Atom-7B进行对话微调的模型参数供开放下载，关于模型的进展详见社区官网[llama.family](https://llama.family)。
 
 #### Llama2官方模型
 
@@ -237,53 +293,8 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 |  LoRA参数 | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
 
 
-#### 🔵 中文预训练模型Atom-7B
-
-##### Atom大模型
-**原子大模型Atom**由Llama中文社区和原子回声联合打造，在中文大模型评测榜单C-Eval中位居前十（8月21日评测提交时间）。
-
-|  类别  | 模型名称        | 🤗模型加载名称                  | 下载地址                                                     |
-| --------------- | --------------- | ------------------------------ | ------------------------------------------------------------ |
-|  预训练  | Atom-7B  | FlagAlpha/Atom-7B  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B) |
-|  Chat  | Atom-7B-Chat  | FlagAlpha/Atom-7B-Chat  | [HuggingFace](https://huggingface.co/FlagAlpha/Atom-7B-Chat) \| [ModelScope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat) \| [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)|
-
-<p align="center" width="100%">
-<img src="./assets/ceval.jpg" alt="ceval" style="width: 100%; display: block; margin: auto;">
-</p>
-
-Atom系列模型包含Atom-7B和Atom-13B，基于Llama2做了中文能力的持续优化。Atom-7B和Atom-7B-Chat目前已完全开源，支持商用，可在[Hugging Face](https://huggingface.co/FlagAlpha)仓库获取模型，详情见[Atom-7B下载](#基于llama2的中文预训练模型atom)。Atom大模型针对中文做了以下优化：
-
-###### 大规模的中文数据预训练
-
-原子大模型Atom在Llama2的基础上，采用大规模的中文数据进行持续预训练，包含百科、书籍、博客、新闻、公告、小说、金融数据、法律数据、医疗数据、代码数据、专业论文数据、中文自然语言处理竞赛数据集等，详见[📝 数据来源](#-数据来源)。
-
-同时对庞大的数据进行了过滤、打分、去重，筛选出超过1T token的高质量中文数据，持续不断加入训练迭代中。
-
-###### 更高效的中文词表
-为了提高中文文本处理的效率，我们针对Llama2模型的词表进行了深度优化。首先，我们基于数百G的中文文本，在该模型词表的基础上扩展词库至65,000个单词。经过测试，我们的改进使得中文编码/解码速度提高了约350％。此外，我们还扩大了中文字符集的覆盖范围，包括所有emoji符号😊。这使得生成带有表情符号的文章更加高效。
-
-###### 自适应上下文扩展
-Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Kernel （NTK）方法，经过微调可以将上下文长度扩增到32K。
-
-###### 📝 中文数据
-
-我们通过以下数据来优化Llama2的中文能力:
-
-| 类型                                                       | 描述                                                         |
-| ---------------------------------------------------------- | ------------------------------------------------------------ |
-| 网络数据                                                   | 互联网上公开的网络数据，挑选出去重后的高质量中文数据，涉及到百科、书籍、博客、新闻、公告、小说等高质量长文本数据。 |
-| [Wikipedia](https://github.com/goldsmith/Wikipedia)        | 中文Wikipedia的数据                                          |
-| [悟道](https://github.com/BAAI-WuDao/Model)                | 中文悟道开源的200G数据                                       |
-| [Clue](https://github.com/CLUEbenchmark/CLUEDatasetSearch) | Clue开放的中文预训练数据，进行清洗后的高质量中文长文本数据   |
-| 竞赛数据集                                                 | 近年来中文自然语言处理多任务竞赛数据集，约150个              |
-| [MNBVC](https://github.com/esbatmop/MNBVC)                 | MNBVC 中清洗出来的部分数据集
-
-社区提供预训练版本Atom-7B和基于Atom-7B进行对话微调的模型参数供开放下载，关于模型的进展详见社区官网[llama.family](https://llama.family)。
-
-
-
 ### 社区资源
-社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。
+社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。更多的内容请看[llama.family](https://llama.family/)
 
 <details>
 
@@ -326,7 +337,7 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 ###### 第 1 步：准备环境
 如需设置环境，安装所需要的软件包，运行下面的命令。
-```
+```bash
 git clone https://github.com/LlamaFamily/Llama-Chinese.git
 cd Llama-Chinese
 pip install -r requirements.txt
@@ -369,7 +380,7 @@ text = tokenizer.decode(generate_ids[0])
 print(text)
 ```
 2. 运行 quick_start.py 代码。
-```
+```bash
 python quick_start.py
 ```
 
@@ -441,7 +452,7 @@ python3 -m fastchat.serve.openai_api_server \
 
 ###### 第 2 步：测试api服务
 执行下面的python代码测试上面部署的api服务
-```bash
+```python
 # coding=utf-8
 import json
 import time
@@ -700,11 +711,6 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 * [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
 * [Llama 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/abs/2307.09288)
 * [Code Llama: Open Foundation Models for Code](https://ai.meta.com/research/publications/code-llama-open-foundation-models-for-code/)
-
-### Llama2的评测结果
-<p align="center" width="100%">
-<img src="./assets/llama_eval.jpeg" style="width: 100%; display: block; margin: auto;">
-</p>
 
 
 ## 📌 其它
