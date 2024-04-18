@@ -6,7 +6,7 @@
   Llama-Chinese
 </h1>
 <p align="center" width="100%">
-  <img src="assets/llama.png" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
+  <img src="assets/llama.jpg" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
   <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
