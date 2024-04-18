@@ -3,6 +3,8 @@ output_model=save_folder
 if [ ! -d ${output_model} ];then  
     mkdir ${output_model}
 fi
+export CUDA_HOME=/usr/local/cuda/
+export NCCL_P2P_DISABLE=1
 cp ./finetune.sh ${output_model}
 deepspeed --include localhost:1,0 finetune_clm_lora.py \
     --model_name_or_path meta-llama/Llama-2-7b-chat-hf \

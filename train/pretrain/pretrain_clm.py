@@ -432,7 +432,7 @@ def main():
 
     def tokenize_function(examples):
         with CaptureLogger(tok_logger) as cl:
-            output = tokenizer( [ '<s>'+item+'</s>' for item in examples[text_column_name]])
+            output = tokenizer( [ item for item in examples[text_column_name]])
         return output
 
     with training_args.main_process_first(desc="dataset map tokenization"):
