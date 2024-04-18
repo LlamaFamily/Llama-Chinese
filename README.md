@@ -249,6 +249,16 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 社区提供预训练版本Atom-7B和基于Atom-7B进行对话微调的模型参数供开放下载，关于模型的进展详见社区官网[llama.family](https://llama.family)。
 
+#### Llama3官方模型
+
+|  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
+|  ----------  | ---------- | ------------------------- | --------------------- |
+|  预训练  | Llama3-8B  | meta-llama/Meta-Llama-3-8B  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B) |
+|  预训练  | Llama3-70B | meta-llama/Meta-Llama-3-70B | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-7B) |
+|  对话模型  | Llama3-8B-Chat  | meta-llama/Meta-Llama-3-8B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) |
+|  对话模型  | Llama3-70B-Chat  | meta-llama/Meta-Llama-3-70B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct) |
+
+
 #### Llama2官方模型
 
 <details>
