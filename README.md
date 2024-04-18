@@ -679,7 +679,20 @@ while True:
 
 ##### 🥇 模型评测
 
+###### Llama2和Llama3对比评测
+基础模型对比
+<p align="center" width="100%">
+<img src="./assets/base_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
+微调模型对比
+<p align="center" width="100%">
+<img src="./assets/tuned_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
+
 ###### Llama3模型评测
+<p align="center" width="100%">
+<img src="./assets/llama3_eval.png" style="width: 100%; display: block; margin: auto;">
+</p>
 
 ###### Llama2模型评测
 <p align="center" width="100%">
@@ -709,7 +722,11 @@ Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llam
 
 #### 📖 学习中心
 
+##### 官方文档
+Meta Llama全系列模型官方文档：https://llama.meta.com/docs/get-started
+
 ##### Llama3
+Llama 3官方链接：https://llama.meta.com/llama3
 
 ##### Llama2
 
