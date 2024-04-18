@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  Llama-Chinese
+  Llama中文社区
 </h1>
 <p align="center" width="100%">
   <img src="assets/llama.jpg" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
