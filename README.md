@@ -36,12 +36,9 @@
     + [🤗 Llama2官方模型](#-llama2官方模型)
     + [🤗 Llama2中文微调模型](#-llama2中文微调模型)
   * [🌟 社区资源](#社区资源)
-    + [算力](#-算力)
-    + [数据](#-数据)
-    + [论坛](#-论坛)
-    + [应用](#-应用)
 
-- [📌 如何使用Llama模型?](#-如何使用llama模型?)
+
+- [📌 如何使用Llama模型?](#-如何使用llama模型)
   - [快速上手-使用Anaconda](#快速上手-使用anaconda)
   - [快速上手-使用Docker](#快速上手-使用docker)
   - [快速上手-使用llama.cpp](#快速上手-使用llamacpp)
@@ -70,6 +67,7 @@
   - [LangChain](#langchain)
     
 * [🥇 模型评测](#-模型评测)
+  + [Llama2和Llama3对比评测](#llama2和llama3对比评测)
   + [Llama3模型评测](#llama3模型评测)
   + [Llama2模型评测](#llama2模型评测)
 
@@ -77,10 +75,9 @@
     + [Llama3](#llama3)
     + [Llama2](#llama2)
       - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
-      - [Llama相关论文](#llama相关论文)
-      - [Llama2的评测结果](#llama2的评测结果)
+    + [Llama相关论文](#llama相关论文)
 
-- [📌 其它](#其它)
+- [📌 其它](#-其它)
   * [🎉 致谢](#-致谢)
   * [🤔 问题反馈](#-问题反馈)
 
