@@ -17,7 +17,7 @@
 </p> 
 
 <p align="center">
-  <a href="https://llama.family">在线体验（包含Llama2、Llama3）：https://llama.family</a>
+  <a href="https://llama.family">Llama3 在线体验（包含Llama2）：https://llama.family</a>
 </p>
 <p align="center">
   <a href="https://huggingface.co/FlagAlpha/Atom-7B-Chat">基于Llama2的开源中文预训练大模型Atom-7B</a>
@@ -130,6 +130,7 @@
 ### 📢 最新动态
 
 【最新】2024年04月19日：社区增加了llama3 8B、llama3 70B[在线体验链接](https://llama.family/chat/#/)。
+
 【最新】2024年04月14日：社区更新了四个专家角色：心理咨询师、羊驼夸夸 、律师、医生。链接：[角色role](https://llama.family/tools/#/agent)。
 
 【最新】2024年04月10日：Atom-7B-Chat 模型回答内容相较之前更为丰富、增强了模型的指令遵循能力和回答稳定性、优化了ppo的奖励模型。下载链接[modelscope](https://modelscope.cn/models/FlagAlpha/Atom-7B-Chat)、[Huggingface](https://huggingface.co/FlagAlpha/Atom-7B-Chat)。
