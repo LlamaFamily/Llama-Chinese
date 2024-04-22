@@ -389,7 +389,7 @@ docker build -f docker/Dockerfile -t flagalpha/llama2-chinese:gradio .
 Step 2: Start chat_gradio through Docker-compose.
 ```bash
 cd Llama-Chinese/docker
-doker-compose up -d --build
+docker-compose up -d --build
 ```
 
 #### Simple Setup: llama.cpp
