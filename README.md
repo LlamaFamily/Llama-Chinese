@@ -568,7 +568,7 @@ LoRA微调脚本见：[train/sft/finetune_lora.sh](https://github.com/LlamaFamil
 ### Step4: 加载微调模型
 
 #### LoRA微调
-基于LoRA微调的模型参数见：[基于Llama2的中文微调模型](#基于llama2的中文微调模型)，LoRA参数需要和基础模型参数结合使用。
+基于LoRA微调的模型参数见：[基于Llama2的中文微调模型](#llama2中文微调模型)，LoRA参数需要和基础模型参数结合使用。
 
 通过[PEFT](https://github.com/huggingface/peft)加载预训练模型参数和微调模型参数，以下示例代码中，base_model_name_or_path为预训练模型参数保存路径，finetune_model_path为微调模型参数保存路径。
 
