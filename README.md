@@ -33,6 +33,7 @@
   * [🤗 模型](#-模型)
     + [🤗 中文预训练模型Atom-7B](#-中文预训练模型atom)
     + [🤗 Llama3官方模型](#llama3官方模型)
+    + [🤗 Llama3中文微调模型](#llama3中文微调模型)
     + [🤗 Llama2官方模型](#llama2官方模型)
     + [🤗 Llama2中文微调模型](#llama2中文微调模型)
   * [🌟 社区资源](#社区资源)
@@ -254,6 +255,12 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 |  预训练  | Llama3-70B | meta-llama/Meta-Llama-3-70B | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-7B) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
 |  对话模型  | Llama3-8B-Chat  | meta-llama/Meta-Llama-3-8B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
 |  对话模型  | Llama3-70B-Chat  | meta-llama/Meta-Llama-3-70B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
+
+#### Llama3中文微调模型
+
+|  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
+|  ----------  | ---------- | ------------------------- | --------------------- |
+|  对话模型  | Llama3-Chinese-8B-Instruct  | FlagAlpha/Llama3-Chinese-8B-Instruct  | [HuggingFace](https://huggingface.co/FlagAlpha/Llama3-Chinese-8B-Instruct) \| [modelscope](https://modelscope.cn/models/FlagAlpha/Llama3-Chinese-8B-Instruct/summary) \| [wisemodel](https://wisemodel.cn/models/FlagAlpha/Llama3-Chinese-8B-Instruct/file) |
 
 
 #### Llama2官方模型
