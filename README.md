@@ -9,7 +9,7 @@
   <img src="assets/llama.jpg" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
-  <font face="黑体" color=orange size="6"> 最好的中文Llama大模型 </font>
+  <font face="黑体" color=orange size="6"> Llama3体验和微调已开放，最好的中文Llama大模型 </font>
 </p>
 
 <p align="center">
