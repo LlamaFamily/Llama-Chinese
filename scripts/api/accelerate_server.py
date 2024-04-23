@@ -17,7 +17,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--model_path',required=True,type=str)
 parser.add_argument('--gpus', default="0", type=str)
 parser.add_argument('--infer_dtype', default="int8", choices=["int4", "int8", "float16"], required=False,type=str)
-parser.add_argument('--model_source', default="llama2_chinese", choices =["llama2_chinese", "llama2_meta"], required=False,type=str)
+parser.add_argument('--model_source', default="llama2_chinese", choices =["llama2_chinese", "llama2_meta", "llama3_meta"], required=False,type=str)
 
 args = parser.parse_args()
 os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus

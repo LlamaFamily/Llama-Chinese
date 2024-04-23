@@ -18,10 +18,13 @@ pip install vllm
 
 ## 第二步：启动测试server
 
-从Huggingface下载Atom或者LLama2模型：
+从Huggingface下载Atom或者LLama3模型：
 ```
 # 您可以选择具体想部署的模型下载
 git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat  Atom-7B-Chat
+
+# 或者下载Meta官方的Llama3模型：
+git clone https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct Meta-Llama-3-8B-Instruct
 ```
 
 1. 单卡推理
@@ -47,6 +50,8 @@ bash multi_gpus_api_server.sh
 
 ## 第三步：启动client测试
 
+注意下面的model_source 模型的源，可以是 llama_chinese、llama2_meta、llama3_meta 根据下载的模型不同去区分，如果下载的是[FlagAlpha](https://huggingface.co/FlagAlpha)下载的则用llama_chinese。
+
 ```
-python client_test.py
+python client_test.py --model_source llama_chinese
 ```
