@@ -86,7 +86,7 @@
 ### 🔥 社区介绍：llama中文社区
 
 欢迎来到Llama中文社区！我们是一个专注于Llama模型在中文方面的优化和上层建设的高级技术社区。
-**已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级【Done】**。**正在从预训练开始对Llama3模型进行中文能力的持续迭代升级【Doing】**
+**已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级【Done】**。**正在对Llama3模型进行中文能力的持续迭代升级【Doing】**
 我们热忱欢迎对大模型LLM充满热情的开发者和研究者加入我们的行列。
 
 <details>
@@ -412,7 +412,7 @@ docker build -f docker/Dockerfile -t flagalpha/llama2-chinese:gradio .
 第 2 步：通过docker-compose启动chat_gradio
 ```bash
 cd Llama-Chinese/docker
-doker-compose up -d --build
+docker-compose up -d --build
 ```
 
 ### 快速上手-使用llama.cpp
@@ -549,7 +549,7 @@ if __name__ == "__main__":
 
 每个csv文件中包含一列“text”，每一行为一个训练样例，每个训练样例按照以下格式将问题和答案组织为模型输入，您可以按照以下格式自定义训练和验证数据集：
 ```
-"<s>Human: "+问题+"\n</s><s>Assistant: "+答案
+"<s>Human: "+问题+"\n</s><s>Assistant: "+答案+"\n"</s>
 ```
 例如，
 ```
