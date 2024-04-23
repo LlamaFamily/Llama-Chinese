@@ -400,7 +400,7 @@ def main():
             use_auth_token=True if model_args.use_auth_token else None,
         )
     else:
-        model = AutoModelForCausalLM.from_config(config)
+        model = AutoModelForCausalLM.from_config(config,trust_remote_code=True)
         n_params = sum({p.data_ptr(): p.numel() for p in model.parameters()}.values())
         logger.info(f"Training new model from scratch - Total size={n_params/2**20:.2f}M params")
     print(training_args.local_rank,'end load model')
