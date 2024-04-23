@@ -1,3 +1,4 @@
+# coding=utf-8
 import argparse
 import gc
 import math
@@ -77,6 +78,21 @@ def get_prompt(chat_history, system_prompt: str):
     print("prompt:{}".format(ret))
     return ret
 
+def get_prompt_llama3(chat_history, system_prompt: str):
+    system_format='<|start_header_id|>system<|end_header_id|>\n\n{content}<|eot_id|>'
+    user_format='<|start_header_id|>user<|end_header_id|>\n\n{content}<|eot_id|>'
+    assistant_format='<|start_header_id|>assistant<|end_header_id|>\n\n{content}<|eot_id|>\n'
+    prompt_str = ''
+    # 拼接历史对话
+    for item in history:
+        if item['role']=='Human':
+            prompt_str+=user_format.format(content=item['content'])
+        else:
+            prompt_str+=assistant_format.format(content=item['content'])
+    if len(system_prompt)>0:
+        prompt_str = system_format.format(content=system_prompt) + prompt_str
+    return prompt_str
+
 
 @app.post("/generate")
 async def create_item(request: Request):
@@ -90,7 +106,13 @@ async def create_item(request: Request):
     top_p = json_post_list.get('top_p')
     temperature = json_post_list.get('temperature')
     
-    prompt = get_prompt(history, system_prompt)
+    if args.model_source == "llama2_meta":
+        prompt = get_prompt(history, system_prompt)
+    elif args.model_source == "llama3_meta":
+        prompt = get_prompt_llama3(history, system_prompt)
+    else:
+        prompt = get_prompt_llama2chinese(history, system_prompt)
+        
     inputs = tokenizer([prompt], return_tensors='pt').to("cuda")
     generate_kwargs = dict(
         inputs,
