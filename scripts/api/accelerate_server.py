@@ -30,7 +30,7 @@ rank = local_rank
 app = FastAPI()
 
 def get_prompt_llama2chinese(
-    chat_history, system_prompt: str
+    chat_history, system_prompt=""
 ) -> str:
     prompt = ''
     for input_text_one in chat_history:
@@ -45,7 +45,7 @@ def get_prompt_llama2chinese(
                 
     return prompt
 
-def get_prompt(chat_history, system_prompt: str):
+def get_prompt(chat_history, system_prompt=""):
     B_INST, E_INST = "[INST]", "[/INST]"
     B_SYS, E_SYS = "<<SYS>>\n", "\n<</SYS>>\n\n"
     
@@ -78,19 +78,20 @@ def get_prompt(chat_history, system_prompt: str):
     print("prompt:{}".format(ret))
     return ret
 
-def get_prompt_llama3(chat_history, system_prompt: str):
+def get_prompt_llama3(chat_history, system_prompt=""):
     system_format='<|start_header_id|>system<|end_header_id|>\n\n{content}<|eot_id|>'
     user_format='<|start_header_id|>user<|end_header_id|>\n\n{content}<|eot_id|>'
     assistant_format='<|start_header_id|>assistant<|end_header_id|>\n\n{content}<|eot_id|>\n'
     prompt_str = ''
     # 拼接历史对话
-    for item in history:
+    for item in chat_history:
         if item['role']=='Human':
             prompt_str+=user_format.format(content=item['content'])
         else:
             prompt_str+=assistant_format.format(content=item['content'])
     if len(system_prompt)>0:
         prompt_str = system_format.format(content=system_prompt) + prompt_str
+    prompt_str = "<|begin_of_text|>" + prompt_str
     return prompt_str
 
 
