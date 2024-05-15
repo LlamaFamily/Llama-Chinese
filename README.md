@@ -131,6 +131,8 @@
 
 ### 📢 最新动态
 
+【最新】2024年05月15日：支持ollama运行Llama3-Chinese-8B-Instruct、Atom-7B-Chat，[详细使用方法](https://github.com/LlamaFamily/Llama-Chinese?tab=readme-ov-file#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E4%BD%BF%E7%94%A8ollama%E8%BF%90%E8%A1%8C)。
+
 【最新】2024年04月23日：社区增加了llama3 8B中文微调模型[Llama3-Chinese-8B-Instruct](https://github.com/LlamaFamily/Llama-Chinese?tab=readme-ov-file#llama3%E4%B8%AD%E6%96%87%E5%BE%AE%E8%B0%83%E6%A8%A1%E5%9E%8B)以及对应的[免费API调用](https://llama.family/docs/chat-completion-v1)。
  
 【最新】2024年04月19日：社区增加了llama3 8B、llama3 70B[在线体验链接](https://llama.family/chat/#/)。
