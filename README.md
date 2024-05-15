@@ -45,6 +45,7 @@
   - [快速上手-使用llama.cpp](#快速上手-使用llamacpp)
   - [快速上手-使用gradio](#快速上手-使用gradio)
   - [快速上手-构建API服务](#快速上手-构建api服务)
+  - [快速上手-使用ollama运行](#快速上手-使用ollama运行)
 
 + [🤖 模型预训练](#-模型预训练)
 + [💡 模型微调](#-模型微调)
@@ -527,6 +528,28 @@ if __name__ == "__main__":
 
 </details>
 
+
+### 快速上手-使用ollama运行
+
+1. 首先需要安装ollama工具
+
+安装方法参考：[https://ollama.com](https://ollama.com/)
+
+2. ollama运行Llama3-Chinese-8B-Instruct、Atom-7B-Chat
+
+ollama运行基于Llama3进行中文微调的大模型[Llama3-Chinese-8B-Instruct](https://huggingface.co/FlagAlpha/Llama3-Chinese-8B-Instruct)
+
+打开命令行执行命令
+```
+ollama run llamafamily/llama3-chinese-8b-instruct
+```
+
+ollama运行基于Llama2进行中文预训练的开源大模型[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)
+
+打开命令行执行命令
+```
+ollama run llamafamily/atom-7b-chat
+```
 
 
 ## 🤖 模型预训练
