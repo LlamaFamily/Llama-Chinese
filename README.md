@@ -807,5 +807,5 @@ Llama3官方链接：https://llama.meta.com/llama3
 </p>
 
 <p align="center" width="100%">
-<img src="https://api.star-history.com/svg?repos=LlamaFamily/Llama-Chinese&type=Date" alt="Wechat" style="width: 100%; display: block; margin: auto;">
+<img src="https://api.star-history.com/svg?repos=LlamaFamily/Llama-Chinese&type=Date" alt="Star" style="width: 100%; display: block; margin: auto;">
 </p>
