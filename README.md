@@ -369,7 +369,7 @@ pip install -r requirements.txt
 你可以从以下来源下载Atom-7B-Chat模型。
 - [HuggingFace](https://huggingface.co/FlagAlpha)
 - [ModelScope](https://modelscope.cn/organization/FlagAlpha)
-- [WideModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)
+- [WiseModel](https://wisemodel.cn/models/FlagAlpha/Atom-7B-Chat)
 
 第 3 步：进行推理
 
@@ -788,9 +788,9 @@ Llama3官方链接：https://llama.meta.com/llama3
 
 感谢芯格[Coremesh](https://coremesh.net)团队的技术和资源支持！
 
-感谢 [福州连天教育科技有限公司](www.3class.cc) 对Llama2中文社区的贡献！
+感谢 [福州连天教育科技有限公司](www.3class.cc) 对Llama中文社区的贡献！
 
-感谢 @Z Potentials社区对Llama2中文社区的支持！
+感谢 @Z Potentials社区对Llama中文社区的支持！
 
 ### 🤔 问题反馈
 
