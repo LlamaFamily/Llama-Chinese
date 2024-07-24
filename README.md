@@ -20,7 +20,7 @@
   <a href="https://llama.family">Llama3 在线体验（包含Llama2）：https://llama.family</a>
 </p>
 <p align="center">
-  <a href="https://huggingface.co/FlagAlpha/Atom-7B-Chat">基于Llama2的开源中文预训练大模型Atom-7B</a>
+  <a href="https://huggingface.co/FlagAlpha/Atom-7B-Chat">基于Llama的开源中文预训练大模型Atom</a>
 </p>
 
 </br></br>
@@ -131,6 +131,10 @@
 
 ### 📢 最新动态
 
+【最新】2024年07月24日：开源最强[Llama 3.1](https://llama.meta.com/docs/overview)模型发布，包含8B、70B和405B！
+
+【最新】2024年07月16日：[社区论坛](https://forum.llamafamily.cn/)上线，有大模型问题，就找Llama中文社区！
+
 【最新】2024年05月15日：支持ollama运行Llama3-Chinese-8B-Instruct、Atom-7B-Chat，[详细使用方法](https://github.com/LlamaFamily/Llama-Chinese?tab=readme-ov-file#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E4%BD%BF%E7%94%A8ollama%E8%BF%90%E8%A1%8C)。
 
 【最新】2024年04月23日：社区增加了llama3 8B中文微调模型[Llama3-Chinese-8B-Instruct](https://github.com/LlamaFamily/Llama-Chinese?tab=readme-ov-file#llama3%E4%B8%AD%E6%96%87%E5%BE%AE%E8%B0%83%E6%A8%A1%E5%9E%8B)以及对应的[免费API调用](https://llama.family/docs/chat-completion-v1)。
@@ -157,12 +161,12 @@
 
 【最新】2023年10月8日：新增清华大学JittorLLMs的推理加速功能[JittorLLMs](#jittorllms)！
 
-【最新】2023年9月12日：更新预训练版本[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)和对话版本[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)模型参数，最新的中文预训练数据量为2.7TB token，训练进程见[llama.family](https://llama.family/)！
-
-【最新】2023年9月2日：新增模型[预训练代码](#-模型预训练)和[全量参数微调代码](#-模型微调)！
-
 <details>
 
+- 2023年9月12日：更新预训练版本[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)和对话版本[Atom-7B-Chat](https://huggingface.co/FlagAlpha/Atom-7B-Chat)模型参数，最新的中文预训练数据量为2.7TB token，训练进程见[llama.family](https://llama.family/)！
+
+- 2023年9月2日：新增模型[预训练代码](#-模型预训练)和[全量参数微调代码](#-模型微调)！
+  
 - 2023年8月28日：发布基于Llama2进行中文预训练的开源大模型[Atom-7B](https://huggingface.co/FlagAlpha/Atom-7B)，并将持续更新，详情参考[社区公众号文章](https://mp.weixin.qq.com/s/Bdx0JTVh1kgPn5ydYxIkEw)！
 
 - 2023年8月26日：提供[FastAPI](#fastapi接口搭建)接口搭建脚本！
