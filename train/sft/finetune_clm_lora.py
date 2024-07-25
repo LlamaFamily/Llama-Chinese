@@ -626,7 +626,7 @@ def main():
     # Training
     if training_args.do_train:
         checkpoint = None
-        if training_args.resume_from_checkpoint is not None:
+        '''if training_args.resume_from_checkpoint is not None:
             resume_from_checkpoint = training_args.resume_from_checkpoint
             checkpoint_name = os.path.join(resume_from_checkpoint, "pytorch_model.bin")
             if not os.path.exists(checkpoint_name):
@@ -643,7 +643,9 @@ def main():
                 set_peft_model_state_dict(model, adapters_weights)
             else:
                 print(f"Checkpoint {checkpoint_name} not found")
-            # checkpoint = Fa
+            # checkpoint = Fa'''
+        if training_args.resume_from_checkpoint is not None:
+            checkpoint = training_args.resume_from_checkpoint
         elif last_checkpoint is not None:
             checkpoint = last_checkpoint
         
