@@ -728,7 +728,7 @@ Join the WeChat group for discussions 😍😍
 
 
 <p align="center" width="100%">
-<img src="./assets/wechat.jpeg" alt="Wechat" style="width: 100%; display: block; margin: auto;">
+<img src="./assets/wechat-new.jpeg" alt="Wechat" style="width: 100%; display: block; margin: auto;">
 </p>
 
 <p align="center" width="100%">
