@@ -9,7 +9,7 @@
   <img src="assets/llama.jpg" alt="Llama" style="width: 20%; display: block; margin: auto;"></a>
 </p>
 <p align="center">
-  <font face="黑体" color=orange size="6"> Llama3体验和微调已开放，最好的中文Llama大模型 </font>
+  <font face="黑体" color=orange size="6"> 最好的Llama大模型开源社区 </font>
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@
 </p> 
 
 <p align="center">
-  <a href="https://llama.family">Llama3.1 在线体验（包含Llama2）：https://llama.family</a>
+  <a href="https://llama.com">Llama4原生多模态MoE模型发布！</a>
 </p>
 <p align="center">
   <a href="https://huggingface.co/FlagAlpha/Atom-7B-Chat">基于Llama的开源中文预训练大模型Atom</a>
@@ -27,76 +27,76 @@
 
 
 ## 🗂️ 目录
+- [🗂️ 目录](#️-目录)
 - [📌 Llama中文社区](#-llama中文社区)
-  * [🔥 社区介绍：Llama中文社区](#-社区介绍llama中文社区)
-  * [📢 最新动态](#-最新动态)
-  * [🤗 模型](#-模型)
-    + [🤗 中文预训练模型Atom-7B](#-中文预训练模型atom)
-    + [🤗 Llama3官方模型](#llama3官方模型)
-    + [🤗 Llama3中文微调模型](#llama3中文微调模型)
-    + [🤗 Llama2官方模型](#llama2官方模型)
-    + [🤗 Llama2中文微调模型](#llama2中文微调模型)
-  * [🌟 社区资源](#社区资源)
-
-
-- [📌 如何使用Llama模型?](#-如何使用llama模型)
+  - [🔥 社区介绍](#-社区介绍)
+    - [为什么选择Llama中文社区？](#为什么选择llama中文社区)
+    - [社区活动](#社区活动)
+    - [立即加入我们！](#立即加入我们)
+  - [🪵 社区资源](#-社区资源)
+    - [💻 算力](#-算力)
+    - [📊 数据](#-数据)
+    - [💬 论坛](#-论坛)
+    - [📱 应用](#-应用)
+  - [📢 最新动态](#-最新动态)
+  - [🤗 模型发布](#-模型发布)
+    - [中文预训练模型Atom](#中文预训练模型atom)
+    - [Llama4官方模型](#llama4官方模型)
+    - [Llama3官方模型](#llama3官方模型)
+    - [Llama3中文微调模型](#llama3中文微调模型)
+    - [Llama2官方模型](#llama2官方模型)
+    - [Llama2中文微调模型](#llama2中文微调模型)
+- [📌 如何使用Llama模型](#-如何使用llama模型)
   - [快速上手-使用Anaconda](#快速上手-使用anaconda)
   - [快速上手-使用Docker](#快速上手-使用docker)
   - [快速上手-使用llama.cpp](#快速上手-使用llamacpp)
   - [快速上手-使用gradio](#快速上手-使用gradio)
   - [快速上手-构建API服务](#快速上手-构建api服务)
   - [快速上手-使用ollama运行](#快速上手-使用ollama运行)
-
-+ [🤖 模型预训练](#-模型预训练)
-+ [💡 模型微调](#-模型微调)
+- [🤖 模型预训练](#-模型预训练)
+- [💡 模型微调](#-模型微调)
   - [Step1: 环境准备](#step1-环境准备)
   - [Step2: 数据准备](#step2-数据准备)
   - [Step3: 微调脚本](#step3-微调脚本)
-    * [LoRA微调](#lora微调)
-    * [全量参数微调](#全量参数微调)
+    - [LoRA微调](#lora微调)
+    - [全量参数微调](#全量参数微调)
   - [Step4: 加载微调模型](#step4-加载微调模型)
-    * [LoRA微调](#lora微调-1)
-    * [全量参数微调](#全量参数微调-1)
-+ [🍄 模型量化](#-模型量化)
-
-+ [🚀 部署加速](#-部署加速)
+    - [LoRA微调](#lora微调-1)
+    - [全量参数微调](#全量参数微调-1)
+- [🍄 模型量化](#-模型量化)
+- [🚀 部署加速](#-部署加速)
   - [TensorRT-LLM](#tensorrt-llm)
-  - [vLLM](#vllm)  
+  - [vLLM](#vllm)
   - [JittorLLMs](#jittorllms)
   - [lmdeploy](#lmdeploy)
-
-+ [💪 外延能力](#-外延能力)
+- [💪 外延能力](#-外延能力)
   - [LangChain](#langchain)
-    
-* [🥇 模型评测](#-模型评测)
-  + [Llama2和Llama3对比评测](#llama2和llama3对比评测)
-  + [Llama3模型评测](#llama3模型评测)
-  + [Llama2模型评测](#llama2模型评测)
-
-* [📖 学习中心](#-学习中心)
-    + [Llama3](#llama3)
-    + [Llama2](#llama2)
-      - [Meta官方对于Llama2的介绍](#meta官方对于llama2的介绍)
-    + [Llama相关论文](#llama相关论文)
-
+- [🥇 模型评测](#-模型评测)
+  - [Llama4模型评测](#llama4模型评测)
+  - [Llama2和Llama3对比评测](#llama2和llama3对比评测)
+  - [Llama3模型评测](#llama3模型评测)
+  - [Llama2模型评测](#llama2模型评测)
+- [📖 学习中心](#-学习中心)
+  - [官方文档](#官方文档)
+  - [社区文档](#社区文档)
+  - [Llama相关论文](#llama相关论文)
 - [📌 其它](#-其它)
-  * [🎉 致谢](#-致谢)
-  * [🤔 问题反馈](#-问题反馈)
+  - [🎉 致谢](#-致谢)
+  - [🤔 问题反馈](#-问题反馈)
+
 
 ## 📌 Llama中文社区
 
-### 🔥 社区介绍：llama中文社区
+### 🔥 社区介绍
 
-欢迎来到Llama中文社区！我们是一个专注于Llama模型在中文方面的优化和上层建设的高级技术社区。
-**已经基于大规模中文数据，从预训练开始对Llama2模型进行中文能力的持续迭代升级【Done】**。**正在对Llama3模型进行中文能力的持续迭代升级【Doing】**
-我们热忱欢迎对大模型LLM充满热情的开发者和研究者加入我们的行列。
+欢迎来到Llama中文社区！Llama模型的开源无疑极大促进了大模型技术的发展，我们致力于构建一个开放平台，能够让所有的开发者与技术爱好者一起共创Llama开源生态。从大模型到小模型，从文本到多模态，从软件到硬件算法优化，我们期望开源能够带给全人类以AI普惠。在一个科技爆发的时代，加入Llama Family，与技术一同进步，与社区一同前行，一起迈向AGI！
 
 <details>
 
 #### 为什么选择Llama中文社区？
 🚀 **高级工程师团队支持**：社区有一批专注为大家服务的NLP高级工程师，我们有着强大的技术支持和丰富的经验，为您提供专业的指导和帮助。
 
-🎯 **中文优化**：我们致力于在Llama模型的中文处理方面进行优化，探索适用于中文的最佳实践，以提升其性能和适应性【支持Llama2、Llama3】。
+🎯 **中文优化**：我们致力于在Llama模型的中文处理方面进行优化，探索适用于中文的最佳实践，以提升其性能和适应性【支持Llama2、Llama3、Llama4】。
 
 💡 **创新交流**：我们拥有一支富有创造力和经验的社区成员团队，定期组织线上活动、技术研讨和经验分享，促进成员间的创新交流。
 
@@ -129,7 +129,41 @@
 
 </details>
 
+
+### 🪵 社区资源
+社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。更多的内容请看[llama.family](https://llama.family/)
+
+<details>
+
+#### 💻 算力
+- 提供低于市场价格的算力资源，可用于各类计算任务，如深度学习模型的训练、推理等。
+- 为社区成员提供专属的在线推理服务，让用户可以快速有效地对模型进行推理操作。
+- 提供一键在线微调服务，使用户可以方便地对模型进行微调，以适应不同的任务和数据。
+
+#### 📊 数据
+- 开放丰富的训练数据资源，覆盖多个领域和行业，为模型训练提供充足的数据支持。
+- 提供高质量、多样化的数据集，以满足不同用户的需求，并支持数据共享和交流，促进数据资源的充分利用。
+
+#### 💬 论坛
+- 社区论坛为社区成员提供了一个在线交流和讨论技术问题的平台。
+- 在论坛上，用户可以分享经验、提出问题、解答疑惑，促进技术交流和合作。
+- 论坛还可以定期举办线上活动、研讨会等，增进社区成员之间的联系和了解。
+
+#### 📱 应用
+- 免费提供应用推广展示位，让开发者可以将他们的应用充分展示给社区成员。
+- 提供推广的帮助，包括但不限于宣传推广、用户引导等服务，帮助应用获得更多的曝光和用户。
+- 通过社区平台，为优秀的应用提供合作机会，促进应用开发者之间的合作和交流，共同推动应用的发展和壮大。
+
+</details>
+
+
 ### 📢 最新动态
+
+【最新】2025年04月05日：原生多模态MoE架构的[Llama 4](https://ai.meta.com/blog/llama-4-multimodal-intelligence/?utm_source=llama-home-latest-updates&utm_medium=llama-referral&utm_campaign=llama-utm&utm_offering=llama-aiblog&utm_product=llama)开源！最高达2T参数的Behemoth模型，以及Maverick、Scout。
+
+【最新】2024年12月06日：[Llama 3.3](https://llama.meta.com/docs/overview)模型发布，更新70B Instruct模型。
+
+【最新】2024年09月25日：[Llama 3.2](https://llama.meta.com/docs/overview)模型发布，核心主打1B、3B端侧小模型，以及11B、90B多模态输入模型！
 
 【最新】2024年07月24日：开源最强[Llama 3.1](https://llama.meta.com/docs/overview)模型发布，包含8B、70B和405B！
 
@@ -216,9 +250,9 @@
 </details>
 
 
-### 🤗 模型
+### 🤗 模型发布
 
-#### 🔵 中文预训练模型Atom
+#### 中文预训练模型Atom
 
 **原子大模型Atom**由Llama中文社区和原子回声联合打造。
 
@@ -231,19 +265,17 @@ Atom系列模型包含Atom-13B、Atom-7B和Atom-1B，基于Llama2做了中文能
 
 - 大规模的中文数据预训练
 
-原子大模型Atom在Llama2的基础上，采用大规模的中文数据进行持续预训练，包含百科、书籍、博客、新闻、公告、小说、金融数据、法律数据、医疗数据、代码数据、专业论文数据、中文自然语言处理竞赛数据集等，详见[📝 数据来源](#-数据来源)。
-
-同时对庞大的数据进行了过滤、打分、去重，筛选出超过1T token的高质量中文数据，持续不断加入训练迭代中。
+    原子大模型Atom在Llama2的基础上，采用大规模的中文数据进行持续预训练，包含百科、书籍、博客、新闻、公告、小说、金融数据、法律数据、医疗数据、代码数据、专业论文数据、中文自然语言处理竞赛数据集等。同时对庞大的数据进行了过滤、打分、去重，筛选出超过1T token的高质量中文数据，持续不断加入训练迭代中。
 
 - 更高效的中文词表
-为了提高中文文本处理的效率，我们针对Llama2模型的词表进行了深度优化。首先，我们基于数百G的中文文本，在该模型词表的基础上扩展词库至65,000个单词。经过测试，我们的改进使得中文编码/解码速度提高了约350％。此外，我们还扩大了中文字符集的覆盖范围，包括所有emoji符号😊。这使得生成带有表情符号的文章更加高效。
+
+    为了提高中文文本处理的效率，我们针对Llama2模型的词表进行了深度优化。首先，我们基于数百G的中文文本，在该模型词表的基础上扩展词库至65,000个单词。经过测试，我们的改进使得中文编码/解码速度提高了约350％。此外，我们还扩大了中文字符集的覆盖范围，包括所有emoji符号😊。这使得生成带有表情符号的文章更加高效。
 
 - 自适应上下文扩展
-Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Kernel （NTK）方法，经过微调可以将上下文长度扩增到32K。
 
-- 📝 中文数据
+    Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Kernel （NTK）方法，经过微调可以将上下文长度扩增到32K。
 
-我们通过以下数据来优化Llama2的中文能力:
+📝 中文数据详情如下：
 
 | 类型                                                       | 描述                                                         |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
@@ -252,18 +284,41 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 | [悟道](https://github.com/BAAI-WuDao/Model)                | 中文悟道开源的200G数据                                       |
 | [Clue](https://github.com/CLUEbenchmark/CLUEDatasetSearch) | Clue开放的中文预训练数据，进行清洗后的高质量中文长文本数据   |
 | 竞赛数据集                                                 | 近年来中文自然语言处理多任务竞赛数据集，约150个              |
-| [MNBVC](https://github.com/esbatmop/MNBVC)                 | MNBVC 中清洗出来的部分数据集
+| [MNBVC](https://github.com/esbatmop/MNBVC)                 | MNBVC 中清洗出来的部分数据集  |
 
 社区提供预训练版本Atom-7B和基于Atom-7B进行对话微调的模型参数供开放下载，关于模型的进展详见社区官网[llama.family](https://llama.family)。
 
-#### Llama3官方模型
+
+#### Llama4官方模型
 
 |  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
 |  ----------  | ---------- | ------------------------- | --------------------- |
-|  预训练  | Llama3-8B  | meta-llama/Meta-Llama-3-8B  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
-|  预训练  | Llama3-70B | meta-llama/Meta-Llama-3-70B | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-7B) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
-|  对话模型  | Llama3-8B-Chat  | meta-llama/Meta-Llama-3-8B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
-|  对话模型  | Llama3-70B-Chat  | meta-llama/Meta-Llama-3-70B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct) \| [百度网盘](https://pan.baidu.com/s/1gBZ7wEn3gC8VRok0Onh9BQ?pwd=8frq) |
+|  预训练  | Llama-4-Scout-17B-16E  | meta-llama/Llama-4-Scout-17B-16E  | [HuggingFace](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E) |
+|  对话模型  | Llama-4-Scout-17B-16E-Instruct | meta-llama/Llama-4-Scout-17B-16E-Instruct | [HuggingFace](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct) |
+|  预训练  | Llama-4-Maverick-17B-128E  | meta-llama/Llama-4-Maverick-17B-128E  | [HuggingFace](https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E) |
+|  对话模型  | Llama-4-Maverick-17B-128E-Instruct  | meta-llama/Llama-4-Maverick-17B-128E-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct) |
+
+
+#### Llama3官方模型
+注意：仅保留同等参数量级模型的最新版本。
+
+|  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
+|  ----------  | ---------- | ------------------------- | --------------------- |
+|  预训练  | Llama-3.2-1B  | meta-llama/Llama-3.2-1B  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-1B) |
+|  对话模型  | Llama-3.2-1B-Instruct | meta-llama/Llama-3.2-1B-Instruct | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct) |
+|  预训练  | Llama-3.2-3B  | meta-llama/Llama-3.2-3B  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-3B) |
+|  对话模型  | Llama-3.2-3B-Instruct | meta-llama/Llama-3.2-3B-Instruct | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct) |
+|  预训练  | Llama-3.1-8B  | meta-llama/Llama-3.1-8B  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-8B) |
+|  对话模型  | Llama-3.1-8B-Instruct | meta-llama/Llama-3.1-8B-Instruct | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
+|  预训练  | Llama-3.1-70B  | meta-llama/Llama-3.1-70B  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-70B)|
+|  对话模型  | Llama-3.3-70B-Instruct  | meta-llama/Llama-3.3-70B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct) |
+|  预训练  | Llama-3.1-405B  | meta-llama/Llama-3.1-405B  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-405B)|
+|  对话模型  | Llama-3.1-405B-Instruct  | meta-llama/Llama-3.1-405B-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct)|
+|  多模态预训练  | Llama-3.2-11B-Vision  | meta-llama/Llama-3.2-11B-Vision  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision)|
+|  多模态对话模型  | Llama-3.2-11B-Vision-Instruct  | meta-llama/Llama-3.2-11B-Vision-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct)|
+|  多模态预训练  | Llama-3.2-90B-Vision  | meta-llama/Llama-3.2-90B-Vision  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-90B-Vision)|
+|  多模态对话模型  | Llama-3.2-90B-Vision-Instruct  | meta-llama/Llama-3.2-90B-Vision-Instruct  | [HuggingFace](https://huggingface.co/meta-llama/Llama-3.2-90B-Vision-Instruct)|
+
 
 #### Llama3中文微调模型
 
@@ -274,7 +329,7 @@ Atom大模型默认支持4K上下文，利用位置插值PI和Neural Tangent Ker
 
 #### Llama2官方模型
 
-<details>
+<!-- <details> -->
 
 |  类别  | 模型名称   | 🤗模型加载名称             | 下载地址                                                     |
 |  ----------  | ---------- | ------------------------- | --------------------- |
@@ -308,7 +363,8 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 
 关于Code Llama的详细信息可以参考官方Github仓库[codellama](https://github.com/facebookresearch/codellama)。
 
-</details>
+<!-- </details> -->
+
 
 #### Llama2中文微调模型
 
@@ -322,33 +378,7 @@ Meta官方在2023年8月24日发布了Code Llama，基于代码数据对Llama2�
 |  LoRA参数 | Llama2-Chinese-13b-Chat-LoRA | FlagAlpha/Llama2-Chinese-13b-Chat-LoRA |     meta-llama/Llama-2-13b-chat-hf     |[HuggingFace](https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat-LoRA) |
 
 
-### 社区资源
-社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。更多的内容请看[llama.family](https://llama.family/)
-
-<details>
-
-#### 💻 算力
-- 提供低于市场价格的算力资源，可用于各类计算任务，如深度学习模型的训练、推理等。
-- 为社区成员提供专属的在线推理服务，让用户可以快速有效地对模型进行推理操作。
-- 提供一键在线微调服务，使用户可以方便地对模型进行微调，以适应不同的任务和数据。
-
-#### 📊 数据
-- 开放丰富的训练数据资源，覆盖多个领域和行业，为模型训练提供充足的数据支持。
-- 提供高质量、多样化的数据集，以满足不同用户的需求，并支持数据共享和交流，促进数据资源的充分利用。
-
-#### 💬 论坛
-- 社区论坛为社区成员提供了一个在线交流和讨论技术问题的平台。
-- 在论坛上，用户可以分享经验、提出问题、解答疑惑，促进技术交流和合作。
-- 论坛还可以定期举办线上活动、研讨会等，增进社区成员之间的联系和了解。
-
-#### 📱 应用
-- 免费提供应用推广展示位，让开发者可以将他们的应用充分展示给社区成员。
-- 提供推广的帮助，包括但不限于宣传推广、用户引导等服务，帮助应用获得更多的曝光和用户。
-- 通过社区平台，为优秀的应用提供合作机会，促进应用开发者之间的合作和交流，共同推动应用的发展和壮大。
-
-</details>
-
-## 📌 如何使用Llama模型?
+## 📌 如何使用Llama模型
 
 
 你可以选择下面的快速上手的任一种方式，开始使用 Llama 系列模型。推荐使用[中文预训练对话模型](#llama2中文预训练模型atom-7b)进行使用，对中文的效果支持更好。
@@ -443,7 +473,7 @@ python examples/chat_gradio.py --model_name_or_path FlagAlpha/Atom-7B-Chat
 ### 快速上手-构建API服务
 使用FastChat构建和OpenAI一致的推理服务接口。
 
-<details>
+<!-- <details> -->
 第 0 步：前提条件
 
 安装fastchat
@@ -532,7 +562,7 @@ if __name__ == "__main__":
     test_api_server("如何去北京?")
 ```
 
-</details>
+<!-- </details> -->
 
 
 ### 快速上手-使用ollama运行
@@ -559,7 +589,7 @@ ollama run llamafamily/atom-7b-chat
 
 
 ## 🤖 模型预训练
-虽然Llama2的预训练数据相对于第一代LLaMA扩大了一倍，但是中文预训练数据的比例依然非常少，仅占0.13%，这也导致了原始Llama2的中文能力较弱。为了能够提升模型的中文能力，可以采用微调和预训练两种路径，其中：
+模型迭代日新月异，虽然Llama2现在使用已经不多，在这里我们还是作为一个学习样例，展示如何做基座模型的预训练与微调。Llama2的预训练数据相对于第一代LLaMA扩大了一倍，但是中文预训练数据的比例依然非常少，仅占0.13%，这也导致了原始Llama2的中文能力较弱。为了能够提升模型的中文能力，可以采用微调和预训练两种路径，其中：
 - 微调需要的算力资源少，能够快速实现一个中文Llama的雏形。但缺点也显而易见，只能激发基座模型已有的中文能力，由于Llama2的中文训练数据本身较少，所以能够激发的能力也有限，治标不治本。
 
 - 基于大规模中文语料进行预训练，成本高，不仅需要大规模高质量的中文数据，也需要大规模的算力资源。但是优点也显而易见，就是能从模型底层优化中文能力，真正达到治本的效果，从内核为大模型注入强大的中文能力。
@@ -722,6 +752,11 @@ while True:
 
 ## 🥇 模型评测
 
+### Llama4模型评测
+<p align="center" width="100%">
+<img src="./assets/Llama4-Maverick.png" style="width: 100%; display: block; margin: auto;">
+</p>
+
 ### Llama2和Llama3对比评测
 基础模型对比
 <p align="center" width="100%">
@@ -742,7 +777,7 @@ while True:
 <img src="./assets/llama_eval.jpeg" style="width: 100%; display: block; margin: auto;">
 </p>
 
-为了能够更加清晰地了解Llama2模型的中文问答能力，我们筛选了一些具有代表性的中文问题，对Llama2模型进行提问。我们测试的模型包含Meta公开的Llama2-7B-Chat和Llama2-13B-Chat两个版本，没有做任何微调和训练。测试问题筛选自[AtomBulb](https://github.com/AtomEcho/AtomBulb)，共95个测试问题，包含：通用知识、语言理解、创作能力、逻辑推理、代码编程、工作技能、使用工具、人格特征八个大的类别。
+为了能够更加清晰地了解Llama模型的中文问答能力，我们筛选了一些具有代表性的中文问题，对Llama模型进行提问。我们测试的模型包含Meta公开的Llama2-7B-Chat和Llama2-13B-Chat两个版本，没有做任何微调和训练。测试问题筛选自[AtomBulb](https://github.com/AtomEcho/AtomBulb)，共95个测试问题，包含：通用知识、语言理解、创作能力、逻辑推理、代码编程、工作技能、使用工具、人格特征八个大的类别。
 
 测试中使用的Prompt如下，例如对于问题“列出5种可以改善睡眠质量的方法”：
 ```
@@ -760,23 +795,19 @@ The answer always been translate into Chinese language.
 ```
 Llama2-7B-Chat的测试结果见[meta_eval_7B.md](assets/meta_eval_7B.md)，Llama2-13B-Chat的测试结果见[meta_eval_13B.md](assets/meta_eval_13B.md)。
 
-通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。因此，基于中文数据对Llama2模型进行训练和微调十分必要。
+通过测试我们发现，Meta原始的Llama2 Chat模型对于中文问答的对齐效果一般，大部分情况下都不能给出中文回答，或者是中英文混杂的形式。当然，随着基座模型多语种语料的扩充，这些问题将很快被解决。比如，在Llama4当中，预训练数据包含200种语言，其中100种语言的语料超过了1B tokens。
 
 
 ## 📖 学习中心
 
 ### 官方文档
-Meta Llama全系列模型官方文档：https://llama.meta.com/docs/get-started
 
-### Llama3
-[Llama3全套学习资料](https://chinesellama.feishu.cn/wiki/XBKPwbhWriWCfrkmJhfcrS9Rnqc?fromScene=spaceOverview)
+Meta Llama全系列模型官方文档：https://www.llama.com/docs/get-started
 
-Llama3官方链接：https://llama.meta.com/llama3
+Meta Llama官方网站：https://www.llama.com
 
-### Llama2
-
-#### Meta官方对于[Llama2](https://ai.meta.com/llama)的介绍
-自从Meta公司发布第一代LLaMA模型以来，羊驼模型家族繁荣发展。近期Meta发布了Llama2版本，开源可商用，在模型和效果上有了重大更新。Llama2总共公布了7B、13B和70B三种参数大小的模型。相比于LLaMA，Llama2的训练数据达到了2万亿token，上下文长度也由之前的2048升级到4096，可以理解和生成更长的文本。Llama2 Chat模型基于100万人类标记数据微调得到，在英文对话上达到了接近ChatGPT的效果。
+### 社区文档
+[Llama全套学习资料](https://chinesellama.feishu.cn/wiki/XBKPwbhWriWCfrkmJhfcrS9Rnqc?fromScene=spaceOverview)
 
 ### Llama相关论文
 * [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971)
